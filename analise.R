@@ -5,6 +5,7 @@ library(tidyverse)
 library(readxl)
 library(geobr)
 library(extrafont)
+library(gganimate)
 
 library(colorspace)
 library(RColorBrewer)
@@ -14,7 +15,7 @@ library(viridis)
 # estilo dos gráficos -----------------------------------------------------
 
 
-font_import()
+loadfonts()
 
 tema <- function(){
   theme_minimal() +
@@ -231,7 +232,13 @@ atribui("COMPESA", "setor", "SANEAMENTO")
 #dados_selecionados[linhas[["COMPESA"]], "setor"]
 
 
-# gráficos anteriores -- mapas --------------------------------------------
+
+# gráficos anteriores -----------------------------------------------------
+
+
+
+# mapa small multiples ----------------------------------------------------
+
 
 dados_qde_setor_estado <- dados_selecionados %>%
   count(setor, Estado)
@@ -265,8 +272,9 @@ mapa_qde <- mapa %>%
   rename(qde = "n") %>%
   arrange(setor)
 
-graf_mapa_comp <- ggplot(mapa_qde, aes(group = Estado))+# %>% filter(seg == "OUTRO")) + 
-  geom_sf(aes(fill = ifelse(qde > 0, setor, NA)), color = "ghostwhite") + 
+graf_mapa_comp <- ggplot(mapa_qde)+# %>% filter(seg == "OUTRO")) + 
+  geom_sf(data = mapa, fill = "#EFEFEF", color = "ghostwhite") +
+  geom_sf(aes(group = Estado, fill = ifelse(qde > 0, setor, NA)), color = "ghostwhite") + 
   # scale_fill_manual(values = c("TRUE" = "steelblue", "FALSE" = NA)) +
   scale_fill_viridis_d(direction = 1,
                        option = "plasma", na.value = "#EFEFEF")+#,
@@ -285,3 +293,36 @@ graf_mapa_comp <- ggplot(mapa_qde, aes(group = Estado))+# %>% filter(seg == "OUT
         panel.background = element_blank())
 
 graf_mapa_facet <- graf_mapa_comp + facet_wrap(~setor)
+ggsave(plot = graf_mapa_facet, "./plots/segmentos_facet.png", width = 9, height = 8, dpi = 300)
+
+
+
+# mapa gif ----------------------------------------------------------------
+
+graf_mapa_labels <- ggplot(mapa_qde) +
+  geom_sf(data = mapa, fill = "#EFEFEF", color = "ghostwhite") +
+  geom_sf(aes(group = Estado, fill = ifelse(qde > 0, setor, NA)), color = "ghostwhite") + 
+  geom_text(aes(label = "Estados com empresas do setor de ", 
+                y = 9.5, x = -73.5), 
+            color = "dimgrey", check_overlap = TRUE,
+            family = "Lora", fontface = "plain", size = 5, 
+            hjust = "left") +
+  geom_text(aes(label = setor, y = 9.5, x = -50, color = setor), # no chute
+            check_overlap = TRUE, family = "Lora", fontface = "bold",
+            size = 5, hjust = "left") +
+  scale_fill_viridis_d(direction = 1,
+                       option = "plasma", na.value = "#EFEFEF") +
+  scale_color_viridis_d(direction = 1,
+                        option = "plasma", na.value = "#EFEFEF") +
+  labs(x = NULL, y = NULL) +
+  tema_mapa()
+
+graf_mapa_gif <- graf_mapa_labels + transition_states(states = setor,
+                                                      transition_length = 1,
+                                                      state_length = 3) #+
+# labs(title = "Estados que possuem empresas do setor de {closest_state}") +
+# theme(title = element_text(size = 13, face = "plain"))
+
+animate(graf_mapa_gif, nframes = nrow(setores)*20, fps = 8)
+
+anim_save("./plots/mapa.gif", animation = last_animation())
