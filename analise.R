@@ -300,7 +300,7 @@ graf_mapa_labels <- ggplot(mapa_qde) +
             color = "dimgrey", check_overlap = TRUE,
             family = "Lora", fontface = "plain", size = 5, 
             hjust = "left") +
-  geom_text(aes(label = setor, y = 9.5, x = -50, color = setor), # no chute
+  geom_text(aes(label = setor, y = 9.5, x = -48, color = setor), # no chute
             check_overlap = TRUE, family = "Lora", fontface = "bold",
             size = 5, hjust = "left") +
   scale_fill_viridis_d(direction = 1,
@@ -316,7 +316,7 @@ graf_mapa_gif <- graf_mapa_labels + transition_states(states = setor,
 # labs(title = "Estados que possuem empresas do setor de {closest_state}") +
 # theme(title = element_text(size = 13, face = "plain"))
 
-gif_animation <- animate(graf_mapa_gif, nframes = nrow(setores)*20, fps = 8, renderer = gifski_renderer())
+gif_animation <- animate(graf_mapa_gif, nframes = nrow(setores)*10, fps = 6, renderer = gifski_renderer())
 
 anim_save("./plots/mapa.gif", animation = gif_animation)
 
