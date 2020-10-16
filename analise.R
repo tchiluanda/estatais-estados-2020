@@ -243,28 +243,21 @@ atribui("COMPESA", "setor", "SANEAMENTO")
 dados_qde_setor_estado <- dados_selecionados %>%
   count(setor, Estado)
 
-mapa <- geobr::read_state()
+#mapa <- geobr::read_state()
+#saveRDS(mapa, "./dados/dados-intermediarios/mapa.rds")
+mapa <- readRDS("./dados/dados-intermediarios/mapa.rds")
 
 mapa_qde <- mapa %>%
   inner_join(dados_qde_setor_estado, by = c("abbrev_state" = "Estado"))
 
-ggplot(mapa_qde %>% filter(setor == "SANEAMENTO")) + 
-    geom_sf(aes(fill = n > 0), color = "coral") +
-    scale_fill_manual(values = c("TRUE" = "lightcoral", "FALSE" = NA)) +
-    labs(fill = "Tem empresa de saneamento?")
+# ggplot(mapa_qde %>% filter(setor == "SANEAMENTO")) + 
+#     geom_sf(aes(fill = n > 0), color = "coral") +
+#     scale_fill_manual(values = c("TRUE" = "lightcoral", "FALSE" = NA)) +
+#     labs(fill = "Tem empresa de saneamento?")
 
 setores <- data.frame(
   setor = unique(dados_selecionados$setor)
 )
-
-combinacao_est_seg <- setores %>%
-  full_join(tab_uf, by = character())
-  rename(Estado = UF,
-         State = CODUF) %>%
-  left_join(dados_qde) %>%
-  left_join(mapa) %>%
-  filter(!is.na(seg)) %>%
-  arrange(seg)
   
 mapa_qde <- mapa %>%
   rename(Estado = "abbrev_state") %>%
@@ -323,6 +316,8 @@ graf_mapa_gif <- graf_mapa_labels + transition_states(states = setor,
 # labs(title = "Estados que possuem empresas do setor de {closest_state}") +
 # theme(title = element_text(size = 13, face = "plain"))
 
-animate(graf_mapa_gif, nframes = nrow(setores)*20, fps = 8)
+gif_animation <- animate(graf_mapa_gif, nframes = nrow(setores)*20, fps = 8, renderer = gifski_renderer())
 
-anim_save("./plots/mapa.gif", animation = last_animation())
+anim_save("./plots/mapa.gif", animation = gif_animation)
+
+  
