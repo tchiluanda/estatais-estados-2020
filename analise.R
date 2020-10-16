@@ -4,11 +4,58 @@
 library(tidyverse)
 library(readxl)
 library(geobr)
+library(extrafont)
+
+library(colorspace)
+library(RColorBrewer)
 library(viridis)
 
 
+# estilo dos gráficos -----------------------------------------------------
+
+
+font_import()
+
+tema <- function(){
+  theme_minimal() +
+    theme(
+      text = element_text(family = "Lora", colour = "grey20"),
+      title = element_text(size = 10, color = "dimgrey", face = "plain"), 
+      plot.subtitle = element_text(color = "grey20", face = "plain", size = 10),
+      axis.text = element_text(colour = "grey20", size = 8, family = "Source Sans Pro"),
+      plot.caption = element_text(face = "italic"),
+      panel.grid.major = element_blank(), 
+      panel.grid.minor = element_blank(),
+      axis.ticks = element_line(size = 0.4),
+      axis.ticks.length = unit(.2, "cm"),
+      axis.title = element_text(size = 8, colour = "grey20"),
+      legend.position = 'none',
+      legend.text = element_text(size = 8, family = "Source Sans Pro"),
+      legend.title = element_text(size = 9, family = "Source Sans Pro")
+    )
+}
+
+tema_barra <- function(){
+  tema() +
+    theme(
+      axis.ticks.y = element_blank()
+    )
+}
+
+tema_mapa <- function() {
+  tema() +
+    theme(axis.line = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none",
+          legend.text = element_text(size = 10),
+          plot.background = element_blank(),
+          panel.background = element_blank())
+}
+
 # dados iniciais ----------------------------------------------------------
 
+tab_uf <- read_excel("./dados/dados-originais/tab_ufs.xlsx")
 dados_raw <- read_excel("./dados/dados-originais/Quadro das Empresas Estatais Estaduais PAF 2020v1.xlsx", skip = 2, sheet = "Dados")
 
 dados_selecionados_raw <- dados_raw %>%
@@ -183,6 +230,7 @@ atribui("COMPESA", "setor", "SANEAMENTO")
 #dados_selecionados[linhas[["CAEMA"]], "setor"] <- "SANEAMENTO"
 #dados_selecionados[linhas[["COMPESA"]], "setor"]
 
+
 # gráficos anteriores -- mapas --------------------------------------------
 
 dados_qde_setor_estado <- dados_selecionados %>%
@@ -198,3 +246,42 @@ ggplot(mapa_qde %>% filter(setor == "SANEAMENTO")) +
     scale_fill_manual(values = c("TRUE" = "lightcoral", "FALSE" = NA)) +
     labs(fill = "Tem empresa de saneamento?")
 
+setores <- data.frame(
+  setor = unique(dados_selecionados$setor)
+)
+
+combinacao_est_seg <- setores %>%
+  full_join(tab_uf, by = character())
+  rename(Estado = UF,
+         State = CODUF) %>%
+  left_join(dados_qde) %>%
+  left_join(mapa) %>%
+  filter(!is.na(seg)) %>%
+  arrange(seg)
+  
+mapa_qde <- mapa %>%
+  rename(Estado = "abbrev_state") %>%
+  inner_join(dados_qde_setor_estado) %>%
+  rename(qde = "n") %>%
+  arrange(setor)
+
+graf_mapa_comp <- ggplot(mapa_qde, aes(group = Estado))+# %>% filter(seg == "OUTRO")) + 
+  geom_sf(aes(fill = ifelse(qde > 0, setor, NA)), color = "ghostwhite") + 
+  # scale_fill_manual(values = c("TRUE" = "steelblue", "FALSE" = NA)) +
+  scale_fill_viridis_d(direction = 1,
+                       option = "plasma", na.value = "#EFEFEF")+#,
+  #breaks = c(1e3, 100e3, 10000e3),
+  #trans = "log", #para usar uma escala de log
+  #labels = function(x){format(x/1e6, decimal.mark = ",", big.mark = ".")}) +
+  #labs(fill = "População \n(milhões)") +
+  tema() + 
+  theme(axis.line = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        text = element_text(family = "Source Sans Pro"),
+        legend.position = "none",
+        legend.text = element_text(size = 10),
+        plot.background = element_blank(),
+        panel.background = element_blank())
+
+graf_mapa_facet <- graf_mapa_comp + facet_wrap(~setor)
