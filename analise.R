@@ -56,7 +56,8 @@ tema_mapa <- function() {
 
 # dados iniciais ----------------------------------------------------------
 
-tab_uf <- readRDS("./dados/dados-originais/estados.rds") #read_excel("./dados/dados-originais/tab_ufs.xlsx")
+tab_uf <- readRDS("./dados/dados-originais/estados.rds") 
+#read_excel("./dados/dados-originais/tab_ufs.xlsx")
 dados_raw <- read_excel("./dados/dados-originais/Quadro das Empresas Estatais Estaduais PAF 2020v1.xlsx", skip = 2, sheet = "Dados")
 
 dados_selecionados_raw <- dados_raw %>%
@@ -192,6 +193,7 @@ dados_selecionados_raw[linha_CMTP, "maior_rem"] <- as.character(9.4e3)
 
 dados_selecionados <- dados_selecionados_raw %>%
   left_join(limpa_setor) %>%
+  left_join(tab_uf) %>%
   #left_join(limpa_dep) %>%
   mutate(
     dep    = str_to_title(dep),
@@ -294,7 +296,7 @@ graf_mapa_comp <- ggplot(mapa_qde)+# %>% filter(seg == "OUTRO")) +
         panel.background = element_blank())
 
 graf_mapa_facet <- graf_mapa_comp + facet_wrap(~setor)
-ggsave(plot = graf_mapa_facet, "./plots/segmentos_facet.png", width = 9, height = 8, dpi = 300)
+ggsave(plot = graf_mapa_facet, "./plots/segmentos_facet2.png", width = 9, height = 8, dpi = 300)
 
 
 
