@@ -163,7 +163,7 @@ limpa_setor = data.frame(
   )
 
 ## Dependência
-#dput(unique(dados_selecionados_raw$dep_raw))
+#dput(unique(dados_selecionados_raw$dep))
 
 # limpa_dep <- data.frame(
 #   dep_raw = c(
@@ -319,5 +319,42 @@ graf_mapa_gif <- graf_mapa_labels + transition_states(states = setor,
 gif_animation <- animate(graf_mapa_gif, nframes = nrow(setores)*10, fps = 6, renderer = gifski_renderer())
 
 anim_save("./plots/mapa.gif", animation = gif_animation)
+
+
+# barchart - quantidades --------------------------------------------------
+
+qde_empresas_seg <- dados_selecionados %>% 
+  group_by(setor, dep) %>%
+  summarise(qde = n()) %>%
+  ungroup() %>%
+  group_by(setor) %>%
+  mutate(qde_tot = sum(qde),
+         dep = factor(dep, levels = c("Dependente", "Não Dependente", "Não Informado"))) %>%
+  filter(!is.na(setor))
+
+vetor_cores_dep <- c("Dependente" = "#f2ac29",
+                     "Não Dependente" = "#718c35",
+                     "Não Informado" = "#5c4b51")
+
+graf_qde_emp <- 
+  ggplot(qde_empresas_seg, aes(x = reorder(setor, qde_tot), y = qde, fill = dep)) +
+  geom_col(width = 0.65, position = position_stack(reverse = TRUE)) +
+  geom_text(aes(label = qde, y = qde), 
+            vjust = 0.4, position = position_stack(vjust = 0.5, reverse = TRUE),
+            family = "Source Sans Pro", size = 3, color = "#ebf2f2") +
+  geom_text(aes(label = qde_tot), y = -1,
+            vjust = 0.4, check_overlap = TRUE,
+            family = "Source Sans Pro", size = 3.5, color = "grey") +  
+  coord_flip() +
+  scale_fill_manual(values = vetor_cores_dep) +
+  #scale_fill_viridis_d() +
+  #scale_color_viridis_d() +
+  labs(x = NULL, y = NULL, 
+       title = NULL, #"Quantidade de empresas por segmento", 
+       fill = NULL) +
+  tema_barra() + theme(axis.text = element_text(size = 9))
+
+ggsave(plot = graf_qde_emp, "./plots/qde_seg.png", h = 6, w = 5, type = "cairo-png")
+
 
   
