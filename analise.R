@@ -56,7 +56,7 @@ tema_mapa <- function() {
 
 # dados iniciais ----------------------------------------------------------
 
-tab_uf <- read_excel("./dados/dados-originais/tab_ufs.xlsx")
+tab_uf <- readRDS("./dados/dados-originais/estados.rds") #read_excel("./dados/dados-originais/tab_ufs.xlsx")
 dados_raw <- read_excel("./dados/dados-originais/Quadro das Empresas Estatais Estaduais PAF 2020v1.xlsx", skip = 2, sheet = "Dados")
 
 dados_selecionados_raw <- dados_raw %>%
@@ -194,8 +194,8 @@ dados_selecionados <- dados_selecionados_raw %>%
   left_join(limpa_setor) %>%
   #left_join(limpa_dep) %>%
   mutate(
-    dep    = toupper(dep),
-    dep    = ifelse(is.na(dep), "NÃO INFORMADO", dep),
+    dep    = str_to_title(dep),
+    dep    = ifelse(is.na(dep), "Não Informado", dep),
     PL     = as.numeric(PL),
     lucros = as.numeric(lucros))
 
@@ -249,6 +249,14 @@ mapa <- readRDS("./dados/dados-intermediarios/mapa.rds")
 
 mapa_qde <- mapa %>%
   inner_join(dados_qde_setor_estado, by = c("abbrev_state" = "Estado"))
+
+# salva df com uf, estado, regiao
+# estados <- data.frame("Estado" = unique(mapa_qde$Estado), "Nome_estado" = unique(mapa_qde$name_state))
+# 
+# estados <- estados %>% left_join(tab_uf %>% select(UF, REGIAO), by = c("Estado" = "UF"))
+# 
+# saveRDS(estados, "./dados/dados-originais/estados.rds")
+
 
 # ggplot(mapa_qde %>% filter(setor == "SANEAMENTO")) + 
 #     geom_sf(aes(fill = n > 0), color = "coral") +
@@ -342,7 +350,7 @@ graf_qde_emp <-
   geom_text(aes(label = qde, y = qde), 
             vjust = 0.4, position = position_stack(vjust = 0.5, reverse = TRUE),
             family = "Source Sans Pro", size = 3, color = "#ebf2f2") +
-  geom_text(aes(label = qde_tot), y = -1,
+  geom_text(aes(label = qde_tot), y = -1.6,
             vjust = 0.4, check_overlap = TRUE,
             family = "Source Sans Pro", size = 3.5, color = "grey") +  
   coord_flip() +
@@ -354,7 +362,37 @@ graf_qde_emp <-
        fill = NULL) +
   tema_barra() + theme(axis.text = element_text(size = 9))
 
-ggsave(plot = graf_qde_emp, "./plots/qde_seg.png", h = 6, w = 5, type = "cairo-png")
+ggsave(plot = graf_qde_emp, "./plots/qde_seg.png", h = 6, w = 5)#, type = "cairo-png")
 
+
+qde_empresas_est <- mapa_dados %>% 
+  select(-geometry) %>%
+  group_by(nome, dep) %>%
+  summarise(qde = n()) %>%
+  ungroup() %>%
+  group_by(nome) %>%
+  mutate(qde_tot = sum(qde),
+         dep = factor(dep, levels = c("Dependente", "Não Dependente", "Não Informado"))) %>%
+  filter(!is.na(dep))
+
+graf_qde_emp_est <- 
+  ggplot(qde_empresas_est, aes(x = reorder(nome, qde_tot), y = qde, fill = dep)) +
+  geom_col(width = 0.65, position = position_stack(reverse = TRUE)) +
+  geom_text(aes(label = qde, y = qde), 
+            vjust = 0.4, position = position_stack(vjust = 0.5, reverse = TRUE),
+            family = "Source Sans Pro", size = 3, color = "#ebf2f2") +
+  geom_text(aes(label = qde_tot), y = -.5, 
+            vjust = 0.4, check_overlap = TRUE,
+            family = "Source Sans Pro", size = 3.5, color = "grey") +  
+  coord_flip() +
+  scale_fill_manual(values = vetor_cores_dep) +
+  #scale_fill_viridis_d() +
+  #scale_color_viridis_d() +
+  labs(x = NULL, y = NULL, 
+       title = NULL, #"Quantidade de empresas por Estado", 
+       fill = NULL) +
+  tema_barra() + theme(axis.text = element_text(size = 9))
+
+ggsave(plot = graf_qde_emp_est, "./plots/qde_est.png", h = 6.5, w = 5, type = "cairo-png")
 
   
