@@ -3,13 +3,16 @@
 
 library(tidyverse)
 library(readxl)
-library(geobr)
 library(extrafont)
 library(gganimate)
 
 library(colorspace)
 library(RColorBrewer)
 library(viridis)
+
+library(geobr)
+library(cartogram)
+library(sf)
 
 
 # estilo dos gráficos -----------------------------------------------------
@@ -396,5 +399,72 @@ graf_qde_emp_est <-
 
 ggsave(plot = graf_qde_emp_est, "./plots/qde_est.png", h = 6.5, w = 5)
 
+
+
+# cartograma --------------------------------------------------------------
+
+# https://github.com/sjewo/cartogram
+
+# pula para ler o objeto direto
+# brazilmaps não está mais no CRAN, mas pode ser baixado pelo github
+# mapa_regiao <- brazilmaps::get_brmap("Region")
+# saveRDS(mapa_regiao, "./dados/dados-originais/mapa_regiao.rds")
+# st_crs(mapa_regiao)
+mapa_regiao <- readRDS("./dados/dados-originais/mapa_regiao.rds")
+
+# mapa_regiao <- geobr::read_region() %>%
+#   mutate(name_region = str_replace(name_region, "Centro Oeste", "Centro-oeste"))
+# por algum motivo, com esse shape ele deforma o sudeste de forma muito bizarra
+
+mapa_regiao <- mapa_regiao %>%
+  mutate(name_region = str_to_title(desc_rg),
+         name_region = str_replace(name_region, "Centro-Oeste", "Centro-oeste"))
+
+qde_regiao <- dados_selecionados %>%
+  count(REGIAO)
+
+mapa_cartograma <- mapa_regiao %>% 
+  left_join(qde_regiao, by = c("name_region" = "REGIAO"))
+
+#mp_sf <- as_Spatial(mapa_cartograma)
+
+mp_sf <- mapa_cartograma %>%
+  st_as_sf() %>%
+  st_transform(crs = 29101) #5641
+
+mapa_deform <- cartogram_cont(mp_sf, 'n', 3)
+
+mp_def <- sf::st_as_sf(mapa_deform)
+
+# testa gif transição entre mapas normal e deformado.
+
+mp_def_join <- mp_def %>%
+  mutate(tipo_geometria = "deformada")
+
+mp_nor_join <- mp_sf %>%
+  mutate(tipo_geometria = "normal")
+
+mp_duplo <- rbind(mp_def_join, mp_nor_join)
+
+mapa_duplo_gif <- ggplot(data = mp_duplo, aes(fill = Region, group = Region)) +
+  geom_sf(color = NA) +
+  geom_sf_label(aes(label = ifelse(tipo_geometria == "deformada", n, NA)),
+                size = 6,    
+                color = "grey20",
+                family = "Source Sans Pro",
+                fill = "ghostwhite", label.size = 0,
+                label.r = unit(0.67, 'lines'),
+                label.padding = unit(0.35, "lines")) +
+  ease_aes("cubic-in-out") +
+  scale_fill_viridis(option = "viridis", direction = -1) +
+  labs(x = NULL, y = NULL) +
+  tema_mapa() +
+  transition_states(states = tipo_geometria,
+                    transition_length = 1,
+                    state_length = 1)
+
+animate(mapa_duplo_gif, fps = 8, renderer = gifski_renderer())
+
+anim_save("./plots/cartograma.gif", animation = last_animation())
 
   
