@@ -367,23 +367,22 @@ graf_qde_emp <-
 ggsave(plot = graf_qde_emp, "./plots/qde_seg.png", h = 6, w = 5)#, type = "cairo-png")
 
 
-qde_empresas_est <- mapa_dados %>% 
-  select(-geometry) %>%
-  group_by(nome, dep) %>%
+qde_empresas_est <- dados_selecionados %>% 
+  group_by(Nome_estado, dep) %>%
   summarise(qde = n()) %>%
   ungroup() %>%
-  group_by(nome) %>%
+  group_by(Nome_estado) %>%
   mutate(qde_tot = sum(qde),
          dep = factor(dep, levels = c("Dependente", "Não Dependente", "Não Informado"))) %>%
   filter(!is.na(dep))
 
 graf_qde_emp_est <- 
-  ggplot(qde_empresas_est, aes(x = reorder(nome, qde_tot), y = qde, fill = dep)) +
+  ggplot(qde_empresas_est, aes(x = reorder(Nome_estado, qde_tot), y = qde, fill = dep)) +
   geom_col(width = 0.65, position = position_stack(reverse = TRUE)) +
   geom_text(aes(label = qde, y = qde), 
             vjust = 0.4, position = position_stack(vjust = 0.5, reverse = TRUE),
             family = "Source Sans Pro", size = 3, color = "#ebf2f2") +
-  geom_text(aes(label = qde_tot), y = -.5, 
+  geom_text(aes(label = qde_tot), y = -.6, 
             vjust = 0.4, check_overlap = TRUE,
             family = "Source Sans Pro", size = 3.5, color = "grey") +  
   coord_flip() +
@@ -395,6 +394,7 @@ graf_qde_emp_est <-
        fill = NULL) +
   tema_barra() + theme(axis.text = element_text(size = 9))
 
-ggsave(plot = graf_qde_emp_est, "./plots/qde_est.png", h = 6.5, w = 5, type = "cairo-png")
+ggsave(plot = graf_qde_emp_est, "./plots/qde_est.png", h = 6.5, w = 5)
+
 
   
