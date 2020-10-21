@@ -819,10 +819,12 @@ dados_selecionados %>% filter_at(.vars = vars(colunas_interesse[1:3]), all_vars(
 
 # 71.
 
-sumario_result <- dados_empresas %>%
+sumario_result <- dados_selecionados %>%
   select(dep, colunas_interesse) %>%
   group_by(dep) %>%
-  summarise_all(~sum(as.numeric(.), na.rm = T))
+  summarise_all(~sum(as.numeric(.), na.rm = T)) %>%
+  mutate(`Resultado para o Estado Acionista` = Dividendos - `Subvenção` - `Reforço de Capital`)
+  
 
 result_total_para_incorporar <- sumario_result %>%
   select(dep, `Resultado para o Estado Acionista`) %>%
@@ -873,4 +875,4 @@ waterfall <- ggplot(result_waterfall %>% filter(dep != "Não Informado"),
                  strip.text = element_text(family = "Source Sans Pro")) +
   facet_wrap(~dep)
 
-ggsave(plot = waterfall, "./plots/waterfall.png", h = 6, w = 6, type = "cairo-png")
+ggsave(plot = waterfall, "./plots/waterfall.png", h = 6, w = 6)
