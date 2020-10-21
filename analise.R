@@ -7,6 +7,7 @@ library(scales)
 library(extrafont)
 library(gganimate)
 library(ggbeeswarm)
+library(plotly)
 
 library(colorspace)
 library(RColorBrewer)
@@ -91,7 +92,7 @@ dados_selecionados_raw <- dados_raw %>%
 ## Setor
 #dput(unique(dados_selecionados_raw$seg))
 
-limpa_setor = data.frame(
+limpa_setor <- data.frame(
   seg = c(
     "SETOR IMOBILIÁRIO", 
     "FINANCEIRO", 
@@ -652,6 +653,27 @@ roe_dotplot <- ggplot(dados_roe_agreg, aes(y = reorder(setor, maximo),
 
 ggsave(plot = roe_dotplot, "./plots/roe_dotplot.png", h = 6, w = 5)
 
+
+# ROE - plotly ------------------------------------------------------------
+
+
+roe_plotly <- plot_ly(dados_roe, 
+                      y = ~lucros, 
+                      x = ~PL, 
+                      text = ~Empresa, 
+                      color = ~dep,
+                      hoverinfo = "text",
+                      alpha = 0.75,
+                      marker = list(size = 7)) %>% 
+  add_markers(colors = vetor_cores_dep) %>%
+  layout(yaxis = list(title = "Lucros / Prejuízos (R$)"),
+         xaxis = list(title = "Patrimônio Líquido (R$)"),
+         font = "Source Sans Pro",
+         hoverlabel = list(font = "Source Sans Pro"),
+         legend = list(orientation = 'h', x = 0, y = 1.3)) %>%
+  config(displayModeBar = FALSE)
+
+htmlwidgets::saveWidget(partial_bundle(roe_plotly), file = "roe.html")
 
 # Lucro / Prejuízo --------------------------------------------------------
 
