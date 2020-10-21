@@ -77,7 +77,11 @@ dados_selecionados_raw <- dados_raw %>%
     gov_cf    = `Ficha de Identificação da Estatal > Governança > Conselho Fiscal`,
     gov_aud   = `Ficha de Identificação da Estatal > Governança > Comitê de Auditoria`,
     maior_rem = `Ficha de Informações Financeiras da Estatal > Valor da Maior Remuneração Paga`,
-    plr_rva   = `Ficha de Informações Financeiras da Estatal > Foi Distribuído o PLR ou RVA em 2019?`
+    plr_rva   = `Ficha de Informações Financeiras da Estatal > Foi Distribuído o PLR ou RVA em 2019?`,
+    Dividendos = `Relação da Estatal com o Controlador > Dividendos Pagos ao Tesouro Estadual`,
+    `Subvenção` = `Relação da Estatal com o Controlador > Subvenções Recebidas do Tesouro Estadual > 2019`,
+    `Reforço de Capital` = `Relação da Estatal com o Controlador > Reforço de Capital > 2019`,
+    `Resultado para o Estado Acionista` = Resultado
     )
 
 
@@ -760,3 +764,48 @@ graf_barra_lucro_setor <-
   tema_barra()
 
 ggsave(plot = graf_barra_lucro_setor, "./plots/bar_lucro_setor.png", h = 6, w = 6, device = "png")
+
+
+# mapa resultado----------------------------------------------------------------
+
+
+colunas_interesse <- c("Dividendos", 
+                       #"Passivo Assumido", 
+                       "Subvenção", 
+                       "Reforço de Capital", 
+                       "Resultado para o Estado Acionista")
+
+mapa_res <- dados_selecionados %>% 
+  group_by(Estado) %>% 
+  summarise_at(vars(colunas_interesse),
+               .funs = ~-sum(as.numeric(.), na.rm = TRUE)) %>%
+  mutate(Dividendos = -Dividendos) %>%
+  gather(colunas_interesse, key = "variavel", value = "valor") %>%
+  left_join(mapa, by = c("Estado" = "abbrev_state"))
+
+mapa_res_graf <- ggplot(mapa_res %>% 
+                          filter(variavel == "Resultado para o Estado Acionista"))+#, nome != "SÃO PAULO")) + 
+  geom_sf(aes(fill = -valor, geometry = geom), color = NA) +
+  # geom_sf_text(aes(label = ifelse(valor<=-1e5, 
+  #                                 format(round(-valor/1e6,0),
+  #                                                  big.mark = "."), NA)),
+  #              family = "Source Sans Pro", size = 3) +
+  scale_fill_gradient2(low = "#DC143C", mid = "#e2e2e2",
+                       high = "#008080", midpoint = 0,
+                       na.value = "ghostwhite", guide = "colourbar",
+                       aesthetics = "fill",
+                       labels = function(x){
+                         format(round(x/1e6, 0), big.mark = ".",
+                                decimal.mark = ",")}) +
+  # scale_fill_continuous_diverging(
+  #   palette = "Reds", rev = TRUE,
+  #   na.value = "ghostwhite",
+  #   labels = function(x){
+  #     format(round(x/1e6, 0), big.mark = ".", decimal.mark = ",")}) +
+  labs(title = NULL, fill = "R$ milhões", x = NULL, y = NULL) +
+  tema_mapa() + 
+  theme(legend.position = "left")
+
+ggsave(plot = mapa_res_graf, "./plots/mapa_result.png", h = 6, w = 6.5, device = "png")
+
+dados_selecionados %>% group_by(Estado) %>% summarise(soma = sum(`Resultado para o Estado Acionista`)) %>% arrange(desc(soma))
