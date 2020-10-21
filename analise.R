@@ -648,3 +648,115 @@ roe_dotplot <- ggplot(dados_roe_agreg, aes(y = reorder(setor, maximo),
 
 ggsave(plot = roe_dotplot, "./plots/roe_dotplot.png", h = 6, w = 5)
 
+
+# Lucro / Prejuízo --------------------------------------------------------
+
+dados_lucro_preju <- dados_selecionados %>%
+  filter(!is.na(lucros)) %>%
+  mutate(
+    ROE = lucros / PL,
+    PL_formatado = format(PL, big.mark = ".", decimal.mark = ',', scientific = FALSE)) %>%
+  mutate(Empresa = paste0(emp, ' (', Estado, ')\n',
+                          'Dependência: ', dep, '\n',
+                          'Setor: ', setor, '\n',
+                          'PL: R$ ', PL_formatado, '\n',
+                          'Lucros / Prejuízos no ano: R$ ', format(lucros, big.mark = '.', decimal.mark = ","), '\n',
+                          'ROE: ', ifelse(is.na(ROE), 'Não disponível', percent(round(ROE,4)))),
+         setores_principais = ifelse(seg %in% principais_setores, setor, "Demais"))
+
+qde_NAs_lucro <- length(which(is.na(dados_selecionados$lucros) == TRUE))
+
+length(which(dados_lucro_preju$lucros<=-50e6 | dados_lucro_preju$lucros>=50e6))
+summary(dados_lucro_preju$lucros)
+length(which(dados_lucro_preju$result<=0))
+
+# # só pra ver a distribuição
+# ggplot(dados_lucro_preju, aes(x = result)) +# geom_histogram(bins = 100) +
+#   geom_density(fill = "lightcoral", color = NA)+
+#   scale_x_continuous(limits = c(-2.5e8, 2.5e8), 
+#                      breaks = seq(-2.5e8, 2.5e8, by = 0.5e8),
+#                      labels = function(x){format(round(x/1e6, 1), big.mark = ".",
+#                                                  decimal.mark = ',')}) + 
+#   tema()
+
+ggplot(dados_lucro_preju %>% filter(dep != "Não Informado"), aes(y = lucros, color = lucros>0, x = dep, 
+                                                                 label = Empresa)) +
+  geom_quasirandom() + #aes(size = PL), 
+  #scale_color_manual(values = c(cores_escala[1], cores_escala[4])) +
+  scale_y_continuous(limits = c(-2.5e8, 50e6),
+                     labels = function(x){format(round(x/1e6, 1), big.mark = ".",
+                                                 decimal.mark = ',')}) + 
+  labs(#title = "Distribuição do ROE das empresas do estados", 
+    x = NULL, y = NULL)+ #,
+  #subtitle = "Mais de 60% das dependentes têm ROE negativo, mais de 60% das não dependentes têm ROE positivo") +
+  tema()
+
+# grafico barras
+
+sumario_lucro <- dados_selecionados %>% 
+  mutate(result_pos = ifelse(lucros >= 0, "Positivo", "Negativo")) %>%
+  group_by(dep, result_pos) %>%
+  summarise(qde = n()) %>%
+  ungroup() %>%
+  group_by(dep) %>%
+  mutate(tot_por_dep = sum(qde),
+         percent_dep = percent(qde / tot_por_dep)) 
+
+sumario_lucro_total <- sumario_lucro %>%
+  group_by(result_pos) %>%
+  summarise(dep = "Total",
+            qde = sum(qde),
+            tot_por_dep = sum(qde)) %>%
+  ungroup() %>%
+  group_by(dep) %>%
+  mutate(tot_por_dep = sum(qde),
+         percent_dep = percent(qde / tot_por_dep)) %>%
+  ungroup() %>%
+  bind_rows(sumario_lucro)
+
+graf_barra_lucro <- ggplot(sumario_lucro_total, aes(x = dep, y = qde, fill = result_pos)) +
+  geom_col(position = "fill", width = 0.65) +
+  geom_text(aes(label = paste0(qde, "\n(", percent_dep,")")), position = position_fill(vjust = 0.5),
+            family = "Source Sans Pro", size = 3.2, color = "ghostwhite") +
+  scale_y_continuous(labels = percent) +
+  scale_fill_manual(values = c("Negativo" = "#DC143C", 
+                               "Positivo" = "#008080"), 
+                    na.value = "darkgray") +
+  labs(x = NULL, y = NULL) +
+  tema_barra()
+
+ggsave(plot = graf_barra_lucro, "./plots/bar_lucro.png", h = 6, w = 4, device = "png")
+
+sumario_lucro_setor <- dados_selecionados %>%
+  filter(!is.na(lucros)) %>%
+  group_by(setor) %>%
+  summarise(tot = sum(lucros)) %>%
+  mutate(result_pos = ifelse(tot >= 0, "Positivo", "Negativo"))
+
+sumario_lucro_setor %>% janitor::adorn_totals("row")
+
+graf_barra_lucro_setor <- 
+  ggplot(sumario_lucro_setor, 
+         aes(y = tot, color = result_pos, fill = result_pos,
+             x = reorder(setor, tot))) + 
+  geom_col(width = 0.6) + 
+  geom_text(aes(label = format(round(tot/1e6, 0), big.mark = ".",
+                               decimal.mark = ','),
+                y = ifelse(tot>= 0, tot*1.03 - 1e4, tot - 5e7),
+                hjust = ifelse(tot>= 0, "left", "right")), 
+            vjust = 0.5,
+            family = "Source Sans Pro", size = 3.5) +
+  coord_flip() +
+  scale_color_manual(values = c("Negativo" = "#DC143C", 
+                                "Positivo" = "#008080"), 
+                     na.value = "darkgray") +
+  scale_fill_manual(values = c("Negativo" = "#DC143C", 
+                               "Positivo" = "#008080"), 
+                    na.value = "darkgray") +
+  scale_y_continuous(labels = function(x){
+    paste(format(round(x/1e6, 1), big.mark = ".", decimal.mark = ','), "mi")},
+    expand = expand_scale(add = c(.7e9, .7e9))) +
+  labs(x = NULL, y = NULL) +
+  tema_barra()
+
+ggsave(plot = graf_barra_lucro_setor, "./plots/bar_lucro_setor.png", h = 6, w = 6, device = "png")
