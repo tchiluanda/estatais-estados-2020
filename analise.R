@@ -809,3 +809,68 @@ mapa_res_graf <- ggplot(mapa_res %>%
 ggsave(plot = mapa_res_graf, "./plots/mapa_result.png", h = 6, w = 6.5, device = "png")
 
 dados_selecionados %>% group_by(Estado) %>% summarise(soma = sum(`Resultado para o Estado Acionista`)) %>% arrange(desc(soma))
+
+
+# Resultado -  decomposição -----------------------------------------------
+
+# quantas empresas não informaram quaisquer dessas informações de resultado?
+dados_selecionados %>% filter_at(.vars = vars(colunas_interesse[1:3]), all_vars(is.na(.))) %>% select(emp, colunas_interesse) %>%
+  View()
+
+# 71.
+
+sumario_result <- dados_empresas %>%
+  select(dep, colunas_interesse) %>%
+  group_by(dep) %>%
+  summarise_all(~sum(as.numeric(.), na.rm = T))
+
+result_total_para_incorporar <- sumario_result %>%
+  select(dep, `Resultado para o Estado Acionista`) %>%
+  gather(`Resultado para o Estado Acionista`, key = componentes, value = y_end) %>%
+  mutate(y_0 = 0)
+
+result_waterfall <- sumario_result %>%
+  select(-`Resultado para o Estado Acionista`) %>%
+  mutate(Dividendos = -Dividendos) %>%
+  filter(dep != "Não Informado") %>%
+  gather(-dep, key = componentes, value = valor) %>%
+  arrange(dep) %>%
+  group_by(dep) %>%
+  mutate(y_end = cumsum(valor),
+         y_0 = lag(y_end,1)) %>%
+  ungroup() %>%
+  select(-valor) %>%
+  # gather(y_0, yend, key = cats, value = preenchimento) %>%
+  # mutate(preenchimento = -preenchimento) %>%
+  mutate_at(.vars = vars(starts_with("y")), .funs = ~-.) %>%
+  bind_rows(result_total_para_incorporar) %>%
+  mutate(componentes = factor(componentes, levels = colunas_interesse)) %>%
+  replace_na(list(y_0 = 0, y_end = 0)) %>%
+  mutate(pto_medio = (y_0 + y_end)/2)
+
+
+waterfall <- ggplot(result_waterfall %>% filter(dep != "Não Informado"), 
+                    aes(x = componentes, xend = componentes, color = componentes)) + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey",
+             size = 0.5) +
+  geom_segment(aes(y = ifelse(componentes == "Resultado para o Estado Acionista", NA, y_0), yend = y_end), 
+               arrow = arrow(angle = 90, ends = "both", length = unit(.05, "inches")),
+               # arrow = arrow(length = unit(3, "points"), type = "closed"), 
+               size = .5) + 
+  geom_segment(aes(y = ifelse(componentes != "Resultado para o Estado Acionista", NA, y_0), yend = y_end), 
+               size = 14) + 
+  geom_text(aes(y = ifelse(componentes == "Dividendos", y_end + .4e9,
+                           y_end - .3e9),
+                label = format(round((y_end-y_0)/1e6,0), big.mark = ".",
+                               decimal.mark = ",")), family = "Source Sans Pro", size = 3.5, hjust = "center", vjust = "center") +
+  scale_color_manual(values = c("Dividendos" = "#008080", "Subvenção" = "#DC143C", "Reforço de Capital" = "#DC143C", "Resultado para o Estado Acionista" = "#DC143C")) +
+  scale_fill_manual(values = c("Dividendos" = "#008080", "Subvenção" = "#DC143C", "Reforço de Capital" = "#DC143C", "Resultado para o Estado Acionista" = "#DC143C")) +
+  scale_y_continuous(labels = function(x){format(round(x/1e6, 1), big.mark = ".", decimal.mark = ',')}) +
+  scale_x_discrete(labels = c("Dividendos", "Subvenção", "Reforço de Capital" = "Reforço\nde Capital", "Resultado para o Estado Acionista"="Resultado\n para o \nEstado Acionista")) +
+  labs(x = NULL, y = NULL) +
+  tema() + theme(panel.background = element_rect(fill = "ghostwhite",
+                                                 color = NA),
+                 strip.text = element_text(family = "Source Sans Pro")) +
+  facet_wrap(~dep)
+
+ggsave(plot = waterfall, "./plots/waterfall.png", h = 6, w = 6, type = "cairo-png")
