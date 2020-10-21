@@ -305,7 +305,7 @@ graf_mapa_comp <- ggplot(mapa_qde)+# %>% filter(seg == "OUTRO")) +
         panel.background = element_blank())
 
 graf_mapa_facet <- graf_mapa_comp + facet_wrap(~setor)
-ggsave(plot = graf_mapa_facet, "./plots/segmentos_facet2.png", width = 9, height = 8, dpi = 300)
+ggsave(plot = graf_mapa_facet, "./plots/segmentos_facet2.png", width = 9, height = 8, dpi = 300) # windows: acrescentar: , type = "cairo-png"
 
 
 
