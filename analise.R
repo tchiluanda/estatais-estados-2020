@@ -61,7 +61,7 @@ tema_mapa <- function() {
 
 # dados iniciais ----------------------------------------------------------
 
-tab_uf <- readRDS("./dados/dados-originais/estados.rds") 
+tab_uf <- readRDS("./dados/dados-intermediarios/estados.rds") 
 #read_excel("./dados/dados-originais/tab_ufs.xlsx")
 dados_raw <- read_excel("./dados/dados-originais/Quadro das Empresas Estatais Estaduais PAF 2020v1.xlsx", skip = 2, sheet = "Dados")
 
@@ -262,7 +262,7 @@ mapa_qde <- mapa %>%
 # 
 # estados <- estados %>% left_join(tab_uf %>% select(UF, REGIAO), by = c("Estado" = "UF"))
 # 
-# saveRDS(estados, "./dados/dados-originais/estados.rds")
+# saveRDS(estados, "./dados/dados-intermediarios/estados.rds")
 
 
 # ggplot(mapa_qde %>% filter(setor == "SANEAMENTO")) + 
@@ -410,9 +410,9 @@ ggsave(plot = graf_qde_emp_est, "./plots/qde_est.png", h = 6.5, w = 5)
 # pula para ler o objeto direto
 # brazilmaps não está mais no CRAN, mas pode ser baixado pelo github
 # mapa_regiao <- brazilmaps::get_brmap("Region")
-# saveRDS(mapa_regiao, "./dados/dados-originais/mapa_regiao.rds")
+# saveRDS(mapa_regiao, "./dados/dados-intermediarios/mapa_regiao.rds")
 # st_crs(mapa_regiao)
-mapa_regiao <- readRDS("./dados/dados-originais/mapa_regiao.rds")
+mapa_regiao <- readRDS("./dados/dados-intermediarios/mapa_regiao.rds")
 
 # mapa_regiao <- geobr::read_region() %>%
 #   mutate(name_region = str_replace(name_region, "Centro Oeste", "Centro-oeste"))
