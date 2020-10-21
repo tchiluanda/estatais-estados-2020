@@ -606,3 +606,45 @@ roe2 <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = d
   tema()
 
 ggsave(plot = roe2, "./plots/roe2.png", h = 6.5, w = 6.5)
+
+# ROE - dotplot -----------------------------------------------------------
+
+# 197 empresas
+dados_roe_agreg <- dados_roe %>%  
+  filter(dep != "Não Informado",
+         abs(ROE) < 10) %>%
+  group_by(setor, dep) %>%
+  summarise(media_ROE = mean(ROE),
+            soma_lucro = sum(lucros),
+            soma_PL    = sum(PL),
+            ROE_medio = sum(lucros)/sum(PL)) %>%
+  ungroup() %>%
+  select(setor, dep, ROE_medio) %>%
+  spread(dep, ROE_medio) %>%
+  mutate(maior = ifelse(Dependente > `Não Dependente`, "Dependente", "Não Dependente")) %>%
+  rowwise() %>%
+  mutate(maximo = max(Dependente, `Não Dependente`, na.rm = T)) %>%
+  gather(Dependente, `Não Dependente`, key = dep, value = ROE_medio) %>%
+  arrange(desc(maximo))
+
+roe_dotplot <- ggplot(dados_roe_agreg, aes(y = reorder(setor, maximo), 
+                                           color = dep, x = ROE_medio, group = setor)) +
+  geom_path(color = "lightgrey", size = 1.5) +
+  geom_point(size = 3) +
+  geom_text(aes(label = ifelse(dep == maior | is.na(maior), 
+                               percent(ROE_medio, accuracy = 1), NA), 
+                color = dep), fontface = "bold", size = 3.5,
+            family = "Source Sans Pro",
+            nudge_x = 0.09) +
+  geom_text(aes(label = ifelse(dep == maior, NA, percent(ROE_medio, accuracy = 1)), 
+                color = dep),  size = 3.5,
+            family = "Source Sans Pro",
+            nudge_x = -0.07) +
+  labs(x = NULL, y = NULL) +
+  scale_x_continuous(labels = percent) +
+  scale_color_manual(values = vetor_cores_dep) +
+  scale_fill_manual(values = vetor_cores_dep) +
+  tema_barra()
+
+ggsave(plot = roe_dotplot, "./plots/roe_dotplot.png", h = 6, w = 5)
+
