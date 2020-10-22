@@ -79,6 +79,8 @@ dados_selecionados_raw <- dados_raw %>%
     gov_aud   = `Ficha de Identificação da Estatal > Governança > Comitê de Auditoria`,
     maior_rem = `Ficha de Informações Financeiras da Estatal > Valor da Maior Remuneração Paga`,
     plr_rva   = `Ficha de Informações Financeiras da Estatal > Foi Distribuído o PLR ou RVA em 2019?`,
+    desp_investimento = `Ficha de Informações Financeiras da Estatal > Despesa Total da Empresa > Despesa com Investimento`,
+    desp_pessoal = `Ficha de Informações Financeiras da Estatal > Despesa Total da Empresa > Despesa com Pessoal`,
     Dividendos = `Relação da Estatal com o Controlador > Dividendos Pagos ao Tesouro Estadual`,
     `Subvenção` = `Relação da Estatal com o Controlador > Subvenções Recebidas do Tesouro Estadual > 2019`,
     `Reforço de Capital` = `Relação da Estatal com o Controlador > Reforço de Capital > 2019`,
@@ -198,6 +200,8 @@ linha_CMTP <- dados_selecionados_raw$emp == "CMTP"
 dados_selecionados_raw[linha_CMTP, "PL"] <- as.character(20.2e6)
 dados_selecionados_raw[linha_CMTP, "lucros"] <- as.character(236.8e3)
 dados_selecionados_raw[linha_CMTP, "maior_rem"] <- as.character(9.4e3)
+dados_selecionados_raw[linha_CMTP, "desp_investimento"] <- as.character(1.9e6)
+dados_selecionados_raw[linha_CMTP, "desp_pessoal"] <- as.character(3.2e6)
 
 # junta todo mundo
 
@@ -207,9 +211,10 @@ dados_selecionados <- dados_selecionados_raw %>%
   #left_join(limpa_dep) %>%
   mutate(
     dep    = str_to_title(dep),
-    dep    = ifelse(is.na(dep), "Não Informado", dep),
-    PL     = as.numeric(PL),
-    lucros = as.numeric(lucros))
+    dep    = ifelse(is.na(dep), "Não Informado", dep)) %>%
+  mutate_at(
+    .vars = c("PL", "lucros", "desp_investimento", "desp_pessoal"),
+    .funs = as.numeric)
 
 #verifica empresas repetidas
 #rep <- dados_selecionados %>% count(emp)
@@ -898,3 +903,8 @@ waterfall <- ggplot(result_waterfall %>% filter(dep != "Não Informado"),
   facet_wrap(~dep)
 
 ggsave(plot = waterfall, "./plots/waterfall.png", h = 6, w = 6)
+
+
+# exporta dados -----------------------------------------------------------
+
+write.csv2(dados_selecionados, file = "./dados/dados.csv", fileEncoding = "UTF-8")
