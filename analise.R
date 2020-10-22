@@ -79,6 +79,7 @@ dados_selecionados_raw <- dados_raw %>%
     gov_aud   = `Ficha de Identificação da Estatal > Governança > Comitê de Auditoria`,
     maior_rem = `Ficha de Informações Financeiras da Estatal > Valor da Maior Remuneração Paga`,
     plr_rva   = `Ficha de Informações Financeiras da Estatal > Foi Distribuído o PLR ou RVA em 2019?`,
+    qde_empregados = `Ficha de Identificação da Estatal > Número de Empregados Próprios`,
     desp_investimento = `Ficha de Informações Financeiras da Estatal > Despesa Total da Empresa > Despesa com Investimento`,
     desp_pessoal = `Ficha de Informações Financeiras da Estatal > Despesa Total da Empresa > Despesa com Pessoal`,
     Dividendos = `Relação da Estatal com o Controlador > Dividendos Pagos ao Tesouro Estadual`,
@@ -213,7 +214,7 @@ dados_selecionados <- dados_selecionados_raw %>%
     dep    = str_to_title(dep),
     dep    = ifelse(is.na(dep), "Não Informado", dep)) %>%
   mutate_at(
-    .vars = c("PL", "lucros", "desp_investimento", "desp_pessoal"),
+    .vars = c("PL", "lucros", "desp_investimento", "desp_pessoal", "qde_empregados"),
     .funs = as.numeric)
 
 #verifica empresas repetidas
