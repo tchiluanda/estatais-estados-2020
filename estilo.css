@@ -273,3 +273,13 @@ section.destaque a:hover{
     
 
 }
+
+/* vis do mapa */
+
+.box-definicao {
+    display: none;
+}
+
+.box-definicao.ativo {
+    display: block;
+}

@@ -12,11 +12,29 @@ const vis_mapa = {
         
     },
 
+    state : {
+
+        setor : null
+
+    },
+
     data : {
 
         lista_setores   : null,
         setores_estados : null
     
+    },
+
+    utils : {
+
+        remove_acentos : function(str) {
+
+            str = str.split(" ")[0];
+
+            return str.replace(/[^a-zA-Z ]/g, "");
+
+        }
+
     },
 
     fs : {
@@ -43,7 +61,37 @@ const vis_mapa = {
             console.table(vis_mapa.data.setores_estados);
 
             vis_mapa.fs.popula_lista(vis_mapa.data.lista_setores);
+            vis_mapa.fs.controla_seletor();
         
+        },
+
+        mostra_box_setor : function(setor) {
+
+            console.log("Me chamaram para ativar o setor ", setor);
+
+            d3.selectAll(".box-definicao").classed("ativo", false);
+
+            d3.select("#box" + setor).classed("ativo", true);
+
+        },
+
+        controla_seletor : function() {
+
+            let seletor = d3.select("#seletor-setores");
+
+            seletor.on("change", function() {
+
+                let opcao_escolhida = seletor.property("value");
+
+                opcao_escolhida = vis_mapa.utils.remove_acentos(opcao_escolhida);
+                vis_mapa.state.setor = opcao_escolhida;
+
+                console.log("Opa, mudança! Vou ativar o setor ", opcao_escolhida);
+
+                vis_mapa.fs.mostra_box_setor(opcao_escolhida);
+
+            });
+            
         },
 
         popula_lista : function(dados_lista) {
@@ -63,7 +111,8 @@ const vis_mapa = {
               .selectAll("div.box-definicao")
               .data(dados_lista)
               .join("div")
-              .classed("box-definicao", true);
+              .classed("box-definicao", true)
+              .attr("id", d => ("box" + vis_mapa.utils.remove_acentos(d.setor)));
 
             boxes
               .append("h2")
