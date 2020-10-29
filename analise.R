@@ -267,6 +267,17 @@ dados_selecionados <- dados_selecionados_raw %>%
 dados_qde_setor_estado <- dados_selecionados %>%
   count(setor, Estado)
 
+
+# exporta dados para gerar o gráfico em D3
+write.csv(dados_qde_setor_estado, 
+          file = "./dados/mapa-setores.csv", 
+          fileEncoding = "UTF-8")
+
+write.csv(tab_definicoes_setores, 
+          file = "./dados/lista-setores.csv", 
+          fileEncoding = "UTF-8")
+
+
 #mapa <- geobr::read_state()
 #saveRDS(mapa, "./dados/dados-intermediarios/mapa.rds")
 mapa <- readRDS("./dados/dados-intermediarios/mapa.rds")
