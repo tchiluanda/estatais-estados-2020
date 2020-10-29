@@ -71,7 +71,7 @@ const vis_mapa = {
 
             boxes
               .append("p")
-              .text(d => d["definição"]);
+              .text(d => d.def);
 
         }
 
