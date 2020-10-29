@@ -57,6 +57,22 @@ const vis_mapa = {
               .attr("value", d => d.setor)
               .text(d => d.setor);
 
+            let boxes = d3.select("div.boxes-definicao");
+
+            boxes = boxes
+              .selectAll("div.box-definicao")
+              .data(dados_lista)
+              .join("div")
+              .classed("box-definicao", true);
+
+            boxes
+              .append("h2")
+              .text(d => d.setor);
+
+            boxes
+              .append("p")
+              .text(d => d["definição"]);
+
         }
 
     }
