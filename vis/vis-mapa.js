@@ -38,8 +38,25 @@ const vis_mapa = {
         },
 
         init : function() {
+
             console.table(vis_mapa.data.lista_setores);
             console.table(vis_mapa.data.setores_estados);
+
+            vis_mapa.fs.popula_lista(vis_mapa.data.lista_setores);
+        
+        },
+
+        popula_lista : function(dados_lista) {
+
+            let seletor = d3.select("#seletor-setores");
+
+            seletor
+              .selectAll("option")
+              .data(dados_lista)
+              .join("option")
+              .attr("value", d => d.setor)
+              .text(d => d.setor);
+
         }
 
     }
