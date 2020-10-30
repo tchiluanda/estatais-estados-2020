@@ -116,11 +116,16 @@ const vis_mapa = {
 
             boxes
               .append("h2")
-              .text(d => d.setor);
+              .text(d => d.setor)
+              .style("color", d => d.cores);
 
             boxes
               .append("p")
-              .text(d => d.def);
+              .text(d => d.def)
+              .style("background-color", d => d.cores)
+              .style("color", (d,i) => i > 14 ? "rgb(59,55,52)" : "ghostwhite");
+
+            
 
         }
 

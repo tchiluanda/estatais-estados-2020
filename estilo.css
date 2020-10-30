@@ -283,3 +283,14 @@ section.destaque a:hover{
 .box-definicao.ativo {
     display: block;
 }
+
+.box-definicao h2 {
+    font-size: 1rem;
+    padding-left: .5rem;
+}
+
+.box-definicao p {
+    padding: .5rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+}
