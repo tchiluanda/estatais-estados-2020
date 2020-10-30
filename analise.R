@@ -16,6 +16,7 @@ library(viridis)
 library(geobr)
 library(cartogram)
 library(sf)
+library(geojsonsf)
 
 
 # estilo dos gráficos -----------------------------------------------------
@@ -255,27 +256,6 @@ dados_selecionados <- dados_selecionados_raw %>%
 #dados_selecionados[linhas[["CAEMA"]], "setor"] <- "SANEAMENTO"
 #dados_selecionados[linhas[["COMPESA"]], "setor"]
 
-
-
-# exporta dados para JS ---------------------------------------------------
-
-dados_qde_setor_estado <- dados_selecionados %>%
-  count(setor, Estado)
-
-tab_definicoes_setores$cores <- viridis::plasma(
-  nrow(tab_definicoes_setores), 
-  direction = 1)
-
-# exporta dados para gerar o gráfico em D3
-write.csv(dados_qde_setor_estado, 
-          file = "./dados/mapa-setores.csv", 
-          fileEncoding = "UTF-8")
-
-write.csv(tab_definicoes_setores, 
-          file = "./dados/lista-setores.csv", 
-          fileEncoding = "UTF-8")
-
-
 # mapa small multiples ----------------------------------------------------
 
 #mapa <- geobr::read_state()
@@ -292,11 +272,45 @@ mapa_qde <- mapa %>%
 # 
 # saveRDS(estados, "./dados/dados-intermediarios/estados.rds")
 
+# exporta dados para JS ---------------------------------------------------
+
+dados_qde_setor_estado <- dados_selecionados %>%
+  count(setor, Estado)
+
+tab_definicoes_setores$cores <- viridis::plasma(
+  nrow(tab_definicoes_setores), 
+  direction = 1)
+
+mapa_qde_export <- mapa_qde %>%
+  mutate(tem_empresa = qde > 0) %>%
+  select(Estado, tem_empresa)
+
+# exporta dados para gerar o gráfico em D3
+# write.csv(dados_qde_setor_estado, 
+#           file = "./dados/mapa-setores.csv", 
+#           fileEncoding = "UTF-8")
+
+write.csv(tab_definicoes_setores, 
+          file = "./dados/lista-setores.csv", 
+          fileEncoding = "UTF-8")
+
+
+write_file(
+  geojsonsf::sf_geojson(mapa_qde_export),#, digits = 6), 
+  "./dados/mapa-setores.geojson")
+
+
+# plot mapa small multiples -----------------------------------------------
+
+
 
 # ggplot(mapa_qde %>% filter(setor == "SANEAMENTO")) + 
 #     geom_sf(aes(fill = n > 0), color = "coral") +
 #     scale_fill_manual(values = c("TRUE" = "lightcoral", "FALSE" = NA)) +
 #     labs(fill = "Tem empresa de saneamento?")
+
+
+
 
 setores <- data.frame(
   setor = unique(dados_selecionados$setor)
