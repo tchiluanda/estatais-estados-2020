@@ -63,8 +63,8 @@ tema_mapa <- function() {
 
 # dados iniciais ----------------------------------------------------------
 
-tab_uf <- readRDS("./dados/dados-intermediarios/estados.rds") 
-#read_excel("./dados/dados-originais/tab_ufs.xlsx")
+tab_uf <- read_excel("./dados/dados-originais/tab_ufs.xlsx") %>%
+  select(Estado, Nome_estado, REGIAO)
 dados_raw <- read_excel("./dados/dados-originais/Quadro das Empresas Estatais Estaduais PAF 2020v1.xlsx", skip = 2, sheet = "Dados")
 tab_setores <- read_excel("./dados/dados-originais/tab_setores.xlsx", sheet = "tab")
 tab_definicoes_setores <- read_excel("./dados/dados-originais/tab_setores.xlsx", sheet = "def")
@@ -262,6 +262,8 @@ dados_selecionados <- dados_selecionados_raw %>%
 #saveRDS(mapa, "./dados/dados-intermediarios/mapa.rds")
 mapa <- readRDS("./dados/dados-intermediarios/mapa.rds")
 
+mapa <- st_simplify(mapa, dTolerance = .05)
+
 mapa_qde <- mapa %>%
   inner_join(dados_qde_setor_estado, by = c("abbrev_state" = "Estado"))
 
@@ -274,30 +276,57 @@ mapa_qde <- mapa %>%
 
 # exporta dados para JS ---------------------------------------------------
 
-dados_qde_setor_estado <- dados_selecionados %>%
-  count(setor, Estado)
-
 tab_definicoes_setores$cores <- viridis::plasma(
   nrow(tab_definicoes_setores), 
   direction = 1)
 
-mapa_qde_export <- mapa_qde %>%
-  mutate(tem_empresa = qde > 0) %>%
-  select(Estado, tem_empresa)
+write.csv(tab_definicoes_setores, 
+          file = "./dados/lista-setores.csv", 
+          fileEncoding = "UTF-8")
+
+# mapa
+
+dados_qde_setor_estado <- dados_selecionados %>%
+  count(setor, Estado)
+
+primeiro_termo_setor <- str_split(
+  unique(dados_selecionados$setor), 
+  pattern = " ", 
+  simplify = TRUE)[,1] %>%
+  str_replace_all(pattern = "[^a-zA-Z ]", replacement = "") # para ficar igual ao JS
+
+todos_setores_estados <- 
+  full_join(
+    data.frame(setor = unique(dados_selecionados$setor),
+               cod_setor = primeiro_termo_setor),
+    data.frame(Estado = unique(tab_uf$Estado)),
+    by = character()
+  )
+
+dados_setor_estados_mapa <- todos_setores_estados %>%
+  left_join(dados_qde_setor_estado) %>%
+  mutate(tem_empresa = ifelse(is.na(n), 0, 
+                              ifelse(n > 0, 1, 0)),
+         ) %>%
+  select(-n, -setor) %>%
+  spread(cod_setor, tem_empresa)
+
+mapa_qde_export <- mapa %>%
+  rename(Estado = abbrev_state) %>%
+  left_join(dados_setor_estados_mapa)
+
+st_write(mapa_qde_export, "./dados/mapa-setores/mapa-setores.shp")
 
 # exporta dados para gerar o gráfico em D3
 # write.csv(dados_qde_setor_estado, 
 #           file = "./dados/mapa-setores.csv", 
 #           fileEncoding = "UTF-8")
 
-write.csv(tab_definicoes_setores, 
-          file = "./dados/lista-setores.csv", 
-          fileEncoding = "UTF-8")
-
 
 write_file(
-  geojsonsf::sf_geojson(mapa_qde_export),#, digits = 6), 
+  geojsonsf::sf_geojson(mapa_qde_export, digits = 4), 
   "./dados/mapa-setores.geojson")
+
 
 
 # plot mapa small multiples -----------------------------------------------
