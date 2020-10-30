@@ -257,16 +257,14 @@ dados_selecionados <- dados_selecionados_raw %>%
 
 
 
-# gráficos anteriores -----------------------------------------------------
-
-
-
-# mapa small multiples ----------------------------------------------------
-
+# exporta dados para JS ---------------------------------------------------
 
 dados_qde_setor_estado <- dados_selecionados %>%
   count(setor, Estado)
 
+tab_definicoes_setores$cores <- viridis::plasma(
+  nrow(tab_definicoes_setores), 
+  direction = 1)
 
 # exporta dados para gerar o gráfico em D3
 write.csv(dados_qde_setor_estado, 
@@ -277,6 +275,8 @@ write.csv(tab_definicoes_setores,
           file = "./dados/lista-setores.csv", 
           fileEncoding = "UTF-8")
 
+
+# mapa small multiples ----------------------------------------------------
 
 #mapa <- geobr::read_state()
 #saveRDS(mapa, "./dados/dados-intermediarios/mapa.rds")
