@@ -142,6 +142,8 @@ const vis_mapa = {
 
                 vis_mapa.fs.mostra_box_setor(opcao_escolhida);
 
+                vis_mapa.fs.pinta_mapa(opcao_escolhida);
+
             });
             
         },
@@ -229,13 +231,13 @@ const vis_mapa = {
             svg
               .select("g")
               .selectAll("path")
-              .attr("fill", function(d) {
-
-                console.log(d, d.properties[setor], this, vis_mapa.data.tabela_cores[setor]);
-
-
-                  return(d.properties[setor] == 1 ? vis_mapa.data.tabela_cores[setor] : "grey");
-              })
+              .attr(
+                  "fill", 
+                  d => 
+                  d.properties[setor] == 1 ?
+                  vis_mapa.data.tabela_cores[setor] :
+                  "grey"
+                )
             ;
 
         }
