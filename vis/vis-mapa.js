@@ -57,7 +57,7 @@ const vis_mapa = {
                 let key = vis_mapa.utils.remove_acentos(linha.setor);
 
                 vis_mapa.data.tabela_cores[key] = linha.cores;
-                
+
             });
 
         },
@@ -205,25 +205,38 @@ const vis_mapa = {
               .geoConicEqualArea()
               .parallels([-33.8, 5.3])
               .rotate([40, 0])
-              .fitSize([dim, dim], geodata);
+              .fitSize([dim, dim], geodata)
+            ;
 
             let svg = d3.select("svg.vis-mapa");
 
 
             svg.append("g")
-            .selectAll("path")
-            .data(feats)
-            .join("path")
-            .attr("fill", "grey")
-            .attr("stroke", "white")
-            .attr("d", d3.geoPath().projection(projecao));
+              .selectAll("path")
+              .data(feats)
+              .join("path")
+              .attr("fill", "grey")
+              .attr("stroke", "white")
+              .attr("d", d3.geoPath().projection(projecao))
+            ;
+
         },
 
         pinta_mapa : function(setor) {
 
+            let svg = d3.select("svg.vis-mapa");
+
+            svg
+              .select("g")
+              .selectAll("path")
+              .attr("fill", function(d) {
+
+                console.log(d, d.properties[setor], this, vis_mapa.data.tabela_cores[setor]);
 
 
-
+                  return(d.properties[setor] == 1 ? vis_mapa.data.tabela_cores[setor] : "grey");
+              })
+            ;
 
         }
 
