@@ -35,7 +35,8 @@ const vis_mapa = {
     data : {
 
         lista_setores   : null,
-        mapa_setores    : null
+        mapa_setores    : null,
+        tabela_cores    : {}
     
     },
 
@@ -46,6 +47,18 @@ const vis_mapa = {
             str = str.split(" ")[0];
 
             return str.replace(/[^a-zA-Z ]/g, "");
+
+        },
+
+        monta_escala_cores : function() {
+
+            vis_mapa.data.lista_setores.forEach(linha => {
+
+                let key = vis_mapa.utils.remove_acentos(linha.setor);
+
+                vis_mapa.data.tabela_cores[key] = linha.cores;
+                
+            });
 
         },
 
@@ -73,17 +86,20 @@ const vis_mapa = {
     fs : {
 
         start : function() {
+
             Promise.all(
+
             [
                 d3.csv(vis_mapa.config.urls_dados["lista_setores"]),
                 d3.json(vis_mapa.config.urls_dados["mapa_setores"])
-            ])
-            .then(function(files) {
+            ]
+            
+            ).then(function(files) {
           
               vis_mapa.data.lista_setores   = files[0];
               vis_mapa.data.mapa_setores = files[1];
-              
-            vis_mapa.fs.init();
+
+              vis_mapa.fs.init();
 
             })
         },
@@ -95,6 +111,7 @@ const vis_mapa = {
 
             vis_mapa.fs.popula_lista(vis_mapa.data.lista_setores);
             vis_mapa.fs.controla_seletor();
+            vis_mapa.utils.monta_escala_cores();
             vis_mapa.utils.resize();
             vis_mapa.fs.constroi_mapa();
         
@@ -200,6 +217,14 @@ const vis_mapa = {
             .attr("fill", "grey")
             .attr("stroke", "white")
             .attr("d", d3.geoPath().projection(projecao));
+        },
+
+        pinta_mapa : function(setor) {
+
+
+
+
+
         }
 
     }
