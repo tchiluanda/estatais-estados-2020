@@ -5,8 +5,22 @@ const vis_mapa = {
         urls_dados : {
 
             lista_setores:   "./dados/lista-setores.csv",
-            setores_estados: "./dados/mapa-setores.csv"
+            mapa_setores: "./dados/mapa.json"
 
+        },
+
+        dimensoes : {
+
+            w   : null,
+            h   : null,
+            dim : null
+
+        },
+
+        ref : {
+
+            svg  : "svg.vis-mapa",
+            cont : "figure.vis-mapa"
         }
 
         
@@ -21,7 +35,7 @@ const vis_mapa = {
     data : {
 
         lista_setores   : null,
-        setores_estados : null
+        mapa_setores    : null
     
     },
 
@@ -33,6 +47,25 @@ const vis_mapa = {
 
             return str.replace(/[^a-zA-Z ]/g, "");
 
+        },
+
+        resize : function() {
+
+            let w = window.innerWidth;
+            let h = window.innerHeight;
+
+            let dim = w > 500 ? 500 : w;
+
+            d3.select(vis_mapa.config.ref.svg)
+              .style("height", dim)
+              .style("width", dim);
+
+            vis_mapa.config.dimensoes.w = w;
+              //+cont.style("width").slice(0,-2);
+  
+            vis_mapa.config.dimensoes.h = h;
+            vis_mapa.config.dimensoes.dim = dim - 10;
+
         }
 
     },
@@ -43,12 +76,12 @@ const vis_mapa = {
             Promise.all(
             [
                 d3.csv(vis_mapa.config.urls_dados["lista_setores"]),
-                d3.csv(vis_mapa.config.urls_dados["setores_estados"])
+                d3.json(vis_mapa.config.urls_dados["mapa_setores"])
             ])
             .then(function(files) {
           
               vis_mapa.data.lista_setores   = files[0];
-              vis_mapa.data.setores_estados = files[1];
+              vis_mapa.data.mapa_setores = files[1];
               
             vis_mapa.fs.init();
 
@@ -58,10 +91,12 @@ const vis_mapa = {
         init : function() {
 
             console.table(vis_mapa.data.lista_setores);
-            console.table(vis_mapa.data.setores_estados);
+            console.table(vis_mapa.data.mapa_setores);
 
             vis_mapa.fs.popula_lista(vis_mapa.data.lista_setores);
             vis_mapa.fs.controla_seletor();
+            vis_mapa.utils.resize();
+            vis_mapa.fs.constroi_mapa();
         
         },
 
@@ -127,6 +162,44 @@ const vis_mapa = {
 
             
 
+        },
+
+        constroi_mapa : function() {
+
+            let dim = vis_mapa.config.dimensoes.dim;
+
+            let topodata = vis_mapa.data.mapa_setores;
+
+            let feats = 
+              topojson.feature(
+                topodata, 
+                topodata.objects.estados)
+              .features;
+
+            let geodata = {
+
+                type:"FeatureCollection",
+                "features": feats
+
+            };
+
+
+            let projecao = d3
+              .geoConicEqualArea()
+              .parallels([-33.8, 5.3])
+              .rotate([40, 0])
+              .fitSize([dim, dim], geodata);
+
+            let svg = d3.select("svg.vis-mapa");
+
+
+            svg.append("g")
+            .selectAll("path")
+            .data(feats)
+            .join("path")
+            .attr("fill", "grey")
+            .attr("stroke", "white")
+            .attr("d", d3.geoPath().projection(projecao));
         }
 
     }
