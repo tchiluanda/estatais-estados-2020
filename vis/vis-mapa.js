@@ -5,7 +5,7 @@ const vis_mapa = {
         urls_dados : {
 
             lista_setores:   "./dados/lista-setores.csv",
-            mapa_setores: "./dados/mapa.json"
+            mapa_setores: "./dados/mapa-topo.json"
 
         },
 
@@ -21,6 +21,13 @@ const vis_mapa = {
 
             svg  : "svg.vis-mapa",
             cont : "figure.vis-mapa"
+        },
+
+        cores : {
+
+            padrao : "#EFEFEF",
+            divisa : "ghostwhite"
+
         }
 
         
@@ -236,8 +243,8 @@ const vis_mapa = {
               .selectAll("path")
               .data(feats)
               .join("path")
-              .attr("fill", "grey")
-              .attr("stroke", "white")
+              .attr("fill", vis_mapa.config.cores.padrao)
+              .attr("stroke", vis_mapa.config.cores.divisa)
               .attr("d", d3.geoPath().projection(projecao))
             ;
 
@@ -257,7 +264,7 @@ const vis_mapa = {
                   d => 
                   d.properties[setor] == 1 ?
                   vis_mapa.data.tabela_cores[setor] :
-                  "grey"
+                  vis_mapa.config.cores.padrao
                 )
             ;
 
