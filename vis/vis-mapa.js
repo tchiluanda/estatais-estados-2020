@@ -231,6 +231,8 @@ const vis_mapa = {
             svg
               .select("g")
               .selectAll("path")
+              .transition()
+              .duration(400)
               .attr(
                   "fill", 
                   d => 
