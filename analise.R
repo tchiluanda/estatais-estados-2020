@@ -262,7 +262,7 @@ dados_selecionados <- dados_selecionados_raw %>%
 #saveRDS(mapa, "./dados/dados-intermediarios/mapa.rds")
 mapa <- readRDS("./dados/dados-intermediarios/mapa.rds")
 
-mapa <- st_simplify(mapa, dTolerance = .001)
+mapa <- st_simplify(mapa, dTolerance = .0001)
 
 mapa_qde <- mapa %>%
   inner_join(dados_qde_setor_estado, by = c("abbrev_state" = "Estado"))
