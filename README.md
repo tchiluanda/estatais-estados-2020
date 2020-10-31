@@ -57,7 +57,7 @@ ggplot(mapa) +
 O comando do geoproject então vai ficar
 
 ```bash
-geoproject 'd3.geoConicEqualArea().parallels([-33.8, 5.3]).rotate([120, 0]).fitSize([960, 960], d)' < mapa-setores.json > mp-set-conic.json
+geoproject 'd3.geoConicEqualArea().parallels([-33.8, 5.3]).rotate([40, 0]).fitSize([960, 960], d)' < mapa-setores.json > mp-set-conic.json
 ```
 
 This d3.geoConicEqualArea projection is California Albers, and as its name suggests, is appropriate for showing California. It’s also equal-area, which is strongly recommended for choropleth maps as the projection will not distort the data. If you’re not sure what projection to use, try d3-stateplane or search spatialreference.org.
@@ -91,3 +91,85 @@ ndjson-split 'd.features' \
   < mp-set-conic.json \
   > mp-set-conic.ndjson
 ```
+
+Even better, we can use d3-geo-projection to quickly generate an SVG choropleth from the command line! To do that, first install D3:
+
+```bash
+npm install -g d3
+```
+
+Next use ndjson-map, requiring D3 via -r d3, and defining a fill property using a sequential scale with the Viridis color scheme:
+
+```bash
+ndjson-map -r d3 '(d.properties.fill = d3.scaleOrdinal().domain([0, 1]).range(["#efefef", "#0D0887"])(d.properties.ABASTEC), d)' < mp-set-conic.ndjson > mp-set-conic-color.ndjson
+```
+
+To convert the newline-delimited GeoJSON to SVG using geo2svg:
+
+```bash
+geo2svg -n --stroke none -p 1 -w 960 -h 960 < mp-set-conic-color.ndjson > mp-set-conic.svg
+```
+
+
+The GeoJSON feature collection of census tracts we constructed previously was 13.6M. That’s fine for local viewing, but a bit large for the web! Fortunately there are ways to shrink geometry without apparent loss of detail. We can:
+
+Simplify (e.g., remove coordinates per Visvalingham).
+Quantize (e.g., remove digits, say 224.3021507494117 to 224.3).
+Compress (e.g., remove redundant geometry).
+
+These are possible with GeoJSON, but we can do even better if we switch to a JSON dialect designed for efficient transport: TopoJSON. TopoJSON files are often 80% smaller than GeoJSON files, even without simplification. How is it so concise?
+
+First, TopoJSON represents lines and polygons as sequences of arcs rather than sequences of coordinates. Contiguous polygons (census tracts, counties, states, etc.) have shared borders whose coordinates are duplicated in GeoJSON. With hierarchical geometry, such as counties that compose into states, there’s even more duplication! By representing lines and polygons as sequences of arcs, repeating an arc does not require repeating coordinates. (For more, see How to Infer Topology.)
+
+
+To get started, install the TopoJSON CLI:
+
+```bash
+npm install -g topojson
+```
+
+Use geo2topo to convert to TopoJSON, reducing its size to 8.1M:
+
+```bash
+geo2topo -n \
+  estados=mapa-proj.ndjson \
+  > mapa-proj-topo.json
+```
+  
+The slightly peculiar syntax, tracts=…, allows you to specify multiple named GeoJSON inputs, resulting in a topology with multiple named objects (or “layers”). Arcs can be shared across all objects in a topology.
+
+Now to toposimplify, further reducing to 3.1M:
+
+```bash
+toposimplify -p 1 -f \
+  < mapa-proj-topo.json \
+  > mapa-simples-topo.json
+```
+
+The -p 1 argument tells toposimplify to use a planar area threshold of one square pixel when implementing Visvalingham’s method; this is appropriate because we previously applied a conic equal-area projection. If simplifying before projecting, use -s and specify a minimum-area threshold in steradians instead. The -f says to remove small, detached rings—little islands, but not contiguous tracts—further reducing the output size.
+
+Lastly to topoquantize and delta-encode, reducing to 1.6M:
+
+```bash
+topoquantize 1e5 \
+  < mapa-simples-topo.json \
+  > mapa-quant-topo.json.json
+```
+
+As you can see, this is visually identical to the original, yet a tenth the size! Gzip (performed automatically by most servers) further reduces the transfer size to a svelte 390K.
+Now suppose we want to overlay county borders on our choropleth map of census tracts. Most readers probably aren’t familiar with the geography of census tracts, so county outlines provide a helpful cue. (If we were making a national choropleth, we might similarly want state borders.)
+The Census Bureau also publishes county boundaries, but we don’t actually need them. TopoJSON has another powerful trick up its sleeve: since census tracts compose hierarchically into counties, we can derive county geometry using topomerge!
+
+
+
+No final, ficou assim:
+
+1. pega mapa pelo geobr
+2. simplifica com st_simplify
+3. junta os dados (gera o mapa_qde_export)
+4. exporta em geojson com qde de dígitos limitada ou não
+5. projeta o mapa usando geoproject
+6. converte para ndjson com `ndjson-split 'd.features' < mapa-proj.json > mapa-proj.ndjson`
+7. converte para topojson com geo2topo acima.
+8. toposimplify
+9. topoquantize
