@@ -276,12 +276,19 @@ section.destaque a:hover{
 
 /* vis do mapa */
 
+.boxes-definicao {
+    position: relative;
+}
+
 .box-definicao {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    /*display: none;*/
 }
 
 .box-definicao.ativo {
-    display: block;
+    /*display: block;*/
+    opacity: 1;
 }
 
 .box-definicao h2 {

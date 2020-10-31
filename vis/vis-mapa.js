@@ -110,6 +110,7 @@ const vis_mapa = {
             console.table(vis_mapa.data.mapa_setores);
 
             vis_mapa.fs.popula_lista(vis_mapa.data.lista_setores);
+            vis_mapa.fs.ajusta_altura_box();
             vis_mapa.fs.controla_seletor();
             vis_mapa.utils.monta_escala_cores();
             vis_mapa.utils.resize();
@@ -179,7 +180,25 @@ const vis_mapa = {
               .style("background-color", d => d.cores)
               .style("color", (d,i) => i > 14 ? "rgb(59,55,52)" : "ghostwhite");
 
-            
+        },
+
+        ajusta_altura_box : function() {
+
+            let altura_max = 0;
+
+            let boxes = d3.select("div.boxes-definicao").selectAll("div.box-definicao");
+            boxes.each(function() {
+
+                let no = d3.select(this).node();
+
+                let altura = no.getBoundingClientRect().height;
+
+                altura_max = Math.max(altura_max, altura);
+
+            });
+
+            d3.selectAll(".box-definicao").style("height", altura_max + "px");
+            d3.select(vis_mapa.config.ref.cont).style("margin-top", (altura_max + 20) + "px");
 
         },
 
