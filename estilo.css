@@ -276,6 +276,12 @@ section.destaque a:hover{
 
 /* vis do mapa */
 
+#seletor-setores {
+    font-family: Lora;
+    border: 1px solid maroon;
+    border-radius: .25rem;
+}
+
 .boxes-definicao {
     position: relative;
 }
