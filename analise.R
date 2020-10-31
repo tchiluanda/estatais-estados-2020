@@ -262,7 +262,7 @@ dados_selecionados <- dados_selecionados_raw %>%
 #saveRDS(mapa, "./dados/dados-intermediarios/mapa.rds")
 mapa <- readRDS("./dados/dados-intermediarios/mapa.rds")
 
-mapa <- st_simplify(mapa, dTolerance = .05)
+mapa <- st_simplify(mapa, dTolerance = .001)
 
 mapa_qde <- mapa %>%
   inner_join(dados_qde_setor_estado, by = c("abbrev_state" = "Estado"))
@@ -315,16 +315,11 @@ mapa_qde_export <- mapa %>%
   rename(Estado = abbrev_state) %>%
   left_join(dados_setor_estados_mapa)
 
-st_write(mapa_qde_export, "./dados/mapa-setores/mapa-setores.shp")
-
-# exporta dados para gerar o gráfico em D3
-# write.csv(dados_qde_setor_estado, 
-#           file = "./dados/mapa-setores.csv", 
-#           fileEncoding = "UTF-8")
-
+# dá para exportar como shp e depois usar a CLI tools do Bostock para converter
+#st_write(mapa_qde_export, "./dados/mapa-setores/mapa-setores.shp")
 
 write_file(
-  geojsonsf::sf_geojson(mapa_qde_export, digits = 4), 
+  geojsonsf::sf_geojson(mapa_qde_export), #, digits = 5), 
   "./dados/mapa-setores.geojson")
 
 
