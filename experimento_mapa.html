@@ -7,26 +7,28 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="mapa-setores">
+    <section class="content">
+        <div class="mapa-setores">
 
-        <div class="mapa-setores-selecao">
-            <label for="seletor-setores">Escolha o setor:</label>
+            <div class="mapa-setores-selecao">
+                <label for="seletor-setores">Escolha o setor:</label>
 
-            <select name="setores" id="seletor-setores">
-            </select>
+                <select name="setores" id="seletor-setores">
+                </select>
+            </div>
+
+            <div class="boxes-definicao">
+                <!--<div class="box-definicao">
+                    <h2></h2>
+                    <p></p>
+                </div>-->
+            </div>
+
+            <figure class="vis-mapa">
+                <svg class="vis-mapa"></svg>
+            </figure>
         </div>
-
-        <div class="boxes-definicao">
-            <!--<div class="box-definicao">
-                <h2></h2>
-                <p></p>
-            </div>-->
-        </div>
-
-        <figure class="vis-mapa">
-            <svg class="vis-mapa"></svg>
-        </figure>
-    </div>
+    </section>
 
     <script src="./vis/d3.v6.min.js"></script>
     <script src="./vis/topojson.min.js"></script>
