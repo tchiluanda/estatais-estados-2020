@@ -168,8 +168,19 @@ No final, ficou assim:
 2. simplifica com st_simplify
 3. junta os dados (gera o mapa_qde_export)
 4. exporta em geojson com qde de dígitos limitada ou não
-5. projeta o mapa usando geoproject
-6. converte para ndjson com `ndjson-split 'd.features' < mapa-proj.json > mapa-proj.ndjson`
-7. converte para topojson com geo2topo acima.
-8. toposimplify
-9. topoquantize
+(nao) 5. projeta o mapa usando geoproject
+6. converte para ndjson com `ndjson-split 'd.features' < mapa-setores.geojson > mapa-setores.ndjson`
+7. converte para topojson com geo2topo `geo2topo -n estados=mapa-setores.ndjson > mapa-topo.json`
+8. toposimplify `toposimplify -p 1 -f < mapa-topo.json > mapa-simples.json`
+9. topoquantize `topoquantize 1e5 < mapa-simples.json > mapa.json`
+
+
+In order to use fitSize/fitExtent we need to create a geojson object that contains all the individual features, a feature collection does this, the structure is as follows:
+
+```js
+featureCollection = {
+  "type":"FeatureCollection",
+  "features": [ ... ]
+}
+```
+(https://stackoverflow.com/questions/56516358/d3-js-set-fitextent-or-fitsize-or-center-and-scale-programmatically-for-map-w)
