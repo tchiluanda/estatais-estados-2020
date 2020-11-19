@@ -264,8 +264,8 @@ mapa <- readRDS("./dados/dados-intermediarios/mapa.rds")
 
 mapa <- st_simplify(mapa, dTolerance = .0001)
 
-mapa_qde <- mapa %>%
-  inner_join(dados_qde_setor_estado, by = c("abbrev_state" = "Estado"))
+# mapa_qde <- mapa %>%
+#   inner_join(dados_qde_setor_estado, by = c("abbrev_state" = "Estado"))
 
 # salva df com uf, estado, regiao
 # estados <- data.frame("Estado" = unique(mapa_qde$Estado), "Nome_estado" = unique(mapa_qde$name_state))
@@ -322,19 +322,12 @@ write_file(
   geojsonsf::sf_geojson(mapa_qde_export), #, digits = 5), 
   "./dados/mapa-setores.geojson")
 
-
-
 # plot mapa small multiples -----------------------------------------------
-
-
 
 # ggplot(mapa_qde %>% filter(setor == "SANEAMENTO")) + 
 #     geom_sf(aes(fill = n > 0), color = "coral") +
 #     scale_fill_manual(values = c("TRUE" = "lightcoral", "FALSE" = NA)) +
 #     labs(fill = "Tem empresa de saneamento?")
-
-
-
 
 setores <- data.frame(
   setor = unique(dados_selecionados$setor)
@@ -370,36 +363,37 @@ graf_mapa_facet <- graf_mapa_comp + facet_wrap(~setor)
 ggsave(plot = graf_mapa_facet, "./plots/segmentos_facet2.png", width = 9, height = 8, dpi = 300) # windows: acrescentar: , type = "cairo-png"
 
 
-
 # mapa gif ----------------------------------------------------------------
 
-graf_mapa_labels <- ggplot(mapa_qde) +
-  geom_sf(data = mapa, fill = "#EFEFEF", color = "ghostwhite") +
-  geom_sf(aes(group = Estado, fill = ifelse(qde > 0, setor, NA)), color = "ghostwhite") + 
-  geom_text(aes(label = "Estados com empresas do setor de ", 
-                y = 9.5, x = -73.5), 
-            color = "dimgrey", check_overlap = TRUE,
-            family = "Lora", fontface = "plain", size = 5, 
-            hjust = "left") +
-  geom_text(aes(label = setor, y = 9.5, x = -48, color = setor), # no chute
-            check_overlap = TRUE, family = "Lora", fontface = "bold",
-            size = 5, hjust = "left") +
-  scale_fill_viridis_d(direction = 1,
-                       option = "plasma", na.value = "#EFEFEF") +
-  scale_color_viridis_d(direction = 1,
-                        option = "plasma", na.value = "#EFEFEF") +
-  labs(x = NULL, y = NULL) +
-  tema_mapa()
+#### Foi substituído pelo mapa em D3. só precisa exportar mais acima.
 
-graf_mapa_gif <- graf_mapa_labels + transition_states(states = setor,
-                                                      transition_length = 1,
-                                                      state_length = 3) #+
-# labs(title = "Estados que possuem empresas do setor de {closest_state}") +
-# theme(title = element_text(size = 13, face = "plain"))
-
-gif_animation <- animate(graf_mapa_gif, nframes = nrow(setores)*10, fps = 6, renderer = gifski_renderer())
-
-anim_save("./plots/mapa.gif", animation = gif_animation)
+# graf_mapa_labels <- ggplot(mapa_qde) +
+#   geom_sf(data = mapa, fill = "#EFEFEF", color = "ghostwhite") +
+#   geom_sf(aes(group = Estado, fill = ifelse(qde > 0, setor, NA)), color = "ghostwhite") + 
+#   geom_text(aes(label = "Estados com empresas do setor de ", 
+#                 y = 9.5, x = -73.5), 
+#             color = "dimgrey", check_overlap = TRUE,
+#             family = "Lora", fontface = "plain", size = 5, 
+#             hjust = "left") +
+#   geom_text(aes(label = setor, y = 9.5, x = -48, color = setor), # no chute
+#             check_overlap = TRUE, family = "Lora", fontface = "bold",
+#             size = 5, hjust = "left") +
+#   scale_fill_viridis_d(direction = 1,
+#                        option = "plasma", na.value = "#EFEFEF") +
+#   scale_color_viridis_d(direction = 1,
+#                         option = "plasma", na.value = "#EFEFEF") +
+#   labs(x = NULL, y = NULL) +
+#   tema_mapa()
+# 
+# graf_mapa_gif <- graf_mapa_labels + transition_states(states = setor,
+#                                                       transition_length = 1,
+#                                                       state_length = 3) #+
+# # labs(title = "Estados que possuem empresas do setor de {closest_state}") +
+# # theme(title = element_text(size = 13, face = "plain"))
+# 
+# gif_animation <- animate(graf_mapa_gif, nframes = nrow(setores)*10, fps = 6, renderer = gifski_renderer())
+# 
+# anim_save("./plots/mapa.gif", animation = gif_animation)
 
 
 # barchart - quantidades --------------------------------------------------
@@ -423,7 +417,7 @@ graf_qde_emp <-
   geom_text(aes(label = qde, y = qde), 
             vjust = 0.4, position = position_stack(vjust = 0.5, reverse = TRUE),
             family = "Source Sans Pro", size = 3, color = "#ebf2f2") +
-  geom_text(aes(label = qde_tot), y = -1.6,
+  geom_text(aes(label = qde_tot), y = -.9,
             vjust = 0.4, check_overlap = TRUE,
             family = "Source Sans Pro", size = 3.5, color = "grey") +  
   coord_flip() +
@@ -433,9 +427,9 @@ graf_qde_emp <-
   labs(x = NULL, y = NULL, 
        title = NULL, #"Quantidade de empresas por segmento", 
        fill = NULL) +
-  tema_barra() + theme(axis.text = element_text(size = 9))
+  tema_barra() + theme(axis.text = element_text(size = 8))
 
-ggsave(plot = graf_qde_emp, "./plots/qde_seg.png", h = 6, w = 5)#, type = "cairo-png")
+ggsave(plot = graf_qde_emp, "./plots/qde_seg.png", h = 4.5, w = 5)#, type = "cairo-png")
 
 
 qde_empresas_est <- dados_selecionados %>% 
@@ -964,3 +958,25 @@ ggsave(plot = waterfall, "./plots/waterfall.png", h = 6, w = 6)
 # exporta dados -----------------------------------------------------------
 
 write.csv2(dados_selecionados, file = "./dados/dados.csv", fileEncoding = "UTF-8")
+
+
+
+# infos do texto ----------------------------------------------------------
+
+# Distribuição regiões
+dados_selecionados %>% count(REGIAO) %>% janitor::adorn_percentages(denominator = "col") %>% janitor::adorn_pct_formatting(digits = 2)
+
+# Dependentes
+dados_selecionados %>% count(dep) %>% janitor::adorn_percentages(denominator = "col") %>% janitor::adorn_pct_formatting(digits = 2)
+
+# por estado
+dados_selecionados %>% count(Estado) %>% summary()
+
+dados_selecionados %>% filter(dep == "Dependente") %>% count(Estado) %>% arrange(desc(n))
+
+dados_selecionados %>% filter(dep == "Não Dependente") %>% count(Estado) %>% arrange(desc(n))
+
+dados_selecionados %>% filter(dep == "Dependente") %>% count(setor) %>% arrange(desc(n))
+
+dados_selecionados %>% count(setor, dep) %>% spread(dep, n) %>% arrange(desc(`Não Dependente`))
+
