@@ -142,6 +142,11 @@ section.content figure.plot-container h4.plot-subtitle {
     margin-bottom: 5px;
 }
 
+p.caption {
+    font-size: 13px;
+    font-style: italic;
+}
+
 section.content figure.plot-container ul.plot-legenda {
     display: flex;
     flex-direction: row;
@@ -166,6 +171,7 @@ section.content figure.plot-container ul.plot-legenda span.plot-legenda-key {
     display: inline-block;
     vertical-align: text-bottom;
     margin-right: 2px;
+    margin-bottom: 2px;
 }
 
 section.content video {
