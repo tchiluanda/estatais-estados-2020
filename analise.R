@@ -216,7 +216,8 @@ dados_selecionados <- dados_selecionados_raw %>%
   #left_join(limpa_dep) %>%
   mutate(
     dep    = str_to_title(dep),
-    dep    = ifelse(is.na(dep), "Não Informado", dep)) %>%
+    dep    = ifelse(is.na(dep), "Não Informado", dep),
+    gov    = gov_ca == "SIM" & gov_cf == "SIM" & gov_aud == "SIM") %>%
   mutate_at(
     .vars = c("PL", "lucros", "desp_investimento", "desp_pessoal", "qde_empregados"),
     .funs = as.numeric)
@@ -534,6 +535,7 @@ anim_save("./plots/cartograma.gif", animation = last_animation())
 
 summary(dados_selecionados$PL)
 length(which(dados_selecionados$PL==0))
+length(which(dados_selecionados$PL<0))
 length(which(is.na(dados_selecionados$PL)))
 length(which(is.na(dados_selecionados$lucros)))
 
@@ -559,6 +561,7 @@ dados_roe <- dados_selecionados %>%
   filter(!is.na(ROE)) %>%
   mutate(Empresa = paste0(emp, ' (', Estado, ')\n',
                           'Dependência: ', dep, '\n',
+                          'Possui todas as estruturas de Governança? ', ifelse(gov, "Sim", "Não"), '\n',
                           'Setor: ', setor, '\n',
                           'PL: R$ ', PL_formatado, '\n',
                           'Lucros / Prejuízos no ano: R$ ', 
@@ -643,7 +646,7 @@ roe2 <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = d
   geom_quasirandom()+ #beeswarm() + #aes(size = PL), 
   scale_color_manual(values = c("Negativo" = "#DC143C", 
                                 "Positivo" = "#008080")) +
-  annotate("rect", xmin = 0, xmax = 1.5, ymin = -2, ymax = 0, alpha = 0.2, fill = "antiquewhite") +
+  annotate("rect", xmin = 0, xmax = 1.5, ymin = 0, ymax = 2, alpha = 0.2, fill = "antiquewhite") +
   annotate("rect", xmin = 1.5, xmax = 2.7, ymin = 0, ymax = 2, alpha = 0.2, fill = "antiquewhite") +
   geom_text(data = sumario_roe_sinal, 
             aes(y = ifelse(dep == "Dependente", y, NA),
@@ -667,12 +670,25 @@ roe2 <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = d
 
 ggsave(plot = roe2, "./plots/roe2.png", h = 6.5, w = 6.5)
 
+length(which(dados_roe$ROE > 2))
+length(which(dados_roe$ROE < -2))
+
 # ROE - dotplot -----------------------------------------------------------
+
+emp_distorcao <- dados_roe %>%  
+  filter(setor == "OUTROS" & abs(ROE) >= 4) %>%
+  select(emp, ROE) %>%
+  select(emp) %>%
+  unlist()
+
+dados_qde_setor_dep <- dados_roe %>%  
+  filter(dep != "Não Informado") %>%
+  count(setor, dep)
 
 # 197 empresas
 dados_roe_agreg <- dados_roe %>%  
-  filter(dep != "Não Informado",
-         abs(ROE) < 10) %>%
+  filter(dep != "Não Informado", abs(ROE) < 50) %>%
+  #filter(!(emp %in% emp_distorcao)) %>% #(1)
   group_by(setor, dep) %>%
   summarise(media_ROE = mean(ROE),
             soma_lucro = sum(lucros),
@@ -685,29 +701,41 @@ dados_roe_agreg <- dados_roe %>%
   rowwise() %>%
   mutate(maximo = max(Dependente, `Não Dependente`, na.rm = T)) %>%
   gather(Dependente, `Não Dependente`, key = dep, value = ROE_medio) %>%
-  arrange(desc(maximo))
+  arrange(desc(maximo)) %>%
+  left_join(dados_qde_setor_dep) %>%
+  mutate(setor = ifelse(setor == "OUTROS", "OUTROS*", setor))
+
 
 roe_dotplot <- ggplot(dados_roe_agreg, aes(y = reorder(setor, maximo), 
-                                           color = dep, x = ROE_medio, group = setor)) +
-  geom_path(color = "lightgrey", size = 1.5) +
-  geom_point(size = 3) +
+                                           color = dep, x = ifelse(ROE_medio < -.75, -.75, ROE_medio), group = setor)) +
+  geom_path(color = "lightgrey", size = 1.3, aes(linetype = ifelse(setor == "OUTROS*", "solid", "dotted"))) +
+  geom_point(aes(size = n)) +
+  # geom_point(size = 3) +
   geom_text(aes(label = ifelse(dep == maior | is.na(maior), 
                                percent(ROE_medio, accuracy = 1), NA), 
-                color = dep), fontface = "bold", size = 3.5,
+                color = dep), fontface = "bold", size = 3,
             family = "Source Sans Pro",
-            nudge_x = 0.09) +
+            nudge_x = 0.11) +
   geom_text(aes(label = ifelse(dep == maior, NA, percent(ROE_medio, accuracy = 1)), 
-                color = dep),  size = 3.5,
+                color = dep),  size = 3,
             family = "Source Sans Pro",
-            nudge_x = -0.07) +
+            nudge_x = -0.12) +
   labs(x = NULL, y = NULL) +
   scale_x_continuous(labels = percent) +
   scale_color_manual(values = vetor_cores_dep) +
   scale_fill_manual(values = vetor_cores_dep) +
   tema_barra()
 
-ggsave(plot = roe_dotplot, "./plots/roe_dotplot.png", h = 6, w = 5)
+#fiz um ajuste manual no gráfico para evitar achatá-lo demais. Aí quebrei a escala da posiçào do ponto em "outros".
 
+ggsave(plot = roe_dotplot, "./plots/roe_dotplot.png", h = 6, w = 5.5)
+
+dados_roe %>%  
+  filter(dep == "Não Informado" | abs(ROE) >= 50) %>%
+  select(emp, ROE)
+
+dados_roe %>%
+  filter(emp == "COMPANHIA DE DESENVOLVIMENTO AGRICOLA DE SAO PAULO - CODASP - EM LIQUIDACAO")
 
 # ROE - plotly ------------------------------------------------------------
 
@@ -976,7 +1004,12 @@ dados_selecionados %>% filter(dep == "Dependente") %>% count(Estado) %>% arrange
 
 dados_selecionados %>% filter(dep == "Não Dependente") %>% count(Estado) %>% arrange(desc(n))
 
-dados_selecionados %>% filter(dep == "Dependente") %>% count(setor) %>% arrange(desc(n))
+dados_selecionados %>% 
+  filter(dep == "Dependente") %>% 
+  count(setor) %>% 
+  arrange(desc(n)) %>%
+  janitor::adorn_percentages(denominator = "col") %>%
+  janitor::adorn_pct_formatting(digits = 2)
 
 dados_selecionados %>% count(setor, dep) %>% spread(dep, n) %>% arrange(desc(`Não Dependente`))
 
