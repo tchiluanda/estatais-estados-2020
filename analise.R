@@ -220,7 +220,11 @@ dados_selecionados <- dados_selecionados_raw %>%
     gov    = gov_ca == "SIM" & gov_cf == "SIM" & gov_aud == "SIM") %>%
   mutate_at(
     .vars = c("PL", "lucros", "desp_investimento", "desp_pessoal", "qde_empregados"),
-    .funs = as.numeric)
+    .funs = as.numeric) %>%
+  mutate(result_NA = is.na(Dividendos) & is.na(`Subvenção`) & is.na(`Reforço de Capital`)) %>%
+  mutate_at(.vars = vars("Dividendos", `Subvenção`, `Reforço de Capital`),
+            .funs = ~ifelse(is.na(.), 0, .)) %>%
+  mutate(`Resultado para o Estado Acionista` = ifelse(result_NA, NA, Dividendos - `Subvenção` - `Reforço de Capital`))
 
 #verifica empresas repetidas
 #rep <- dados_selecionados %>% count(emp)
@@ -881,47 +885,65 @@ colunas_interesse <- c("Dividendos",
                        "Resultado para o Estado Acionista")
 
 mapa_res <- dados_selecionados %>% 
-  group_by(Estado) %>% 
+  group_by(Estado) %>%
   summarise_at(vars(colunas_interesse),
                .funs = ~-sum(as.numeric(.), na.rm = TRUE)) %>%
   mutate(Dividendos = -Dividendos) %>%
   gather(colunas_interesse, key = "variavel", value = "valor") %>%
   left_join(mapa, by = c("Estado" = "abbrev_state"))
 
-mapa_res_graf <- ggplot(mapa_res %>% 
-                          filter(variavel == "Resultado para o Estado Acionista"))+#, nome != "SÃO PAULO")) + 
-  geom_sf(aes(fill = -valor, geometry = geom), color = NA) +
+mapa_res_simp <- mapa_res %>% 
+  filter(variavel == "Resultado para o Estado Acionista") %>%
+  mutate(
+    Resultado_cat = cut(
+      -valor,
+      breaks = c(-Inf, -500e6, -200e6, 0, 200e6, Inf),
+      labels = c("Prejuízo maior que R$ 500 mi", "Prejuízo entre R$ 200 e 500 mi", "Prejuízo até R$ 200 mi", "Lucro até R$ 200 mi", "Lucro acima de R$ 200 mi")), 
+    Resultado_cat = ifelse(valor == 0, "Sem informação", as.character(Resultado_cat)))
+
+diverge_hcl(n = 7, rev = T) %>% dput()
+
+cores_mapa <- c("#8E063B", "#BB7784", "#D6BCC0", "#E2E2E2", "#BEC1D4", "#7D87B9")
+
+names(cores_mapa) <- c("Prejuízo maior que R$ 500 mi", "Prejuízo entre R$ 200 e 500 mi", "Prejuízo até R$ 200 mi", "Sem informação", "Lucro até R$ 200 mi", "Lucro acima de R$ 200 mi")
+
+
+
+mapa_res_graf <- ggplot(mapa_res_simp) + 
+  geom_sf(aes(fill = Resultado_cat, geometry = geom), color = NA) +
   # geom_sf_text(aes(label = ifelse(valor<=-1e5, 
   #                                 format(round(-valor/1e6,0),
   #                                                  big.mark = "."), NA)),
   #              family = "Source Sans Pro", size = 3) +
-  scale_fill_gradient2(low = "#DC143C", mid = "#e2e2e2",
-                       high = "#008080", midpoint = 0,
-                       na.value = "ghostwhite", guide = "colourbar",
-                       aesthetics = "fill",
-                       labels = function(x){
-                         format(round(x/1e6, 0), big.mark = ".",
-                                decimal.mark = ",")}) +
+  scale_fill_manual(values = cores_mapa) +
+  # scale_fill_gradient2(low = "#DC143C", mid = "#e2e2e2",
+  #                      high = "#008080", midpoint = 0,
+  #                      na.value = "white", guide = "colourbar",
+  #                      aesthetics = "fill",
+  #                      labels = function(x){
+  #                        format(round(x/1e6, 0), big.mark = ".",
+  #                               decimal.mark = ",")}) +
   # scale_fill_continuous_diverging(
   #   palette = "Reds", rev = TRUE,
   #   na.value = "ghostwhite",
   #   labels = function(x){
   #     format(round(x/1e6, 0), big.mark = ".", decimal.mark = ",")}) +
-  labs(title = NULL, fill = "R$ milhões", x = NULL, y = NULL) +
+  labs(title = NULL, fill = NULL, x = NULL, y = NULL) +
   tema_mapa() + 
-  theme(legend.position = "left")
+  theme(legend.position = c(0.2, 0.2),
+        legend.text = element_text(size = 8))
 
-ggsave(plot = mapa_res_graf, "./plots/mapa_result.png", h = 6, w = 6.5, device = "png")
+ggsave(plot = mapa_res_graf, "./plots/mapa_result.png", h = 5, w = 5, device = "png")
 
-dados_selecionados %>% group_by(Estado) %>% summarise(soma = sum(`Resultado para o Estado Acionista`)) %>% arrange(desc(soma))
+dados_selecionados %>% group_by(Estado) %>% summarise(soma = sum(`Resultado para o Estado Acionista`, na.rm =TRUE)) %>% arrange(desc(soma))
 
 
 # Resultado -  decomposição -----------------------------------------------
 
 # quantas empresas não informaram quaisquer dessas informações de resultado?
-dados_selecionados %>% filter_at(.vars = vars(colunas_interesse[1:3]), all_vars(is.na(.))) %>% select(emp, colunas_interesse) %>%
-  View()
-
+# dados_selecionados %>% filter_at(.vars = vars(colunas_interesse[1:3]), all_vars(is.na(.))) %>% select(emp, colunas_interesse) %>%
+#   nrow()
+dados_selecionados %>% filter(result_NA) %>% nrow()
 # 71.
 
 sumario_result <- dados_selecionados %>%
@@ -1012,4 +1034,12 @@ dados_selecionados %>%
   janitor::adorn_pct_formatting(digits = 2)
 
 dados_selecionados %>% count(setor, dep) %>% spread(dep, n) %>% arrange(desc(`Não Dependente`))
+
+# estados e resultados para o acionista
+sumario_resultado_estados <- dados_selecionados %>% 
+  group_by(Estado) %>% 
+  summarise_at(vars(colunas_interesse),
+               .funs = ~-sum(as.numeric(.), na.rm = TRUE)) %>%
+  mutate(Dividendos = -Dividendos)
+  arrange(`Resultado para o Estado Acionista`)
 
