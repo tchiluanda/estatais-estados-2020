@@ -207,6 +207,14 @@ dados_selecionados_raw[linha_CMTP, "maior_rem"] <- as.character(9.4e3)
 dados_selecionados_raw[linha_CMTP, "desp_investimento"] <- as.character(1.9e6)
 dados_selecionados_raw[linha_CMTP, "desp_pessoal"] <- as.character(3.2e6)
 
+govs <- dados_selecionados %>%
+  select(starts_with("gov_")) %>% 
+  unlist() %>%
+  unique()
+
+gov_sim <- c("SIM", "Sim", "CONTROLE INTERNO", "Possui")
+gov_nao <- c("NÃO", "Não", "Não Possui", "Não possui")
+
 # junta todo mundo
 
 dados_selecionados <- dados_selecionados_raw %>%
@@ -217,7 +225,7 @@ dados_selecionados <- dados_selecionados_raw %>%
   mutate(
     dep    = str_to_title(dep),
     dep    = ifelse(is.na(dep), "Não Informado", dep),
-    gov    = gov_ca == "SIM" & gov_cf == "SIM" & gov_aud == "SIM") %>%
+    gov    = gov_ca %in% gov_sim & gov_cf %in% gov_sim & gov_aud %in% gov_sim) %>%
   mutate_at(
     .vars = c("PL", "lucros", "desp_investimento", "desp_pessoal", "qde_empregados"),
     .funs = as.numeric) %>%
@@ -1023,34 +1031,95 @@ dados_gov_setor <- dados_selecionados %>%
   select(setor, dep, pct_gov) %>%
   spread(dep, pct_gov) %>%
   group_by(setor) %>%
-  mutate(maximo = ifelse(`Dependente` > `Não Dependente`, `Dependente`, `Não Dependente`),
-         maior  = ifelse(`Dependente` > `Não Dependente`, "Dependente", "Não Dependente")) %>%
+  mutate(
+    maximo = max(Dependente, `Não Dependente`, na.rm = T),
+    # maximo = ifelse(`Dependente` > `Não Dependente`, `Dependente`, `Não Dependente`),
+    maior  = ifelse(`Dependente` > `Não Dependente`, "Dependente", "Não Dependente")) %>%
   gather(`Não Dependente`, `Dependente`, key = dep, value = pct_gov) %>%
-  left_join(tab_linhas)
+  left_join(tab_linhas) %>%
+  left_join(dados_qde_setor_dep)
 
 
 
 gov_dotplot <- ggplot(dados_gov_setor, aes(y = reorder(setor, maximo), 
                                            color = dep, x = pct_gov, group = setor)) +
   geom_path(aes(x = x), color = "lightgrey", size = 1.3, alpha = .5,
-            arrow = arrow(angle = 90, ends = "both", type = "closed", length = unit(5, "points"))) +
-  geom_point(size = 2) +
+            arrow = arrow(angle = 90, ends = "both", type = "closed", length = unit(3.5, "points"))) +
+  geom_point(size = 2.5) + #aes(size = n)) +
   geom_text(aes(label = ifelse(dep == maior | is.na(maior), 
                                percent(pct_gov, accuracy = 1), NA), 
                 color = dep), fontface = "bold", size = 3.5,
             family = "Source Sans Pro",
-            nudge_x = 0.08) +
+            nudge_x = 0.085) +
   geom_text(aes(label = ifelse(dep == maior, NA, percent(pct_gov, accuracy = 1)), 
                 color = dep),  size = 3.5,
             family = "Source Sans Pro",
             nudge_x = -0.07) +
   labs(x = NULL, y = NULL) +
   scale_x_continuous(labels = percent, breaks = seq(0, 1, .2)) +
+  expand_limits(x = 1.1) +
   scale_color_manual(values = vetor_cores_dep) +
   scale_fill_manual(values = vetor_cores_dep) +
   tema_barra()
 
-ggsave(plot = gov_dotplot, "./plots/gov_dotplot.png", h = 6, w = 5)
+ggsave(plot = gov_dotplot, "./plots/gov_dotplot.png", h = 6, w = 5.1)
+
+
+# governança estados ------------------------------------------------------
+
+tab_linhas_est <- data.frame(Nome_estado = unique(dados_selecionados$Nome_estado), x0 = 0, x1 = 1) %>%
+  gather(x0, x1, key = pos, value = x) %>%
+  select(-pos) %>%
+  arrange(Nome_estado, x)
+
+dados_qde_est_dep <- dados_roe %>%  
+  filter(dep != "Não Informado") %>%
+  count(Nome_estado, dep)
+
+dados_gov_estado <- dados_selecionados %>%
+  filter(dep != "Não Informado") %>%
+  mutate(gov = ifelse(is.na(gov), FALSE, gov)) %>%
+  count(Nome_estado, gov, dep) %>%
+  spread(gov, n, fill = 0) %>%
+  mutate(total = `FALSE` + `TRUE`,
+         pct_gov = `TRUE`/total) %>%
+  select(Nome_estado, dep, pct_gov) %>%
+  spread(dep, pct_gov) %>%
+  group_by(Nome_estado) %>%
+  mutate(
+    maximo = max(Dependente, `Não Dependente`, na.rm = T),
+    maior  = ifelse(`Dependente` > `Não Dependente`, "Dependente", "Não Dependente")) %>%
+  gather(`Não Dependente`, `Dependente`, key = dep, value = pct_gov) %>%
+  left_join(tab_linhas_est) %>%
+  left_join(dados_qde_est_dep)
+
+
+
+gov_est_dotplot <- ggplot(dados_gov_estado, aes(y = reorder(Nome_estado, maximo), 
+                                           color = dep, x = pct_gov, group = Nome_estado)) +
+  geom_path(aes(x = x), color = "lightgrey", size = 1.3, alpha = .5,
+            arrow = arrow(angle = 90, ends = "both", type = "closed", length = unit(3.5, "points"))) +
+  geom_point(size = 2.5) + #aes(size = n)) +
+  geom_text(aes(label = ifelse(dep == maior | is.na(maior), 
+                               percent(pct_gov, accuracy = 1), NA), 
+                color = dep), fontface = "bold", size = 3.5,
+            family = "Source Sans Pro",
+            nudge_x = 0.085) +
+  geom_text(aes(label = ifelse(dep == maior, NA, percent(pct_gov, accuracy = 1)), 
+                color = dep),  size = 3.5,
+            family = "Source Sans Pro",
+            nudge_x = -0.07) +
+  labs(x = NULL, y = NULL) +
+  scale_x_continuous(labels = percent, breaks = seq(0, 1, .2)) +
+  expand_limits(x = 1.1) +
+  scale_color_manual(values = vetor_cores_dep) +
+  scale_fill_manual(values = vetor_cores_dep) +
+  tema_barra()
+
+ggsave(plot = gov_est_dotplot, "./plots/gov_est_dotplot.png", h = 6, w = 4.5)
+
+
+# deveria ser uma função, mas não dá tempo
 
 # exporta dados -----------------------------------------------------------
 
