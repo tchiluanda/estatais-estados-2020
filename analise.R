@@ -1005,6 +1005,53 @@ waterfall <- ggplot(result_waterfall %>% filter(dep != "Não Informado"),
 ggsave(plot = waterfall, "./plots/waterfall.png", h = 6, w = 6)
 
 
+
+# Governança --------------------------------------------------------------
+
+tab_linhas <- data.frame(setor = unique(dados_selecionados$setor), x0 = 0, x1 = 1) %>%
+  gather(x0, x1, key = pos, value = x) %>%
+  select(-pos) %>%
+  arrange(setor, x)
+
+dados_gov_setor <- dados_selecionados %>%
+  filter(dep != "Não Informado") %>%
+  mutate(gov = ifelse(is.na(gov), FALSE, gov)) %>%
+  count(setor, gov, dep) %>%
+  spread(gov, n, fill = 0) %>%
+  mutate(total = `FALSE` + `TRUE`,
+         pct_gov = `TRUE`/total) %>%
+  select(setor, dep, pct_gov) %>%
+  spread(dep, pct_gov) %>%
+  group_by(setor) %>%
+  mutate(maximo = ifelse(`Dependente` > `Não Dependente`, `Dependente`, `Não Dependente`),
+         maior  = ifelse(`Dependente` > `Não Dependente`, "Dependente", "Não Dependente")) %>%
+  gather(`Não Dependente`, `Dependente`, key = dep, value = pct_gov) %>%
+  left_join(tab_linhas)
+
+
+
+gov_dotplot <- ggplot(dados_gov_setor, aes(y = reorder(setor, maximo), 
+                                           color = dep, x = pct_gov, group = setor)) +
+  geom_path(aes(x = x), color = "lightgrey", size = 1.3, alpha = .5,
+            arrow = arrow(angle = 90, ends = "both", type = "closed", length = unit(5, "points"))) +
+  geom_point(size = 2) +
+  geom_text(aes(label = ifelse(dep == maior | is.na(maior), 
+                               percent(pct_gov, accuracy = 1), NA), 
+                color = dep), fontface = "bold", size = 3.5,
+            family = "Source Sans Pro",
+            nudge_x = 0.08) +
+  geom_text(aes(label = ifelse(dep == maior, NA, percent(pct_gov, accuracy = 1)), 
+                color = dep),  size = 3.5,
+            family = "Source Sans Pro",
+            nudge_x = -0.07) +
+  labs(x = NULL, y = NULL) +
+  scale_x_continuous(labels = percent, breaks = seq(0, 1, .2)) +
+  scale_color_manual(values = vetor_cores_dep) +
+  scale_fill_manual(values = vetor_cores_dep) +
+  tema_barra()
+
+ggsave(plot = gov_dotplot, "./plots/gov_dotplot.png", h = 6, w = 5)
+
 # exporta dados -----------------------------------------------------------
 
 write.csv2(dados_selecionados, file = "./dados/dados.csv", fileEncoding = "UTF-8")
