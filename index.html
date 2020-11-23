@@ -83,11 +83,32 @@
                 <img class="plot" src="./plots/qde_est.png" alt="Visualização da quantidade de empresas por estado">
         </figure>  
 
-        <p>Ao examinar as empresas controladas pelos segmentos empresarias, observa-se que os setores de Financeiro, Desenvolvimento e Saneamento são os mais representativos, com 31, 29, 23 empresas, respectivamente. Entre os seguimentos com menor número de empresas, destacam-se os setores de Saúde e Mineração (4).</p>
+        <p>Ao examinar as empresas controladas pelos segmentos empresarias, observa-se que os setores de Financeiro, Desenvolvimento e Saneamento são os mais representativos, com 31, 29, 23 empresas, respectivamente. Entre os segmentos com menor número de empresas, destacam-se os setores de Saúde e Mineração (4).</p>
 
-        <img class="gif" src="./plots/mapa.gif" alt="Visualização dos estados que possuem determinados tipos de empresas">
+        <p>Abaixo é possível selecionar um setor para exibir sua definição, bem como um mapa indicando os estados que possuem empresas nessa área de atuação.</p>
 
-        <img class="plot" src="./plots/segmentos_facet.png" alt="Visualização dos estados que possuem determinados tipos de empresas" style = "width: 100%;">
+        <div class="mapa-setores">
+
+            <div class="mapa-setores-selecao">
+                <label for="seletor-setores">Escolha o setor:</label>
+
+                <select name="setores" id="seletor-setores">
+                </select>
+            </div>
+
+            <div class="boxes-definicao">
+                <!--<div class="box-definicao">
+                    <h2></h2>
+                    <p></p>
+                </div>-->
+            </div>
+
+            <figure class="vis-mapa">
+                <svg class="vis-mapa"></svg>
+            </figure>
+        </div>
+
+        <img class="plot" src="./plots/segmentos_facet2.png" alt="Visualização dos estados que possuem determinados tipos de empresas" style = "width: 100%;">
 
         <p>Em relação ao critério dependência, o setor Pesquisa e Assistência Técnica possui o maior número de empresas dependentes (17), seguido pelo setor de Desenvolvimento e o de Habitação e Urbanização (14) e pelos de Abastecimento e Transportes com 10 empresas.  Por outro lado, o setor Financeiro caracteriza-se pelo maior quantitativo de empresas não dependentes (27), seguido de perto pelo de Saneamento (24), Distribuição de Gás (15), Gestão de ativos (13) e Energia (11).</p>
 
@@ -264,10 +285,9 @@
     </section>
 
 
-
-    
-    
-
+    <script src="./vis/d3.v6.min.js"></script>
+    <script src="./vis/topojson.min.js"></script>
+    <script src="./vis/vis-mapa.js"></script>
     
 </body>
 </html>
