@@ -212,8 +212,8 @@ govs <- dados_selecionados %>%
   unlist() %>%
   unique()
 
-gov_sim <- c("SIM", "Sim", "CONTROLE INTERNO", "Possui")
-gov_nao <- c("NÃO", "Não", "Não Possui", "Não possui")
+sim <- c("SIM", "Sim", "CONTROLE INTERNO", "Possui")
+nao <- c("NÃO", "Não", "Não Possui", "Não possui", "NAO", "NÂO")
 
 # junta todo mundo
 
@@ -223,9 +223,11 @@ dados_selecionados <- dados_selecionados_raw %>%
   left_join(tab_uf) %>%
   #left_join(limpa_dep) %>%
   mutate(
-    dep    = str_to_title(dep),
-    dep    = ifelse(is.na(dep), "Não Informado", dep),
-    gov    = gov_ca %in% gov_sim & gov_cf %in% gov_sim & gov_aud %in% gov_sim) %>%
+    dep     = str_to_title(dep),
+    dep     = ifelse(is.na(dep), "Não Informado", dep),
+    gov     = gov_ca %in% sim & gov_cf %in% sim & gov_aud %in% sim,
+    plr_rva = ifelse(plr_rva %in% sim, "Sim",
+                     ifelse(plr_rva %in% nao, "Não", plr_rva))) %>%
   mutate_at(
     .vars = c("PL", "lucros", "desp_investimento", "desp_pessoal", "qde_empregados"),
     .funs = as.numeric) %>%
@@ -1099,14 +1101,14 @@ gov_est_dotplot <- ggplot(dados_gov_estado, aes(y = reorder(Nome_estado, maximo)
                                            color = dep, x = pct_gov, group = Nome_estado)) +
   geom_path(aes(x = x), color = "lightgrey", size = 1.3, alpha = .5,
             arrow = arrow(angle = 90, ends = "both", type = "closed", length = unit(3.5, "points"))) +
-  geom_point(size = 2.5) + #aes(size = n)) +
+  geom_point(size = 2) + #aes(size = n)) +
   geom_text(aes(label = ifelse(dep == maior | is.na(maior), 
                                percent(pct_gov, accuracy = 1), NA), 
-                color = dep), fontface = "bold", size = 3.5,
+                color = dep), fontface = "bold", size = 3,
             family = "Source Sans Pro",
             nudge_x = 0.085) +
   geom_text(aes(label = ifelse(dep == maior, NA, percent(pct_gov, accuracy = 1)), 
-                color = dep),  size = 3.5,
+                color = dep),  size = 3,
             family = "Source Sans Pro",
             nudge_x = -0.07) +
   labs(x = NULL, y = NULL) +
@@ -1126,10 +1128,10 @@ ggsave(plot = gov_est_dotplot, "./plots/gov_est_dotplot.png", h = 6, w = 4.5)
 
 # governança roe ----------------------------------------------------------
 
-sumario_roe <- dados_roe %>%
-  group_by(cat_ROE, dep) %>%
+sumario_roe_gov <- dados_roe %>%
+  group_by(cat_ROE, gov) %>%
   summarise(qde = n()) %>%
-  group_by(dep) %>%
+  group_by(gov) %>%
   mutate(pct_qde = percent(qde/sum(qde))) %>%
   ungroup() %>%
   mutate(y = case_when(cat_ROE == "bem_neg" ~ -0.75,
@@ -1137,34 +1139,33 @@ sumario_roe <- dados_roe %>%
                        cat_ROE == "pos" ~  0.25,
                        cat_ROE == "bem_pos" ~  0.75))
 
-sumario_roe_sinal <- dados_roe %>%
-  group_by(sinal_ROE, dep) %>%
+sumario_roe_gov_sinal <- dados_roe %>%
+  group_by(sinal_ROE, gov) %>%
   summarise(qde = n()) %>%
-  group_by(dep) %>%
+  group_by(gov) %>%
   mutate(pct_qde = percent(qde/sum(qde))) %>%
   ungroup() %>%
   mutate(y = ifelse(sinal_ROE == "Positivo", 0.5, -0.5))
 
 # empresas fora do limte
-dados_roe %>% filter(ROE > 2 | ROE < -2) %>% select(emp, Estado, dep, ROE)
+dados_roe %>% filter(ROE > 2 | ROE < -2) %>% select(emp, Estado, gov, ROE)
 
-roe2 <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = dep, 
-                                               label = Empresa)) +
+roe_gov <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = gov,label = Empresa)) +
   geom_quasirandom()+ #beeswarm() + #aes(size = PL), 
   scale_color_manual(values = c("Negativo" = "#DC143C", 
                                 "Positivo" = "#008080")) +
   annotate("rect", xmin = 0, xmax = 1.5, ymin = 0, ymax = 2, alpha = 0.2, fill = "antiquewhite") +
   annotate("rect", xmin = 1.5, xmax = 2.7, ymin = 0, ymax = 2, alpha = 0.2, fill = "antiquewhite") +
-  geom_text(data = sumario_roe_sinal, 
-            aes(y = ifelse(dep == "Dependente", y, NA),
-                label = paste0(pct_qde, ' das \nDependentes'),
+  geom_text(data = sumario_roe_gov_sinal, 
+            aes(y = ifelse(!gov, y, NA),
+                label = paste0(pct_qde, ' das que NÃO \n possuem estrutura \nde governança'),
                 color = sinal_ROE),
             x = 0.8, # 0.8 para estático
             hjust = "right", vjust = "center", family = "Source Sans Pro", 
             size = 3.5) +
-  geom_text(data = sumario_roe_sinal, 
-            aes(y = ifelse(dep == "Não Dependente", y, NA),
-                label = paste0(pct_qde, ' das não\nDependentes'),
+  geom_text(data = sumario_roe_gov_sinal, 
+            aes(y = ifelse(gov, y, NA),
+                label = paste0(pct_qde, ' das que \npossuem estrutura \nde governança'),
                 color = sinal_ROE),
             x = 2.2, # 2.4 para estático
             hjust = "left", vjust = "center", family = "Source Sans Pro", 
@@ -1173,9 +1174,63 @@ roe2 <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = d
   scale_y_continuous(labels = percent, 
                      breaks = define_breaks, 
                      limits = c(-2,2)) + #, 
+  scale_x_discrete(labels = c("sem Governança completa", "com Governança completa")) +
   tema()
 
-ggsave(plot = roe2, "./plots/roe2.png", h = 6.5, w = 6.5)
+ggsave(plot = roe_gov, "./plots/roe_gov.png", h = 6.5, w = 6)
+
+
+
+# PLR ---------------------------------------------------------------------
+
+dados_plr <- dados_selecionados %>%
+  select(emp, dep, plr_rva, setor, Estado) %>%
+  group_by(setor, plr_rva) %>%
+  arrange(dep) %>%
+  mutate(x = ifelse(plr_rva == "Sim", 1 + row_number(), -1 - row_number()))
+
+ggplot(dados_plr, aes(x = x, y = setor, color = dep)) + geom_point()
+
+dados_plr2 <- dados_selecionados %>%
+  filter(!is.na(plr_rva)) %>%
+  select(emp, dep, plr_rva, setor, Estado) %>%
+  group_by(setor) %>%
+  mutate(qde_total = n()) %>%
+  ungroup() %>%
+  group_by(setor, dep) %>%
+  arrange(plr_rva) %>%
+  mutate(x = ifelse(dep == "Dependente", 1 + row_number(), -1 - row_number()),
+         qde = n(),
+         qde_plr = sum(plr_rva == "Sim")) %>%
+  ungroup() %>%
+  mutate(pct_plr = qde_plr / qde) %>%
+  group_by(setor) %>%
+  mutate(pos = ifelse(dep == "Dependente", max(x), min(x)))
+
+min_plr <- min(dados_plr2$pos)
+max_plr <- max(dados_plr2$pos)
+
+plr <- ggplot(dados_plr2, aes(x = x, y = reorder(setor, qde_total), color = plr_rva)) + 
+  #geom_tile() +
+  geom_point(shape = 15) +
+  geom_text(aes(x = ifelse(dep == "Dependente", pos+1, pos-1), label = percent(pct_plr, accuracy = 1), hjust = ifelse(dep == "Dependente", "left", "right")), family = "Source Sans Pro", size = 3.5, color = "#735D36", check_overlap = T) +
+  annotate("text", x = 1, y = -.5, label = "Dependente", hjust = "left",
+           family = "Source Sans Pro", size = 3.5) +
+  annotate("text", x = -1, y = -.5, label = "Não Dependente", hjust = "right",
+           family = "Source Sans Pro", size = 3.5) +  
+  expand_limits(y = -1, x = c(min_plr-3, max_plr+3)) +
+  scale_color_manual(values = c("Sim" = "#735D36", "Não" = "#F4C773")) +
+  labs(y = NULL) +
+  tema() +
+  theme(axis.line.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank())
+
+ggsave(plot = plr, "./plots/plr.png", h = 6.5, w = 6)
+
+dados_selecionados %>%
+  filter(is.na(plr_rva)) %>% nrow()
 
 # exporta dados -----------------------------------------------------------
 
