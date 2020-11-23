@@ -626,32 +626,32 @@ sumario_roe_sinal <- dados_roe %>%
 dados_roe %>% filter(ROE > 2 | ROE < -2) %>% select(emp, Estado, dep, ROE)
 
 
-roe <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = cat_ROE, x = dep, 
-                                              label = Empresa)) +
-  geom_hline(yintercept = 0, linetype = "dotted", color = "Gainsboro") +
-  geom_hline(yintercept = 0.5, linetype = "dotted", color = "Gainsboro") +
-  geom_hline(yintercept = -0.5, linetype = "dotted", color = "Gainsboro") +
-  geom_beeswarm() + #aes(size = PL), 
-  scale_color_manual(values = cores_escala) +
-  annotate("rect", xmin = 0, xmax = 1.5, ymin = -0.5, ymax = 0, alpha = 0.2, fill = "antiquewhite") +
-  annotate("rect", xmin = 1.5, xmax = 2.9, ymin = 0, ymax = 0.5, alpha = 0.2, fill = "antiquewhite") +
-  geom_text(data = sumario_roe, 
-            aes(y = ifelse(dep == "Dependente", y, NA),
-                label = paste0(pct_qde, ' das \nDependentes'),
-                color = cat_ROE),
-            x = 0.8, # 0.8 para estático
-            hjust = "right", vjust = "center", family = "Source Sans Pro", 
-            size = 3.5) +
-  geom_text(data = sumario_roe, 
-            aes(y = ifelse(dep == "Não Dependente", y, NA),
-                label = paste0(pct_qde, ' das não\nDependentes'),
-                color = cat_ROE),
-            x = 2.4, # 2.4 para estático
-            hjust = "left", vjust = "center", family = "Source Sans Pro", 
-            size = 3.5) +
-  labs(title = NULL, x = NULL, y = NULL) +
-  scale_y_continuous(labels = percent, breaks = define_breaks, limits = c(-2,2)) + #, 
-  tema()
+# roe <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = cat_ROE, x = dep, 
+#                                               label = Empresa)) +
+#   geom_hline(yintercept = 0, linetype = "dotted", color = "Gainsboro") +
+#   geom_hline(yintercept = 0.5, linetype = "dotted", color = "Gainsboro") +
+#   geom_hline(yintercept = -0.5, linetype = "dotted", color = "Gainsboro") +
+#   geom_beeswarm() + #aes(size = PL), 
+#   scale_color_manual(values = cores_escala) +
+#   annotate("rect", xmin = 0, xmax = 1.5, ymin = -0.5, ymax = 0, alpha = 0.2, fill = "antiquewhite") +
+#   annotate("rect", xmin = 1.5, xmax = 2.9, ymin = 0, ymax = 0.5, alpha = 0.2, fill = "antiquewhite") +
+#   geom_text(data = sumario_roe, 
+#             aes(y = ifelse(dep == "Dependente", y, NA),
+#                 label = paste0(pct_qde, ' das \nDependentes'),
+#                 color = cat_ROE),
+#             x = 0.8, # 0.8 para estático
+#             hjust = "right", vjust = "center", family = "Source Sans Pro", 
+#             size = 3.5) +
+#   geom_text(data = sumario_roe, 
+#             aes(y = ifelse(dep == "Não Dependente", y, NA),
+#                 label = paste0(pct_qde, ' das não\nDependentes'),
+#                 color = cat_ROE),
+#             x = 2.4, # 2.4 para estático
+#             hjust = "left", vjust = "center", family = "Source Sans Pro", 
+#             size = 3.5) +
+#   labs(title = NULL, x = NULL, y = NULL) +
+#   scale_y_continuous(labels = percent, breaks = define_breaks, limits = c(-2,2)) + #, 
+#   tema()
 
 roe2 <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = dep, 
                                                label = Empresa)) +
@@ -1120,6 +1120,62 @@ ggsave(plot = gov_est_dotplot, "./plots/gov_est_dotplot.png", h = 6, w = 4.5)
 
 
 # deveria ser uma função, mas não dá tempo
+
+
+
+
+# governança roe ----------------------------------------------------------
+
+sumario_roe <- dados_roe %>%
+  group_by(cat_ROE, dep) %>%
+  summarise(qde = n()) %>%
+  group_by(dep) %>%
+  mutate(pct_qde = percent(qde/sum(qde))) %>%
+  ungroup() %>%
+  mutate(y = case_when(cat_ROE == "bem_neg" ~ -0.75,
+                       cat_ROE == "neg" ~ -0.25,
+                       cat_ROE == "pos" ~  0.25,
+                       cat_ROE == "bem_pos" ~  0.75))
+
+sumario_roe_sinal <- dados_roe %>%
+  group_by(sinal_ROE, dep) %>%
+  summarise(qde = n()) %>%
+  group_by(dep) %>%
+  mutate(pct_qde = percent(qde/sum(qde))) %>%
+  ungroup() %>%
+  mutate(y = ifelse(sinal_ROE == "Positivo", 0.5, -0.5))
+
+# empresas fora do limte
+dados_roe %>% filter(ROE > 2 | ROE < -2) %>% select(emp, Estado, dep, ROE)
+
+roe2 <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x = dep, 
+                                               label = Empresa)) +
+  geom_quasirandom()+ #beeswarm() + #aes(size = PL), 
+  scale_color_manual(values = c("Negativo" = "#DC143C", 
+                                "Positivo" = "#008080")) +
+  annotate("rect", xmin = 0, xmax = 1.5, ymin = 0, ymax = 2, alpha = 0.2, fill = "antiquewhite") +
+  annotate("rect", xmin = 1.5, xmax = 2.7, ymin = 0, ymax = 2, alpha = 0.2, fill = "antiquewhite") +
+  geom_text(data = sumario_roe_sinal, 
+            aes(y = ifelse(dep == "Dependente", y, NA),
+                label = paste0(pct_qde, ' das \nDependentes'),
+                color = sinal_ROE),
+            x = 0.8, # 0.8 para estático
+            hjust = "right", vjust = "center", family = "Source Sans Pro", 
+            size = 3.5) +
+  geom_text(data = sumario_roe_sinal, 
+            aes(y = ifelse(dep == "Não Dependente", y, NA),
+                label = paste0(pct_qde, ' das não\nDependentes'),
+                color = sinal_ROE),
+            x = 2.2, # 2.4 para estático
+            hjust = "left", vjust = "center", family = "Source Sans Pro", 
+            size = 3.5) +
+  labs(title = NULL, x = NULL, y = NULL) +
+  scale_y_continuous(labels = percent, 
+                     breaks = define_breaks, 
+                     limits = c(-2,2)) + #, 
+  tema()
+
+ggsave(plot = roe2, "./plots/roe2.png", h = 6.5, w = 6.5)
 
 # exporta dados -----------------------------------------------------------
 
