@@ -40,8 +40,9 @@
 
         <ol class="partes">
             <li>Com quantas estatais se faz um Estado;</li>
-            <li>O Estado empreendedor e</li>
-            <li>Quais os resultados das empresas para o Estado Acionista.</li>
+            <li>O Estado empreendedor;</li>
+            <li>O Estado fiscalizador e</li>
+            <li>O Estado Acionista.</li>
         </ol>
         
         <p>O primeiro bloco apresenta o quantitativo geral das empresas controladas pelos Estados e demonstra o quantitativo por Região / Estado e informa o total de empresas dependentes e quais seus respectivos segmentos. A segunda seção discorre sobre o lucro / prejuízo dessas empresas além de apresentar um ranking de suas respectivas rentabilidades. Por fim, apresenta-se o resultado total do impacto financeiro líquido das empresas controladas nas finanças públicas estaduais.</p>
@@ -173,6 +174,50 @@
                 <img class="plot" style="width:85%;" src="./plots/roe_dotplot.png" alt="Gráfico do indicador de rentabilidade.">
                 <p class="caption">Observar que a posição do ponto que ilustra a rentabilidade média das empresas dependentes no setor "OUTROS" não corresponde ao seu valor de -160%, para evitar achatar e dificultar a visualização de todos os demais pontos. Para indicar essa quebra na escala, a linha correspondente é tracejada, e não contínua.</p>
         </figure>
+
+        <h2>O estado fiscalizador</h2>
+
+        <p>Conceito de governança etc. etc.</p>
+
+        <figure class="plot-container">
+            <h3 class="plot-title">Presença de estrutura de governança por setor</h3>
+            <h4 class="plot-subtitle">Percentuais das empresas que possuem estruturas de governança completas (Conselho de Administração, Conselho Fiscal e Comitê de Auditoria) por setor e por tipo de dependência.</h4>   
+            <ul class="plot-legenda">
+                    <li><span class="plot-legenda-key" style = "background-color: #f2ac29; border-radius: 100%;"></span> Dependentes</li>
+                    <li><span class="plot-legenda-key" style = "background-color: #718c35; border-radius: 100%;"></span> Não Dependentes</li>       
+            </ul>
+
+            <img class="plot" style="width:85%;" src="./plots/gov_dotplot.png" alt="O gráfico mostra que o percentual de empresas que possuem todas as três estruturas de governança é maior para as empresas não dependentes em praticamente todos os setores. Portos e Hidrovias é o único setor em que o percentual de empresas dependentes com a estrutura de governança completa é maior do que o de não dependentes.">
+        </figure>
+
+        <figure class="plot-container">
+            <h3 class="plot-title">Presença de estrutura de governança por estado</h3>
+            <h4 class="plot-subtitle">Percentuais das empresas que possuem estruturas de governança completas (Conselho de Administração, Conselho Fiscal e Comitê de Auditoria) por estado e por tipo de dependência.</h4>   
+            <ul class="plot-legenda">
+                    <li><span class="plot-legenda-key" style = "background-color: #f2ac29; border-radius: 100%;"></span> Dependentes</li>
+                    <li><span class="plot-legenda-key" style = "background-color: #718c35; border-radius: 100%;"></span> Não Dependentes</li>       
+            </ul>
+
+            <img class="plot" style="width:85%;" src="./plots/gov_est_dotplot.png" alt="Da mesma forma, em quase todos os estados o percentual de empresas não dependentes que possuem a estrutura de governança é maior do que o de empresas dependentes.">
+        </figure>
+
+        <figure class="plot-container">
+            <h3 class="plot-title">Estimativa de rentabilidade das empresas pelo critério de Governança</h3>
+            <h4 class="plot-subtitle">Rentabilidade definida como a razão entre lucro ou prejuízo e patrimônio líquido. As empresas são representadas por pontos, da seguinte forma:
+            <br/> <span style="color:#008080; font-family: 'Source Sans Pro';">&#9679; rentabilidade positiva</span> <span style="color:#DC143C; font-family: 'Source Sans Pro';">&#9679; rentabilidade negativa</span> 
+            <br/>Estão excluídas 63 empresas sem informação de lucro / prejuízo ou patrimônio líquido, ou que apresentaram patrimônio líquido menor ou igual a zero. Para uma melhor visualização, não estão apresentadas 8 empresas para as quais o valor do indicador de rentabilidade ficou abaixo de -200%, e 4 empresas para quais o indicador de rentabilidade foi superior a +200%.</h4>
+            <img class="plot" style="width:95%;" src="./plots/roe_gov.png" alt="Gráfico do indicador de rentabilidade, mostrando que 81% das empresas com estrutura de governança tiveram rentabilidade positiva. Entre as empresas que não possuem essa estrutura, a rentabilidade foi positiva para 52,3%.">
+        </figure>
+
+        <figure class="plot-container">
+            <h3 class="plot-title">Pagamento de Participação nos Lucros</h3>
+            <h4 class="plot-subtitle">Cada quadrado representa uma empresa, os números indicam o percentual de empresas do setor que pagaram PLR, para as dependentes e para as não dependentes. Estão excluídas nove empresas para as quais não foram fornecidas as informações necessárias.</h4>
+            <ul class="plot-legenda">
+                <li><span class="plot-legenda-key" style = "background-color: #735D36;"></span> Empresa que pagou PLR</li>
+                <li><span class="plot-legenda-key" style = "background-color: #F4C773;"></span> Empresa que não pagou PLR</li>         
+            </ul>
+            <img class="plot" src="./plots/plr.png" alt="Visualização da quantidade de empresas que pagaram ou não participação nos lucros"/>
+    </figure>  
 
         <h2>O estado acionista</h2>
 
