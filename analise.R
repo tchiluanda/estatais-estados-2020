@@ -1160,21 +1160,21 @@ roe_gov <- ggplot(dados_roe %>% filter(PL>0), aes(y = ROE, color = sinal_ROE, x 
             aes(y = ifelse(!gov, y, NA),
                 label = paste0(pct_qde, ' das que NÃO \n possuem estrutura \nde governança'),
                 color = sinal_ROE),
-            x = 0.8, # 0.8 para estático
+            x = 0.9, # 0.8 para estático
             hjust = "right", vjust = "center", family = "Source Sans Pro", 
             size = 3.5) +
   geom_text(data = sumario_roe_gov_sinal, 
             aes(y = ifelse(gov, y, NA),
                 label = paste0(pct_qde, ' das que \npossuem estrutura \nde governança'),
                 color = sinal_ROE),
-            x = 2.2, # 2.4 para estático
+            x = 2.1, # 2.4 para estático
             hjust = "left", vjust = "center", family = "Source Sans Pro", 
             size = 3.5) +
   labs(title = NULL, x = NULL, y = NULL) +
   scale_y_continuous(labels = percent, 
                      breaks = define_breaks, 
                      limits = c(-2,2)) + #, 
-  scale_x_discrete(labels = c("sem Governança completa", "com Governança completa")) +
+  scale_x_discrete(labels = c("Empresas que não possuem \n estrutura de Governança completa", "Empresas que possuem \nestrutura Governança completa")) +
   tema()
 
 ggsave(plot = roe_gov, "./plots/roe_gov.png", h = 6.5, w = 6)
