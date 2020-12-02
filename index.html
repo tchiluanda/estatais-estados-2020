@@ -172,6 +172,20 @@
                 <iframe class="plot-interativo" src="./plots/roe.html" frameborder="0" width="700" height="600"></iframe>
         </figure>
 
+        <div class="scatter-empresas">
+
+            <div class="scatter-filtros">
+                <label for="seletor-setores">Escolha o setor:</label>
+
+                <select name="setores" id="seletor-setores">
+                </select>
+            </div>
+
+            <div class="vis-dispersao">
+                <svg class="vis-dispersao"></svg>
+            </div>
+        </div>
+
         <p>Dessa forma, uma maneira complementar de se comparar os retornos dos diferentes setores analisados é por meio de um indicador de rentabilidade que pondere a magnitude do resultado da companhia pelo seu tamanho. Nessa linha de raciocínio, elaboramos um indicador calculado pela razão entre o lucro / prejuízo e o patrimônio líquido que representa uma estimativa da rentabilidade das empresas controladas pelos Estados. O gráfico abaixo apresenta os principais resultados.</p>
 
         <figure class="plot-container">
@@ -288,6 +302,7 @@
     <script src="./vis/d3.v6.min.js"></script>
     <script src="./vis/topojson.min.js"></script>
     <script src="./vis/vis-mapa.js"></script>
+    <script src="./vis/vis-dispersao.js"></script>
     
 </body>
 </html>
