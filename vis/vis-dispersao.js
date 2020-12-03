@@ -37,6 +37,14 @@ const vis = {
                 right: 10,
                 bottom: 20
     
+            },
+
+            ranges : {
+
+                x : null,
+
+                y : null
+
             }
     
         }      
@@ -130,6 +138,28 @@ const vis = {
 
         },
 
+        update_range : function(dim) {
+
+            const dims = vis.params.dims;
+
+            if (dim == "x") {
+                
+                vis.params.dims.ranges[dim] = [
+                    dims.margins.left,
+                    dims.w - dims.margins.right
+                ]
+
+            } else if (dim == "y") {
+
+                vis.params.dims.ranges[dim] = [
+                    dims.h - dims.margins.bottom,
+                    dims.margins.top
+                ]
+
+            }
+
+        },
+
         read_data : function(url) {
 
             d3.csv(url).then(
@@ -144,6 +174,32 @@ const vis = {
 
         scales : {
 
+            x : d3.scaleLinear(),
+
+            y : d3.scaleLinear(),
+
+            update :  {
+
+                range : function(dim) {
+
+                    vis.render.scales[dim].range(
+                        vis.params.dims.ranges[dim]
+                    )
+
+                },
+
+                domain : function(dim, variable) {
+
+                    // aqui estou assumindo que a variável é quantitativa,
+
+                    vis.render.scales[dim].domain(
+                        vis.data.quant_variables.domains[variable]
+                    )
+
+                }
+
+            }
+
         }
 
 
@@ -154,10 +210,18 @@ const vis = {
         init : function() {
 
             vis.utils.generates_refs();
-            vis.utils.get_size();
-            vis.utils.set_size();
 
             vis.utils.read_data(vis.params.refs.data);
+
+        },
+
+        resize : function() {
+
+            // sizing, agrupar em uma coisa só, para ser chamada
+            vis.utils.get_size();
+            vis.utils.set_size();
+            vis.utils.update_range("x");
+            vis.utils.update_range("y");
 
         },
 
@@ -165,13 +229,16 @@ const vis = {
         begin : function(data) {
 
             console.log(data.columns);
-            console.table(data);
 
             // saves data as a property to make it easier to access it elsewhere
             vis.data.raw = data;
 
             vis.utils.build_variables_domains();
             vis.utils.set_start_domain_zero("PL");
+
+            vis.control.resize();
+
+            console.log(vis);
 
         }
 
@@ -180,5 +247,3 @@ const vis = {
 }
 
 vis.control.init();
-
-console.log(vis);
