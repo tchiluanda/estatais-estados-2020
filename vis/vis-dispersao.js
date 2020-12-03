@@ -67,7 +67,7 @@ const vis = {
             // para permitir a filtragem dos dados. e também, no caso do "dep", para permitir 
             // estilizar os pontos usando css. para isso vou usar data-attributes.
             categorical :  ["dep", "gov", "plr_rva", "cat_ROE", "setor", "Nome_estado"]
-            
+
         },
 
         //faz mais sentido que o objeto domains contemple todas as variáveis, de qq tipo (em vez de usar um objeto domain para cada tipo de variavel)
@@ -207,13 +207,16 @@ const vis = {
 
         },
 
-        resize : function() {
+        set_dimensions : function() {
 
             // sizing, agrupar em uma coisa só, para ser chamada
             vis.utils.get_size();
             vis.utils.set_size();
             vis.utils.update_range("x");
             vis.utils.update_range("y");
+
+            vis.render.scales.update.range("x");
+            vis.render.scales.update.range("y");
 
         },
 
@@ -228,7 +231,10 @@ const vis = {
             vis.utils.build_variables_domains();
             vis.utils.set_start_domain_zero("PL");
 
-            vis.control.resize();
+            vis.render.scales.update.domain("x", "PL");
+            vis.render.scales.update.domain("y", "lucros");
+
+            vis.control.set_dimensions();
 
             console.log(vis);
 
