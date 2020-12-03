@@ -57,27 +57,21 @@ const vis = {
 
         processed : {},
 
-        quant_variables : {
+        variables : {
 
             // proprio de cada projeto
-            list : ["lucros", "PL"],
-
-            domains : {}
-        
-        },
-
-        categ_variables : {
+            quantitative : ["lucros", "PL"],
 
             // proprio de cada projeto
             // para este em particular, vou usar para definir as variaveis que pretendo usar
             // para permitir a filtragem dos dados. e também, no caso do "dep", para permitir 
             // estilizar os pontos usando css. para isso vou usar data-attributes.
+            categorical :  ["dep", "gov", "plr_rva", "cat_ROE", "setor", "Nome_estado"]
             
-            list : ["dep", "gov", "plr_rva", "cat_ROE", "setor", "Nome_estado"],
-            
-            domains : {}
-
         },
+
+        //faz mais sentido que o objeto domains contemple todas as variáveis, de qq tipo (em vez de usar um objeto domain para cada tipo de variavel)
+        domains : {}
 
     },
 
@@ -122,19 +116,19 @@ const vis = {
 
         build_variables_domains : function() {
 
-            vis.data.quant_variables.list.forEach(variable => {
-                vis.data.quant_variables.domains[variable] = d3.extent(vis.data.raw, d => +d[variable]);
+            vis.data.variables.quantitative.forEach(variable => {
+                vis.data.domains[variable] = d3.extent(vis.data.raw, d => +d[variable]);
             })
 
-            vis.data.categ_variables.list.forEach(variable => {
-                vis.data.categ_variables.domains[variable] = utils.unique(vis.data.raw, variable);
+            vis.data.variables.categorical.forEach(variable => {
+                vis.data.domains[variable] = utils.unique(vis.data.raw, variable);
             })
 
         },
 
         set_start_domain_zero : function(variable) {
 
-            vis.data.quant_variables.domains[variable][0] = 0;
+            vis.data.domains[variable][0] = 0;
 
         },
 
@@ -190,10 +184,8 @@ const vis = {
 
                 domain : function(dim, variable) {
 
-                    // aqui estou assumindo que a variável é quantitativa,
-
                     vis.render.scales[dim].domain(
-                        vis.data.quant_variables.domains[variable]
+                        vis.data.domains[variable]
                     )
 
                 }
