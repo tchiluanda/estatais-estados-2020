@@ -46,7 +46,14 @@ const vis = {
     data : {
 
         raw : null,
-        processed : {}
+
+        processed : {},
+
+        //
+
+        variables : [""],
+
+        domains : {}
 
     },
 
@@ -56,11 +63,11 @@ const vis = {
 
         generates_refs: function() {
 
-            vis.sels.svg  = d3.select(vis.refs.svg);
-            vis.sels.cont = d3.select(vis.refs.cont);
+            vis.params.sels.svg  = d3.select(vis.params.refs.svg);
+            vis.params.sels.cont = d3.select(vis.params.refs.cont);
 
-            vis.elems.svg  = document.querySelector(vis.refs.svg);
-            vis.elems.cont = document.querySelector(vis.refs.cont);
+            vis.params.elems.svg  = document.querySelector(vis.params.refs.svg);
+            vis.params.elems.cont = document.querySelector(vis.params.refs.cont);
 
         },
 
@@ -71,18 +78,18 @@ const vis = {
 
             win_w = win_w > 680 ? 680 : win_w;
 
-            let pos_vis_y = vis.elems.svg.getBoundingClientRect().y;
+            let pos_vis_y = vis.params.elems.svg.getBoundingClientRect().y;
 
-            vis.dims.h = win_h - pos_vis_y - vis.dims.margins.top - vis.dims.margins.bottom;
-            // subtraio a margem para usar como margem
-            vis.dims.w = +vis.sels.svg.style("width").slice(0, -2);
+            vis.params.dims.h = 500;//win_h - pos_vis_y - vis.dims.margins.top - vis.dims.margins.bottom;
+            
+            vis.params.dims.w = win_w;//+vis.sels.svg.style("width").slice(0, -2);
 
         },
 
         set_size: function() {
 
-            vis.elems.svg.style.setProperty(
-                "height", vis.dims.h + "px");
+            vis.params.elems.svg.style.setProperty(
+                "height", vis.params.dims.h + "px");
 
             //vis.elems.svg.style.setProperty("background-color", "coral");
 
@@ -91,7 +98,7 @@ const vis = {
 
         read_data : function(url) {
 
-            d3.csv(vis.refs.data).then(
+            d3.csv(url).then(
                 data => vis.control.begin(data)
             );
 
@@ -99,7 +106,26 @@ const vis = {
 
     },
 
+    render : {
+
+        scales : {
+
+        }
+
+
+    },
+
     control : {
+
+        init : function() {
+
+            vis.utils.generates_refs();
+            vis.utils.get_size();
+            vis.utils.set_size();
+
+            vis.utils.read_data(vis.params.refs.data);
+
+        },
 
 
         begin : function(data) {
@@ -114,3 +140,5 @@ const vis = {
     }
 
 }
+
+vis.control.init();

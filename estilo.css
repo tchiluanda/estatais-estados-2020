@@ -324,9 +324,11 @@ figure.vis-mapa {
 
 svg.vis-dispersao {
     width: 100%;
+    outline: 1px solid rebeccapurple;
 }
 
 div.vis-dispersao {
     position: relative;
+    background-color: khaki;
 }
 
