@@ -1,0 +1,1401 @@
+"Estado","emp","seg","dep","PL","lucros","gov_ca","gov_cf","gov_aud","maior_rem","plr_rva","qde_empregados","desp_investimento","desp_pessoal","Dividendos","Subvenção","Reforço de Capital","Resultado para o Estado Acionista","setor","Nome_estado","REGIAO","gov","result_NA","ROE","PL_formatado","Empresa","cat_ROE","setores_principais","sinal_ROE"
+"TO","COMPANHIA IMOBILIÁRIA DO ESTADO DO TOCANTINS - TERRATINS","SETOR IMOBILIÁRIO","Não Dependente",52017534.87,8014173.8,"SIM","SIM","SIM","0","Não",66,NA,5415426.2,0,344570.09,0,-344570.09,"GESTÃO DE ATIVOS","Tocantins","Norte",TRUE,FALSE,0.154066774214285,"    52.017.534,87","COMPANHIA IMOBILIÁRIA DO ESTADO DO TOCANTINS - TERRATINS (TO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: GESTÃO DE ATIVOS
+PL: R$     52.017.534,87
+Lucros / Prejuízos no ano: R$     8.014.173,80
+ROE: 15.4100%","pos","GESTÃO DE ATIVOS","Positivo"
+"TO","AGÊNCIA DE FOMENTO DO ESTADO DO TOCANTINS S/A","FINANCEIRO","Não Dependente",15393630.53,-3286150.95,"SIM","SIM","SIM","0","Não",35,18000,2527737.96,0,0,1700000,-1700000,"FINANCEIRO","Tocantins","Norte",TRUE,FALSE,-0.213474718884266,"    15.393.630,53","AGÊNCIA DE FOMENTO DO ESTADO DO TOCANTINS S/A (TO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$     15.393.630,53
+Lucros / Prejuízos no ano: R$    -3.286.150,95
+ROE: -21.3500%","neg","FINANCEIRO","Negativo"
+"PI","CMTP","TRANSPORTES","Dependente",20200000,236800,"SIM","SIM","NÃO","9400","Não",NA,1900000,3200000,0,4300000,0,-4300000,"TRANSPORTES","Piauí","Nordeste",FALSE,FALSE,0.0117227722772277,"    20.200.000,00","CMTP (PI)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$     20.200.000,00
+Lucros / Prejuízos no ano: R$       236.800,00
+ROE: 1.1700%","pos","TRANSPORTES","Positivo"
+"PI","COMPANHIA DE TERMINAIS ALFANDEGADOS DO ESTADO DO PIAUÍ","OUTRO","Dependente",249682.28,1146889.81,"SIM","SIM","SIM","9500","Não",10,0,688146.96,0,0,982100,-982100,"PORTOS E HIDROVIAS","Piauí","Nordeste",TRUE,FALSE,4.5933968962475,"       249.682,28","COMPANHIA DE TERMINAIS ALFANDEGADOS DO ESTADO DO PIAUÍ (PI)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PORTOS E HIDROVIAS
+PL: R$        249.682,28
+Lucros / Prejuízos no ano: R$     1.146.889,81
+ROE: 459.3400%","bem_pos","PORTOS E HIDROVIAS","Positivo"
+"PI","EMPRESA DE GESTÃO DE RECURSOS DO ESATDO DO PIAUÍ - EMGERPI","SERVIÇOS PÚBLICOS","Dependente",7065241.88,-18202278.64,"SIM","SIM","NÃO","17985","Não",653,NA,98754659.1,0,82604504,27450819,-110055323,"OUTROS","Piauí","Nordeste",FALSE,FALSE,-2.5763135854593,"     7.065.241,88","EMPRESA DE GESTÃO DE RECURSOS DO ESATDO DO PIAUÍ - EMGERPI (PI)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: OUTROS
+PL: R$      7.065.241,88
+Lucros / Prejuízos no ano: R$   -18.202.278,64
+ROE: -257.6300%","bem_neg","OUTROS","Negativo"
+"PI","Companhia de Gás do Piaui - GASPISA","DISTRIBUIÇÃO DE GÁS","Dependente",63007.07,-4187490.46,"SIM","SIM","NÃO","6000","Não",NA,5000,482909.07,0,0,191250,-191250,"DISTRIBUIÇÃO DE GÁS","Piauí","Nordeste",FALSE,FALSE,-66.4606441785025,"        63.007,07","Companhia de Gás do Piaui - GASPISA (PI)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$         63.007,07
+Lucros / Prejuízos no ano: R$    -4.187.490,46
+ROE: -6 646.0600%","bem_neg","DISTRIBUIÇÃO DE GÁS","Negativo"
+"PI","Agência de Fomento e Desenvolvimento do Estado do Piauí S.A - PIAUÍ FOMENTO","FINANCEIRO","Não Dependente",9262404.5,-1572033.96,"SIM","SIM","SIM","12000","Não",16,1559574.77,1659427.09,0,0,0,0,"FINANCEIRO","Piauí","Nordeste",TRUE,FALSE,-0.169722015487447,"     9.262.404,50","Agência de Fomento e Desenvolvimento do Estado do Piauí S.A - PIAUÍ FOMENTO (PI)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$      9.262.404,50
+Lucros / Prejuízos no ano: R$    -1.572.033,96
+ROE: -16.9700%","neg","FINANCEIRO","Negativo"
+"PI","ÁGUAS E ESGOTOS DO PIAUÍ S/A- AGESPISA","SANEAMENTO","Não Dependente",848595621.46,169203653.4,"SIM","SIM","SIM","44670.68","Não",1059,18679370.73,-219366869.37,0,-34408805.47,34408805.47,0,"SANEAMENTO","Piauí","Nordeste",TRUE,FALSE,0.199392560038062,"   848.595.621,46","ÁGUAS E ESGOTOS DO PIAUÍ S/A- AGESPISA (PI)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$    848.595.621,46
+Lucros / Prejuízos no ano: R$   169.203.653,40
+ROE: 19.9400%","pos","SANEAMENTO","Positivo"
+"RN","AGÊNCIA DE FOMENTO DO RIO GRANDE DO NORTE S/A","FINANCEIRO","Não Dependente",44603407.14,1561324.34,"SIM","SIM","NÃO","14080.09","Não",NA,139480.58,6230492.31,0,0,0,NA,"FINANCEIRO","Rio Grande do Norte","Nordeste",FALSE,TRUE,0.0350045980814729,"    44.603.407,14","AGÊNCIA DE FOMENTO DO RIO GRANDE DO NORTE S/A (RN)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$     44.603.407,14
+Lucros / Prejuízos no ano: R$     1.561.324,34
+ROE: 3.5000%","pos","FINANCEIRO","Positivo"
+"RN","CENTRAIS DE ABASTECIMENTO DO RIO GRANDE DO NORTE - S/A","ABASTECIMENTO","Dependente",586894.15,166315.55,"SIM","SIM","NÃO",NA,"Não",108,159322.35,7844731.22,0,8374826.55,0,-8374826.55,"ABASTECIMENTO","Rio Grande do Norte","Nordeste",FALSE,FALSE,0.283382531585977,"       586.894,15","CENTRAIS DE ABASTECIMENTO DO RIO GRANDE DO NORTE - S/A (RN)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$        586.894,15
+Lucros / Prejuízos no ano: R$       166.315,55
+ROE: 28.3400%","pos","ABASTECIMENTO","Positivo"
+"RN","CEHAB - COMPANHIA ESTADUAL DE HABITACAO E DESENVOLVIMENTO URBANO","URBANIZAÇÃO","Dependente",13845659,248334,"SIM","SIM","NÃO","7626.13","Não",NA,2591519.75,1395912.78,0,0,0,NA,"HABITAÇÃO E URBANIZAÇÃO","Rio Grande do Norte","Nordeste",FALSE,TRUE,0.0179358743415536,"    13.845.659,00","CEHAB - COMPANHIA ESTADUAL DE HABITACAO E DESENVOLVIMENTO URBANO (RN)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$     13.845.659,00
+Lucros / Prejuízos no ano: R$       248.334,00
+ROE: 1.7900%","pos","HABITAÇÃO E URBANIZAÇÃO","Positivo"
+"RN","EMPARN - EMPRESA DE PESQUISA AGROPECUÁRIA DO RIO GRANDE DO NORTE S/A","PESQUISA","Dependente",1693900,-1143136,"SIM","SIM","NÃO","20512.09","Não",128,0,11352573,0,14498476.34,0,-14498476.34,"PESQUISA E ASSISTÊNCIA TÉCNICA","Rio Grande do Norte","Nordeste",FALSE,FALSE,-0.674854477832222,"     1.693.900,00","EMPARN - EMPRESA DE PESQUISA AGROPECUÁRIA DO RIO GRANDE DO NORTE S/A (RN)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$      1.693.900,00
+Lucros / Prejuízos no ano: R$    -1.143.136,00
+ROE: -67.4900%","bem_neg","PESQUISA E ASSISTÊNCIA TÉCNICA","Negativo"
+"RN","COMPANHIA POTIGUAR DE GÁS - POTIGÁS","DISTRIBUIÇÃO DE GÁS","Não Dependente",73251000,19358000,"SIM","SIM","SIM","22059","Sim",57,11119000,14215930,2458603,0,0,2458603,"DISTRIBUIÇÃO DE GÁS","Rio Grande do Norte","Nordeste",TRUE,FALSE,0.264269429768877,"    73.251.000,00","COMPANHIA POTIGUAR DE GÁS - POTIGÁS (RN)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$     73.251.000,00
+Lucros / Prejuízos no ano: R$    19.358.000,00
+ROE: 26.4300%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"RN","EMPRESA POTIGUAR DE PROMOÇÃO TURÍSTICA S/A - EMPROTUR","OUTRO","Dependente",1660726.62,-1075220.55,"SIM","SIM","SIM","7862.5","Não",NA,0,2185855.87,0,4693958.81,0,-4693958.81,"TURISMO","Rio Grande do Norte","Nordeste",TRUE,FALSE,-0.647439823659839,"     1.660.726,62","EMPRESA POTIGUAR DE PROMOÇÃO TURÍSTICA S/A - EMPROTUR (RN)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: TURISMO
+PL: R$      1.660.726,62
+Lucros / Prejuízos no ano: R$    -1.075.220,55
+ROE: -64.7400%","bem_neg","Demais","Negativo"
+"RN","COMPANHIA DE ÁGUAS E ESGOTOS DO RIO GRANDE DO NORTE - CAERN","SANEAMENTO","Não Dependente",2307683547.23,28810661.2999999,"SIM","SIM","SIM","12025","Sim",2230,143963328.39,226791321.87,0,0,542674809.46,-542674809.46,"SANEAMENTO","Rio Grande do Norte","Nordeste",TRUE,FALSE,0.0124846672909648," 2.307.683.547,23","COMPANHIA DE ÁGUAS E ESGOTOS DO RIO GRANDE DO NORTE - CAERN (RN)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  2.307.683.547,23
+Lucros / Prejuízos no ano: R$    28.810.661,30
+ROE: 1.2500%","pos","SANEAMENTO","Positivo"
+"RN","EMPRESA GESTORA DE ATIVOS DO RIO GRANDE DO NORTE - EMGERN","GESTÃO DE ATIVOS","Não Dependente",79185.78,0,"SIM","SIM","NÃO","13376.09","Não",35,0,1923378.62,0,0,0,NA,"GESTÃO DE ATIVOS","Rio Grande do Norte","Nordeste",FALSE,TRUE,0,"        79.185,78","EMPRESA GESTORA DE ATIVOS DO RIO GRANDE DO NORTE - EMGERN (RN)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: GESTÃO DE ATIVOS
+PL: R$         79.185,78
+Lucros / Prejuízos no ano: R$             0,00
+ROE: 0.0000%","neg","GESTÃO DE ATIVOS","Negativo"
+"AC","Banco do Estado do Acre S/A - BANACRE - Em Liquidação Ordinária","Financeiro","Dependente",22460.21,-6773.8,NA,NA,NA,NA,"Não",NA,0,1343719.57,0,1440210.71,0,-1440210.71,"FINANCEIRO","Acre","Norte",FALSE,FALSE,-0.301591124927149,"        22.460,21","Banco do Estado do Acre S/A - BANACRE - Em Liquidação Ordinária (AC)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$         22.460,21
+Lucros / Prejuízos no ano: R$        -6.773,80
+ROE: -30.1600%","neg","FINANCEIRO","Negativo"
+"AC","Companhia de Colonização do Acre - COLONACRE","Abastecimento","Dependente",36984.59,45152.41,NA,NA,NA,NA,"Não",NA,0,0,0,6899,0,-6899,"ABASTECIMENTO","Acre","Norte",FALSE,FALSE,1.22084387037953,"        36.984,59","Companhia de Colonização do Acre - COLONACRE (AC)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$         36.984,59
+Lucros / Prejuízos no ano: R$        45.152,41
+ROE: 122.0800%","bem_pos","ABASTECIMENTO","Positivo"
+"AL","Agência de Fomento de Alagoas S/A - DESENVOLVE","DESENVOLVIMENTO","Dependente",35547000,-4633000,"SIM","SIM","SIM",NA,"Não",38,NA,NA,0,0,0,NA,"FINANCEIRO","Alagoas","Nordeste",TRUE,TRUE,-0.130334486735871,"    35.547.000,00","Agência de Fomento de Alagoas S/A - DESENVOLVE (AL)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$     35.547.000,00
+Lucros / Prejuízos no ano: R$    -4.633.000,00
+ROE: -13.0300%","neg","FINANCEIRO","Negativo"
+"AL","ALAGOAS ATIVOS S.A","GESTÃO DE ATIVOS","Não Dependente",2040425.16,-7988433,"SIM","SIM","NÃO","19950","Não",10,8195.96,981818.26,0,0,0,NA,"GESTÃO DE ATIVOS","Alagoas","Nordeste",FALSE,TRUE,-3.91508258014227,"     2.040.425,16","ALAGOAS ATIVOS S.A (AL)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: GESTÃO DE ATIVOS
+PL: R$      2.040.425,16
+Lucros / Prejuízos no ano: R$    -7.988.433,00
+ROE: -391.5100%","bem_neg","GESTÃO DE ATIVOS","Negativo"
+"AL","Banco do Estado de Alagoas - PRODUBAN","FINANCEIRO","Dependente",2297000,1669000,"NÃO","NÃO","NÃO",NA,"Não",0,NA,NA,0,0,0,NA,"FINANCEIRO","Alagoas","Nordeste",FALSE,TRUE,0.726599912929909,"     2.297.000,00","Banco do Estado de Alagoas - PRODUBAN (AL)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$      2.297.000,00
+Lucros / Prejuízos no ano: R$     1.669.000,00
+ROE: 72.6600%","bem_pos","FINANCEIRO","Positivo"
+"AM","Agência de Fomento do Estado do Amazonas S.A. - AFEAM","Outro","Não Dependente",90524531.3,4924378.8,"Sim","Sim","Sim","28671.89","Não",131,0,34579394.41,0,0,0,0,"FINANCEIRO","Amazonas","Norte",TRUE,FALSE,0.0543982799941876,"    90.524.531,30","Agência de Fomento do Estado do Amazonas S.A. - AFEAM (AM)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$     90.524.531,30
+Lucros / Prejuízos no ano: R$     4.924.378,80
+ROE: 5.4400%","pos","FINANCEIRO","Positivo"
+"AM","Companhia de Desenvolvimento do Estado do Amazonas - CIAMA","Desenvolvimento","Não Dependente",49238864.54,-823380.03,"Sim","Sim","Não","28060","Não",129,0,13542927.68,0,0,2314326.62,-2314326.62,"DESENVOLVIMENTO","Amazonas","Norte",FALSE,FALSE,-0.0167221571352669,"    49.238.864,54","Companhia de Desenvolvimento do Estado do Amazonas - CIAMA (AM)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$     49.238.864,54
+Lucros / Prejuízos no ano: R$      -823.380,03
+ROE: -1.6700%","neg","DESENVOLVIMENTO","Negativo"
+"AM","Companhia de Gás do Amazonas - CIGÁS","Serviços Públicos","Não Dependente",176770064.41,60140382,"Sim","Sim","Não","28000","Sim",131,18687885.89,22048544.89,50546914.49,0,0,50546914.49,"DISTRIBUIÇÃO DE GÁS","Amazonas","Norte",FALSE,FALSE,0.340218137051252,"   176.770.064,41","Companhia de Gás do Amazonas - CIGÁS (AM)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$    176.770.064,41
+Lucros / Prejuízos no ano: R$    60.140.382,00
+ROE: 34.0200%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"AM","Empresa Estadual de Turismo do Amazonas - Amazonastur","Outro","Dependente",6057212.37,-411573.87,"Sim","Sim","Não","25254","Não",136,0,10752636.71,0,22852591.86,0,-22852591.86,"TURISMO","Amazonas","Norte",FALSE,FALSE,-0.0679477364931816,"     6.057.212,37","Empresa Estadual de Turismo do Amazonas - Amazonastur (AM)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TURISMO
+PL: R$      6.057.212,37
+Lucros / Prejuízos no ano: R$      -411.573,87
+ROE: -6.7900%","neg","Demais","Negativo"
+"AM","PR0DAM - Processamento de Dados Amazonas S/A","Informática","Não Dependente",41971469.99,-8717407.56,"Sim","Sim","Não","39760.6","Não",390,1996661.57,50188832.78,0,0,0,0,"INFORMÁTICA","Amazonas","Norte",FALSE,FALSE,-0.207698409469027,"    41.971.469,99","PR0DAM - Processamento de Dados Amazonas S/A (AM)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: INFORMÁTICA
+PL: R$     41.971.469,99
+Lucros / Prejuízos no ano: R$    -8.717.407,56
+ROE: -20.7700%","neg","INFORMÁTICA","Negativo"
+"BA","Agência de Fomento do Estado da Bahia S.A. - DESENBAHIA","FINANCEIRO","Não Dependente",576700938.46,16002591.79,"SIM","SIM","SIM","24947","Sim",195,1726979.1,49213886.94,1761120.18,0,0,1761120.18,"FINANCEIRO","Bahia","Nordeste",TRUE,FALSE,0.0277485100557192,"   576.700.938,46","Agência de Fomento do Estado da Bahia S.A. - DESENBAHIA (BA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$    576.700.938,46
+Lucros / Prejuízos no ano: R$    16.002.591,79
+ROE: 2.7700%","pos","FINANCEIRO","Positivo"
+"BA","CIA DE ENGENHARIA HÍDRICA E DE SANEAMENTO DA BAHIA - CERB","SANEAMENTO","Dependente",6875526.26,1195348.76,"SIM","SIM",NA,"17859.14","Sim",405,82513807.33,35075174.36,0,102341820.87,0,-102341820.87,"SANEAMENTO","Bahia","Nordeste",FALSE,FALSE,0.17385560243646,"     6.875.526,26","CIA DE ENGENHARIA HÍDRICA E DE SANEAMENTO DA BAHIA - CERB (BA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: SANEAMENTO
+PL: R$      6.875.526,26
+Lucros / Prejuízos no ano: R$     1.195.348,76
+ROE: 17.3900%","pos","SANEAMENTO","Positivo"
+"BA","COMPANHIA BAIANA DE PESQUISA MINERAL CBPM","DESENVOLVIMENTO","Dependente",123689785,-10085115.48,"SIM","SIM","NÃO","20623.400000000001","Não",179,71448.39,27505521.8,0,5037498.81,0,-5037498.81,"DESENVOLVIMENTO","Bahia","Nordeste",FALSE,FALSE,-0.0815355567155364,"   123.689.785,00","COMPANHIA BAIANA DE PESQUISA MINERAL CBPM (BA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$    123.689.785,00
+Lucros / Prejuízos no ano: R$   -10.085.115,48
+ROE: -8.1500%","neg","DESENVOLVIMENTO","Negativo"
+"BA","COMPANHIA DE GAS DA BAHIA BAHIAGÁS","DISTRIBUIÇÃO DE GÁS","Não Dependente",609121070.87,93941459.34,"SIM","SIM","NÃO","18107.740000000002","Sim",230,68087510.41,57899440.44,9298308.68,0,0,9298308.68,"DISTRIBUIÇÃO DE GÁS","Bahia","Nordeste",FALSE,FALSE,0.154224609576918,"   609.121.070,87","COMPANHIA DE GAS DA BAHIA BAHIAGÁS (BA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$    609.121.070,87
+Lucros / Prejuízos no ano: R$    93.941.459,34
+ROE: 15.4200%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"BA","COMPANHIA DE PROCESSAMENTO DE DADOS DO ESTADO DA BAHIA","INFORMÁTICA","Não Dependente",31253189,3907211,"SIM","SIM","SIM","11008","Não",459,7440596,47149886,0,0,0,NA,"INFORMÁTICA","Bahia","Nordeste",TRUE,TRUE,0.125017994163732,"    31.253.189,00","COMPANHIA DE PROCESSAMENTO DE DADOS DO ESTADO DA BAHIA (BA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: INFORMÁTICA
+PL: R$     31.253.189,00
+Lucros / Prejuízos no ano: R$     3.907.211,00
+ROE: 12.5000%","pos","INFORMÁTICA","Positivo"
+"BA","COMPANHIA DE TRANSPORTE DO ESTADO DA BAHIA  - CTB","TRANSPORTES","Dependente",77477614.13,-5279954.68,"SIM","SIM","NÃO","14406.58","Não",90,6943574.72,15551859.48,0,37692636.6,0,-37692636.6,"TRANSPORTES","Bahia","Nordeste",FALSE,FALSE,-0.068148132067422,"    77.477.614,13","COMPANHIA DE TRANSPORTE DO ESTADO DA BAHIA  - CTB (BA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$     77.477.614,13
+Lucros / Prejuízos no ano: R$    -5.279.954,68
+ROE: -6.8100%","neg","TRANSPORTES","Negativo"
+"BA","EMPRESA BAIANA DE AGUAS E SANEAMENTO DA BAHIA - EMBASA","ABASTECIMENTO","Não Dependente",5928178.46,279898703.65,"SIM","SIM","SIM","41377","Sim",4884,460328074.29,744813853.36,16892049.92,62405637.28,3902684.48,-49416271.84,"SANEAMENTO","Bahia","Nordeste",TRUE,FALSE,47.2149591208494,"     5.928.178,46","EMPRESA BAIANA DE AGUAS E SANEAMENTO DA BAHIA - EMBASA (BA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$      5.928.178,46
+Lucros / Prejuízos no ano: R$   279.898.703,65
+ROE: 4 721.5000%","bem_pos","SANEAMENTO","Positivo"
+"BA","EMPRESA GRÁFICA DA BAHIA - EGBA","SERVIÇOS PÚBLICOS","Não Dependente",62635221,1243036,"SIM","SIM","SIM","17423.55","Não",203,NA,10841460,0,0,0,NA,"COMUNICAÇÃO","Bahia","Nordeste",TRUE,TRUE,0.0198456392450503,"    62.635.221,00","EMPRESA GRÁFICA DA BAHIA - EGBA (BA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: COMUNICAÇÃO
+PL: R$     62.635.221,00
+Lucros / Prejuízos no ano: R$     1.243.036,00
+ROE: 1.9800%","pos","Demais","Positivo"
+"CE","AGENCIA DE DESENVOLVIMENTO DO ESTADO DO CEARA S.A","DESENVOLVIMENTO","Não Dependente",108182108.8,5193378.05,"SIM","SIM","NÃO","13068.35","Não",0,1067448.61,8425684.39,0,0,50000,-50000,"DESENVOLVIMENTO","Ceará","Nordeste",FALSE,FALSE,0.0480058866258669,"   108.182.108,80","AGENCIA DE DESENVOLVIMENTO DO ESTADO DO CEARA S.A (CE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$    108.182.108,80
+Lucros / Prejuízos no ano: R$     5.193.378,05
+ROE: 4.8000%","pos","DESENVOLVIMENTO","Positivo"
+"CE","CENTRAIS DE ABASTECIMENTO DO CEARÁ S/A - CEASA","ABASTECIMENTO","Não Dependente",4935247.9,618780.27,"SIM","SIM","NÃO","15036.58","Não",41,1384556.18,7235337,0,0,0,NA,"ABASTECIMENTO","Ceará","Nordeste",FALSE,TRUE,0.12537977474242,"     4.935.247,90","CENTRAIS DE ABASTECIMENTO DO CEARÁ S/A - CEASA (CE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$      4.935.247,90
+Lucros / Prejuízos no ano: R$       618.780,27
+ROE: 12.5400%","pos","ABASTECIMENTO","Positivo"
+"CE","COMPANHIA CEARENSE DE TRANSPORTES METROPOLITANOS METROFOR","TRANSPORTES","Não Dependente",1085575695.92,-187730058.34,"SIM","SIM","NÃO","284959.71000000002","Não",227,33701428.84,39309057.75,0,0,146647615.48,-146647615.48,"TRANSPORTES","Ceará","Nordeste",FALSE,FALSE,-0.172931338685602," 1.085.575.695,92","COMPANHIA CEARENSE DE TRANSPORTES METROPOLITANOS METROFOR (CE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$  1.085.575.695,92
+Lucros / Prejuízos no ano: R$  -187.730.058,34
+ROE: -17.2900%","neg","TRANSPORTES","Negativo"
+"CE","COMPANHIA DE ÁGUA E ESGOTO DO CEARÁ - CAGECE","SANEAMENTO","Não Dependente",2411905878.67,165736042.46,"SIM","SIM","SIM","39718.9","Sim",1302,228157223.31,283485307.15,59033253.42,0,0,59033253.42,"SANEAMENTO","Ceará","Nordeste",TRUE,FALSE,0.0687158002000443," 2.411.905.878,67","COMPANHIA DE ÁGUA E ESGOTO DO CEARÁ - CAGECE (CE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  2.411.905.878,67
+Lucros / Prejuízos no ano: R$   165.736.042,46
+ROE: 6.8700%","pos","SANEAMENTO","Positivo"
+"CE","COMPANHIA DE DESENVOLVIMENTO DO CEARÁ - CODECE","DESENVOLVIMENTO","Dependente",15791472.44,-4219000.54,"SIM","SIM","NÃO","179733.73","Não",25,1369118.79,2224331.73,0,2224331.73,0,-2224331.73,"DESENVOLVIMENTO","Ceará","Nordeste",FALSE,FALSE,-0.267169547110326,"    15.791.472,44","COMPANHIA DE DESENVOLVIMENTO DO CEARÁ - CODECE (CE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$     15.791.472,44
+Lucros / Prejuízos no ano: R$    -4.219.000,54
+ROE: -26.7200%","neg","DESENVOLVIMENTO","Negativo"
+"CE","COMPANHIA DE DESENVOLVIMENTO DO COMPLEXO INDUSTRIAL E PORTUARIO DO PECEM - CIPP","OUTRO","Não Dependente",1116810809.18,41256391.64,"SIM","SIM","SIM","14794.18","Sim",95,17849082.82,26469547.43,1535604.64,0,0,1535604.64,"PORTOS E HIDROVIAS","Ceará","Nordeste",TRUE,FALSE,0.0369412538819282," 1.116.810.809,18","COMPANHIA DE DESENVOLVIMENTO DO COMPLEXO INDUSTRIAL E PORTUARIO DO PECEM - CIPP (CE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PORTOS E HIDROVIAS
+PL: R$  1.116.810.809,18
+Lucros / Prejuízos no ano: R$    41.256.391,64
+ROE: 3.6900%","pos","PORTOS E HIDROVIAS","Positivo"
+"CE","COMPANHIA DE GAS DO CEARA - CEGAS","DISTRIBUIÇÃO DE GÁS","Não Dependente",206581278.12,60852840.01,"SIM","SIM","SIM","17607.61","Sim",117,24044611.21,14107487.97,6169436.16,0,0,6169436.16,"DISTRIBUIÇÃO DE GÁS","Ceará","Nordeste",TRUE,FALSE,0.294570933841601,"   206.581.278,12","COMPANHIA DE GAS DO CEARA - CEGAS (CE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$    206.581.278,12
+Lucros / Prejuízos no ano: R$    60.852.840,01
+ROE: 29.4600%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"CE","COMPANHIA DE GESTÃO DOS RECURSOS HÍDRICOS - COGERH","ABASTECIMENTO","Não Dependente",225956109,2978094,"SIM","SIM","SIM","26868.54","Sim",116,38709892,29396469,8512012.55,0,0,8512012.55,"SANEAMENTO","Ceará","Nordeste",TRUE,FALSE,0.013179966734159,"   225.956.109,00","COMPANHIA DE GESTÃO DOS RECURSOS HÍDRICOS - COGERH (CE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$    225.956.109,00
+Lucros / Prejuízos no ano: R$     2.978.094,00
+ROE: 1.3200%","pos","SANEAMENTO","Positivo"
+"CE","EMPRESA DE TECNOLOGIA DA INFORMAÇÃO DO CEARA - ETICE","COMUNICAÇÕES","Dependente",6727981.21,523421.4,"SIM","SIM","NÃO",NA,"Não",166,5255810.75,26407229.83,0,30587551.55,0,-30587551.55,"INFORMÁTICA","Ceará","Nordeste",FALSE,FALSE,0.0777976905200067,"     6.727.981,21","EMPRESA DE TECNOLOGIA DA INFORMAÇÃO DO CEARA - ETICE (CE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: INFORMÁTICA
+PL: R$      6.727.981,21
+Lucros / Prejuízos no ano: R$       523.421,40
+ROE: 7.7800%","pos","INFORMÁTICA","Positivo"
+"DF","BIOTIC S.A. (TERRACAP)","OUTRO","Não Dependente",8457175.87,0,"SIM","SIM","SIM","54046.18","Sim",18,0,7601678.6,0,0,4408219.53,-4408219.53,"OUTROS","Distrito Federal","Centro-oeste",TRUE,FALSE,0,"     8.457.175,87","BIOTIC S.A. (TERRACAP) (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: OUTROS
+PL: R$      8.457.175,87
+Lucros / Prejuízos no ano: R$             0,00
+ROE: 0.0000%","neg","OUTROS","Negativo"
+"DF","BRB - BANCO DE BRASÍLIA S.A.","FINANCEIRO","Não Dependente",1737325,418836,"SIM","SIM","SIM","49172.12","Sim",2926,52162,914851,88617348.18,0,0,88617348.18,"FINANCEIRO","Distrito Federal","Centro-oeste",TRUE,FALSE,0.241080972184249,"     1.737.325,00","BRB - BANCO DE BRASÍLIA S.A. (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$      1.737.325,00
+Lucros / Prejuízos no ano: R$       418.836,00
+ROE: 24.1100%","pos","FINANCEIRO","Positivo"
+"DF","BRB - CRÉDITO FINANCIAMENTO E INVESTIMENTO S.A.","FINANCEIRO","Não Dependente",215550,69817,"SIM","SIM","SIM","29333.56","Sim",46,NA,1613,0,0,61705,-61705,"FINANCEIRO","Distrito Federal","Centro-oeste",TRUE,FALSE,0.323901646949664,"       215.550,00","BRB - CRÉDITO FINANCIAMENTO E INVESTIMENTO S.A. (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$        215.550,00
+Lucros / Prejuízos no ano: R$        69.817,00
+ROE: 32.3900%","pos","FINANCEIRO","Positivo"
+"DF","BRB - DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.","FINANCEIRO","Não Dependente",48426,2178,"SIM","SIM","SIM","29333.56","Sim",32,NA,1532,0,0,0,NA,"FINANCEIRO","Distrito Federal","Centro-oeste",TRUE,TRUE,0.0449758394251022,"        48.426,00","BRB - DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A. (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$         48.426,00
+Lucros / Prejuízos no ano: R$         2.178,00
+ROE: 4.5000%","pos","FINANCEIRO","Positivo"
+"DF","BRB ADMINISTRADORA E CORRETORA DE SEGUROS S.A.","FINANCEIRO","Não Dependente",119388,70366,"SIM","SIM","SIM","23600","Sim",254,4719,31281,0,0,0,NA,"FINANCEIRO","Distrito Federal","Centro-oeste",TRUE,TRUE,0.589389218346902,"       119.388,00","BRB ADMINISTRADORA E CORRETORA DE SEGUROS S.A. (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$        119.388,00
+Lucros / Prejuízos no ano: R$        70.366,00
+ROE: 58.9400%","bem_pos","FINANCEIRO","Positivo"
+"DF","BRB SERVIÇOS S.A.","OUTRO","Não Dependente",8214,4207,"SIM","SIM","SIM","10757.65","Sim",793,1708,21069,0,0,0,NA,"FINANCEIRO","Distrito Federal","Centro-oeste",TRUE,TRUE,0.512174336498661,"         8.214,00","BRB SERVIÇOS S.A. (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$          8.214,00
+Lucros / Prejuízos no ano: R$         4.207,00
+ROE: 51.2200%","bem_pos","FINANCEIRO","Positivo"
+"DF","CARTÃO BRB S.A.","FINANCEIRO","Não Dependente",535543,100377,"SIM","SIM","SIM","24996.85","Sim",180,NA,31512,0,0,0,NA,"FINANCEIRO","Distrito Federal","Centro-oeste",TRUE,TRUE,0.187430327723451,"       535.543,00","CARTÃO BRB S.A. (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$        535.543,00
+Lucros / Prejuízos no ano: R$       100.377,00
+ROE: 18.7400%","pos","FINANCEIRO","Positivo"
+"DF","CENTRAIS DE ABASTECIMENTO DO DISTRITO FEDERAL S.A - CEASA","ABASTECIMENTO","Não Dependente",62275650.97,4049034.07,"SIM","SIM","NÃO","15243.74","Não",58,9025303.47,6778271.98,0,0,0,NA,"ABASTECIMENTO","Distrito Federal","Centro-oeste",FALSE,TRUE,0.0650179324813568,"    62.275.650,97","CENTRAIS DE ABASTECIMENTO DO DISTRITO FEDERAL S.A - CEASA (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$     62.275.650,97
+Lucros / Prejuízos no ano: R$     4.049.034,07
+ROE: 6.5000%","pos","ABASTECIMENTO","Positivo"
+"DF","COMPANHIA DE DESENVOLVIMENTO HABITACIONAL DO DISTRITO FEDERAL - CODHAB","URBANIZAÇÃO","Dependente",121015025.47,-11412901.35,"SIM","SIM","SIM","18200","Não",0,0,13758810.04,0,27991658.06,0,-27991658.06,"HABITAÇÃO E URBANIZAÇÃO","Distrito Federal","Centro-oeste",TRUE,FALSE,-0.094309787612525,"   121.015.025,47","COMPANHIA DE DESENVOLVIMENTO HABITACIONAL DO DISTRITO FEDERAL - CODHAB (DF)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$    121.015.025,47
+Lucros / Prejuízos no ano: R$   -11.412.901,35
+ROE: -9.4300%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"DF","COMPANHIA DE SANEAMENTO AMBIENTAL DO DISTRITO FEDERAL  - CAESB","SANEAMENTO","Não Dependente",1404805227.72,149002360.68,"SIM","SIM","SIM","35462.22","Não",2311,268925696.51,756794611.61,0,17688478.19,15673253.07,-33361731.26,"SANEAMENTO","Distrito Federal","Centro-oeste",TRUE,FALSE,0.106066206004822," 1.404.805.227,72","COMPANHIA DE SANEAMENTO AMBIENTAL DO DISTRITO FEDERAL  - CAESB (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  1.404.805.227,72
+Lucros / Prejuízos no ano: R$   149.002.360,68
+ROE: 10.6100%","pos","SANEAMENTO","Positivo"
+"DF","COMPANHIA DO METROPOLITANO DO DISTRITO FEDERAL - METRÔ-DF","TRANSPORTES","Dependente",1951743230.69,-132263066.41,"SIM","SIM","SIM","35462.22","Não",1241,22097215.7,205294511.44,0,228936011.74,19595942.49,-248531954.23,"TRANSPORTES","Distrito Federal","Centro-oeste",TRUE,FALSE,-0.0677666325827302," 1.951.743.230,69","COMPANHIA DO METROPOLITANO DO DISTRITO FEDERAL - METRÔ-DF (DF)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: TRANSPORTES
+PL: R$  1.951.743.230,69
+Lucros / Prejuízos no ano: R$  -132.263.066,41
+ROE: -6.7800%","neg","TRANSPORTES","Negativo"
+"DF","COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB (Holding)","ENERGIA","Não Dependente",783986000,119045000,"SIM","SIM","SIM","35000","Sim",60,75378000,224368000,0,0,0,NA,"ENERGIA","Distrito Federal","Centro-oeste",TRUE,TRUE,0.151845823777465,"   783.986.000,00","COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB (Holding) (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$    783.986.000,00
+Lucros / Prejuízos no ano: R$   119.045.000,00
+ROE: 15.1800%","pos","ENERGIA","Positivo"
+"DF","COMPANHIA IMOBILIÁRIA DE BRASÍLIA - TERRACAP","OUTRO","Não Dependente",2909676667,170701242,"SIM","SIM","SIM","51740.21","Sim",594,48507992,2364674.45,0,0,0,NA,"HABITAÇÃO E URBANIZAÇÃO","Distrito Federal","Centro-oeste",TRUE,TRUE,0.0586667391384075," 2.909.676.667,00","COMPANHIA IMOBILIÁRIA DE BRASÍLIA - TERRACAP (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$  2.909.676.667,00
+Lucros / Prejuízos no ano: R$   170.701.242,00
+ROE: 5.8700%","pos","HABITAÇÃO E URBANIZAÇÃO","Positivo"
+"DF","COMPANHIA URBANIZADORA DA NOVA CAPITAL DO BRASIL - NOVACAP","URBANIZAÇÃO","Dependente",630252419.23,-2372388.41,"SIM","SIM","NÃO","50863.6","Não",2152,8021010.2,380066688.37,0,786327378.67,802101.02,-787129479.69,"HABITAÇÃO E URBANIZAÇÃO","Distrito Federal","Centro-oeste",FALSE,FALSE,-0.00376418770894751,"   630.252.419,23","COMPANHIA URBANIZADORA DA NOVA CAPITAL DO BRASIL - NOVACAP (DF)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$    630.252.419,23
+Lucros / Prejuízos no ano: R$    -2.372.388,41
+ROE: -0.3800%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"DF","INSTITUTO BRB DE DESENVOLVIMENTO HUMANO E RESPONSABILIDADE SOCIAL","OUTRO","Dependente",9679,1247,"SIM","SIM","SIM","51543.37","Sim",11,NA,NA,0,0,0,NA,"OUTROS","Distrito Federal","Centro-oeste",TRUE,TRUE,0.128835623514826,"         9.679,00","INSTITUTO BRB DE DESENVOLVIMENTO HUMANO E RESPONSABILIDADE SOCIAL (DF)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: OUTROS
+PL: R$          9.679,00
+Lucros / Prejuízos no ano: R$         1.247,00
+ROE: 12.8800%","pos","OUTROS","Positivo"
+"DF","PROFLORA S/A FLORESTAMENTO E REFLORESTAMENTO - EM LIQUIDAÇÃO","OUTRO","Não Dependente",27937695.92,-1400827.54,"SIM","SIM","NÃO","12742.87","Não",7,0,926626.79,0,0,0,NA,"DESENVOLVIMENTO","Distrito Federal","Centro-oeste",FALSE,TRUE,-0.0501411263123233,"    27.937.695,92","PROFLORA S/A FLORESTAMENTO E REFLORESTAMENTO - EM LIQUIDAÇÃO (DF)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$     27.937.695,92
+Lucros / Prejuízos no ano: R$    -1.400.827,54
+ROE: -5.0100%","neg","DESENVOLVIMENTO","Negativo"
+"DF","SOCIEDADE DE ABASTECIMENTO DE BRASÍLIA S.A. - SAB - EM LIQUIDAÇÃO","ABASTECIMENTO","Dependente",1777844.65,382965.71,"SIM","SIM","NÃO","20497.759999999998","Não",179,48267.36,20879141.82,0,21446072.35,0,-21446072.35,"ABASTECIMENTO","Distrito Federal","Centro-oeste",FALSE,FALSE,0.215410109089115,"     1.777.844,65","SOCIEDADE DE ABASTECIMENTO DE BRASÍLIA S.A. - SAB - EM LIQUIDAÇÃO (DF)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$      1.777.844,65
+Lucros / Prejuízos no ano: R$       382.965,71
+ROE: 21.5400%","pos","ABASTECIMENTO","Positivo"
+"DF","SOCIEDADE DE TRANSPORTES COLETIVOS DE BRASÍLIA LTDA. - TCB","TRANSPORTES","Dependente",63734748.08,6416973.71,"SIM","SIM","NÃO","21517.11","Não",565,7180961.18,4108886.69,0,14430773.67,6921797.83,-21352571.5,"TRANSPORTES","Distrito Federal","Centro-oeste",FALSE,FALSE,0.10068249900267,"    63.734.748,08","SOCIEDADE DE TRANSPORTES COLETIVOS DE BRASÍLIA LTDA. - TCB (DF)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$     63.734.748,08
+Lucros / Prejuízos no ano: R$     6.416.973,71
+ROE: 10.0700%","pos","TRANSPORTES","Positivo"
+"ES","Banco de Desenvolvimento do Espírito Santo S/A - BANDES","FINANCEIRO","Não Dependente",219620000,-209203000,"SIM","SIM","SIM","27854.73","Não",163,1752000,40299000,0,0,117710000,-117710000,"FINANCEIRO","Espiríto Santo","Sudeste",TRUE,FALSE,-0.952568072124579,"   219.620.000,00","Banco de Desenvolvimento do Espírito Santo S/A - BANDES (ES)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$    219.620.000,00
+Lucros / Prejuízos no ano: R$  -209.203.000,00
+ROE: -95.2600%","bem_neg","FINANCEIRO","Negativo"
+"ES","Banco do Estado do Espirito Santo - BANESTES","FINANCEIRO","Não Dependente",1608362000,213738000,"SIM","SIM","SIM","35580.32","Sim",2232,90958000,367546000,100028000,0,0,100028000,"FINANCEIRO","Espiríto Santo","Sudeste",TRUE,FALSE,0.132891724624183," 1.608.362.000,00","Banco do Estado do Espirito Santo - BANESTES (ES)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$  1.608.362.000,00
+Lucros / Prejuízos no ano: R$   213.738.000,00
+ROE: 13.2900%","pos","FINANCEIRO","Positivo"
+"ES","Centrais de Abastecimento do Espírito Santo- CEASA","ABASTECIMENTO","Dependente",9974787.68,528059,"SIM","SIM","NÃO","9658.2999999999993","Não",54,4651,5640995.58,0,6867901.74,0,-6867901.74,"ABASTECIMENTO","Espiríto Santo","Sudeste",FALSE,FALSE,0.0529393724398553,"     9.974.787,68","Centrais de Abastecimento do Espírito Santo- CEASA (ES)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$      9.974.787,68
+Lucros / Prejuízos no ano: R$       528.059,00
+ROE: 5.2900%","pos","ABASTECIMENTO","Positivo"
+"ES","Companhia de Habitação e Urbanização do Estado do Espirito Santo - COHAB - Em Liquidação","OUTRO","Dependente",15077000,-8000,"NÃO","SIM","NÃO","6877","Não",25,0,1803307.79,0,1857000,0,-1857000,"HABITAÇÃO E URBANIZAÇÃO","Espiríto Santo","Sudeste",FALSE,FALSE,-0.00053060953770644,"    15.077.000,00","Companhia de Habitação e Urbanização do Estado do Espirito Santo - COHAB - Em Liquidação (ES)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$     15.077.000,00
+Lucros / Prejuízos no ano: R$        -8.000,00
+ROE: -0.0500%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"ES","Companhia Espirito Santense de Saneamento - CESAN","SANEAMENTO","Não Dependente",2519733,192686,"SIM","SIM","SIM","27682.22","Sim",1373,245246159.59,198444578.08,0,0,45228437.74,-45228437.74,"SANEAMENTO","Espiríto Santo","Sudeste",TRUE,FALSE,0.0764708006761034,"     2.519.733,00","Companhia Espirito Santense de Saneamento - CESAN (ES)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$      2.519.733,00
+Lucros / Prejuízos no ano: R$       192.686,00
+ROE: 7.6500%","pos","SANEAMENTO","Positivo"
+"ES","Companhia Estadual de Transportes Coletivos de Passageiros do Espirito Santo - CETURB","TRANSPORTES","Não Dependente",66626031.06,-724608.53,"SIM","SIM","NÃO","20975.16","Não",213,7033801.05,26015077.87,0,0,2361161.47,-2361161.47,"TRANSPORTES","Espiríto Santo","Sudeste",FALSE,FALSE,-0.0108757570948126,"    66.626.031,06","Companhia Estadual de Transportes Coletivos de Passageiros do Espirito Santo - CETURB (ES)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$     66.626.031,06
+Lucros / Prejuízos no ano: R$      -724.608,53
+ROE: -1.0900%","neg","TRANSPORTES","Negativo"
+"GO","Agência de Fomento de Goiás S/A ¿ GOIÁSFOMENTO","DESENVOLVIMENTO","Não Dependente",189940468.58,8660778.75,"SIM","SIM","NÃO","22232.49","Não",112,0,21421196.05,0,0,0,0,"FINANCEIRO","Goiás","Centro-oeste",FALSE,FALSE,0.0455973327577225,"   189.940.468,58","Agência de Fomento de Goiás S/A ¿ GOIÁSFOMENTO (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$    189.940.468,58
+Lucros / Prejuízos no ano: R$     8.660.778,75
+ROE: 4.5600%","pos","FINANCEIRO","Positivo"
+"GO","Agência Goiana de Habitação - AGEHAB","SERVIÇOS PÚBLICOS","Não Dependente",11144312.69,-34421654.01,"SIM","SIM","NÃO","27459.14","Não",191,120629.61,26711897.41,0,0,35735655.41,-35735655.41,"HABITAÇÃO E URBANIZAÇÃO","Goiás","Centro-oeste",FALSE,FALSE,-3.08871932863901,"    11.144.312,69","Agência Goiana de Habitação - AGEHAB (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$     11.144.312,69
+Lucros / Prejuízos no ano: R$   -34.421.654,01
+ROE: -308.8700%","bem_neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"GO","Celg Geração & Transmissão ¿ CELG G & T","ENERGIA","Não Dependente",984150934.06,71096919.55,"NÃO","SIM","SIM","42737.73","Não",189,64823029.27,43817440.31,0,0,29504196.49,-29504196.49,"ENERGIA","Goiás","Centro-oeste",FALSE,FALSE,0.0722418859642778,"   984.150.934,06","Celg Geração & Transmissão ¿ CELG G & T (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ENERGIA
+PL: R$    984.150.934,06
+Lucros / Prejuízos no ano: R$    71.096.919,55
+ROE: 7.2200%","pos","ENERGIA","Positivo"
+"GO","Central de Abastecimento de Goiás - CEASA","ABASTECIMENTO","Não Dependente",14615491.44,768883.21,"SIM","SIM","NÃO","24944.49","Não",86,51135.55,9639325.6,0,0,0,0,"ABASTECIMENTO","Goiás","Centro-oeste",FALSE,FALSE,0.0526074140685891,"    14.615.491,44","Central de Abastecimento de Goiás - CEASA (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$     14.615.491,44
+Lucros / Prejuízos no ano: R$       768.883,21
+ROE: 5.2600%","pos","ABASTECIMENTO","Positivo"
+"GO","Comp. de Armazéns e Silos do Est. de Goiás ¿ CASEGO","ABASTECIMENTO","Dependente",23188034.31,577685.08,"SIM","SIM","NÃO","1000","Não",0,0,67211.39,0,75991.39,0,-75991.39,"ABASTECIMENTO","Goiás","Centro-oeste",FALSE,FALSE,0.0249130681918505,"    23.188.034,31","Comp. de Armazéns e Silos do Est. de Goiás ¿ CASEGO (GO)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$     23.188.034,31
+Lucros / Prejuízos no ano: R$       577.685,08
+ROE: 2.4900%","pos","ABASTECIMENTO","Positivo"
+"GO","Companhia de Desenvolvimento Econômico de Goiás ¿ CODEGO","DESENVOLVIMENTO","Não Dependente",134635287.05,103565648.81,"SIM","SIM","NÃO","40082.5","Não",0,0,12534201.55,0,0,0,0,"DESENVOLVIMENTO","Goiás","Centro-oeste",FALSE,FALSE,0.769231091485982,"   134.635.287,05","Companhia de Desenvolvimento Econômico de Goiás ¿ CODEGO (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$    134.635.287,05
+Lucros / Prejuízos no ano: R$   103.565.648,81
+ROE: 76.9200%","bem_pos","DESENVOLVIMENTO","Positivo"
+"GO","Companhia de Investimentos e Parcerias do Estado de Goiás - GOIASPARCERIAS","DESENVOLVIMENTO","Não Dependente",394333079.03,1435345.13,"SIM","SIM","NÃO","20000","Não",22,1612898.06,2287854.53,0,0,1005696.77,-1005696.77,"GESTÃO DE ATIVOS","Goiás","Centro-oeste",FALSE,FALSE,0.00363993082581541,"   394.333.079,03","Companhia de Investimentos e Parcerias do Estado de Goiás - GOIASPARCERIAS (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: GESTÃO DE ATIVOS
+PL: R$    394.333.079,03
+Lucros / Prejuízos no ano: R$     1.435.345,13
+ROE: 0.3600%","pos","GESTÃO DE ATIVOS","Positivo"
+"GO","Empresa de Assistência Técnica, Extensão Rural e Pesquisa Agropecuária do Estado de Goiás ¿ EMATER-GO","ASSIS. TÉCNICA","Dependente",54465851.17,916322.89,"NÃO","SIM","NÃO","1000","Não",0,0,65673.23,0,63870,0,-63870,"PESQUISA E ASSISTÊNCIA TÉCNICA","Goiás","Centro-oeste",FALSE,FALSE,0.0168238055647006,"    54.465.851,17","Empresa de Assistência Técnica, Extensão Rural e Pesquisa Agropecuária do Estado de Goiás ¿ EMATER-GO (GO)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$     54.465.851,17
+Lucros / Prejuízos no ano: R$       916.322,89
+ROE: 1.6800%","pos","PESQUISA E ASSISTÊNCIA TÉCNICA","Positivo"
+"GO","Goiás Telecomunicações S/A - GOIASTELECOM","COMUNICAÇÕES","Dependente",1723305.09,1147391.77,"SIM","SIM","NÃO","20041.25","Não",6,0,955421.11,0,1350000,0,-1350000,"OUTROS","Goiás","Centro-oeste",FALSE,FALSE,0.665808844097362,"     1.723.305,09","Goiás Telecomunicações S/A - GOIASTELECOM (GO)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: OUTROS
+PL: R$      1.723.305,09
+Lucros / Prejuízos no ano: R$     1.147.391,77
+ROE: 66.5800%","bem_pos","OUTROS","Positivo"
+"GO","GOIÁSGAS","DISTRIBUIÇÃO DE GÁS","Não Dependente",691921.97,-512276.97,"SIM","SIM","NÃO","8720","Não",1,4690,152426.25,0,0,866696.04,-866696.04,"DISTRIBUIÇÃO DE GÁS","Goiás","Centro-oeste",FALSE,FALSE,-0.740368122723434,"       691.921,97","GOIÁSGAS (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$        691.921,97
+Lucros / Prejuízos no ano: R$      -512.276,97
+ROE: -74.0400%","bem_neg","DISTRIBUIÇÃO DE GÁS","Negativo"
+"GO","Indústria Química do Estado de Goiás ¿ IQUEGO","GESTÃO DE ATIVOS","Não Dependente",13366938.33,498450.89,"SIM","SIM","SIM","21851.54","Não",51,0,6852000.55,0,0,11400905.48,-11400905.48,"SAÚDE","Goiás","Centro-oeste",TRUE,FALSE,0.0372898323979924,"    13.366.938,33","Indústria Química do Estado de Goiás ¿ IQUEGO (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SAÚDE
+PL: R$     13.366.938,33
+Lucros / Prejuízos no ano: R$       498.450,89
+ROE: 3.7300%","pos","Demais","Positivo"
+"GO","Metais de Goiás S/A - METAGO","GESTÃO DE ATIVOS","Dependente",22544055.87,24304.46,"SIM","SIM","NÃO","1000","Não",NA,0,186526.68,0,63870,0,-63870,"MINERAÇÃO","Goiás","Centro-oeste",FALSE,FALSE,0.00107808728563092,"    22.544.055,87","Metais de Goiás S/A - METAGO (GO)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: MINERAÇÃO
+PL: R$     22.544.055,87
+Lucros / Prejuízos no ano: R$        24.304,46
+ROE: 0.1100%","pos","Demais","Positivo"
+"GO","Metrobus Transporte Coletivo S.A","TRANSPORTES","Não Dependente",20014950.88,-13979332.82,"SIM","SIM","NÃO","18515.38","Não",441,4289220.71,39404509.55,0,0,4546337.51,-4546337.51,"TRANSPORTES","Goiás","Centro-oeste",FALSE,FALSE,-0.698444522987508,"    20.014.950,88","Metrobus Transporte Coletivo S.A (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$     20.014.950,88
+Lucros / Prejuízos no ano: R$   -13.979.332,82
+ROE: -69.8400%","bem_neg","TRANSPORTES","Negativo"
+"GO","Saneamento de Goiás S.A ¿ SANEAGO","SANEAMENTO","Não Dependente",2801329000,315731000,"SIM","SIM","SIM","82529","Sim",5836,188099000,1002856000,26089000,0,0,26089000,"SANEAMENTO","Goiás","Centro-oeste",TRUE,FALSE,0.112707575582875," 2.801.329.000,00","Saneamento de Goiás S.A ¿ SANEAGO (GO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  2.801.329.000,00
+Lucros / Prejuízos no ano: R$   315.731.000,00
+ROE: 11.2700%","pos","SANEAMENTO","Positivo"
+"MT","AGÊNCIA DE FOMENTO DO ESTADO DE MATO GROSSO S A - DESENVOLVE - MT","OUTRO","Não Dependente",14395973.61,1415017.76,"SIM","SIM","NÃO","18250.900000000001","Não",12,12576891.43,10941318.05,0,0,0,NA,"FINANCEIRO","Mato Grosso","Centro-oeste",FALSE,TRUE,0.0982926058587016,"    14.395.973,61","AGÊNCIA DE FOMENTO DO ESTADO DE MATO GROSSO S A - DESENVOLVE - MT (MT)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$     14.395.973,61
+Lucros / Prejuízos no ano: R$     1.415.017,76
+ROE: 9.8300%","pos","FINANCEIRO","Positivo"
+"MT","CENTRAL DE ABASTECIMENTO DO ESTADO DE MATO GROSSO - CEASA MT","ABASTECIMENTO","Dependente",751700,3711.01,"SIM","SIM","NÃO","18450","Não",0,0,3012405.89,0,1484631.87,0,-1484631.87,"ABASTECIMENTO","Mato Grosso","Centro-oeste",FALSE,FALSE,0.00493682320074498,"       751.700,00","CENTRAL DE ABASTECIMENTO DO ESTADO DE MATO GROSSO - CEASA MT (MT)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$        751.700,00
+Lucros / Prejuízos no ano: R$         3.711,01
+ROE: 0.4900%","pos","ABASTECIMENTO","Positivo"
+"MT","COMPANHIA MATOGROSSENSE DE MINERAÇÃO - METAMAT","OUTRO","Dependente",12250785,-578300,"SIM","SIM","NÃO","25225","Não",63,178960,1151338,0,19215207,0,-19215207,"MINERAÇÃO","Mato Grosso","Centro-oeste",FALSE,FALSE,-0.0472051382829753,"    12.250.785,00","COMPANHIA MATOGROSSENSE DE MINERAÇÃO - METAMAT (MT)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: MINERAÇÃO
+PL: R$     12.250.785,00
+Lucros / Prejuízos no ano: R$      -578.300,00
+ROE: -4.7200%","neg","Demais","Negativo"
+"MT","EMPRESA MATOGROSSENSE DE PESQUISA, ASSISTÊNCIA E EXTENSÃO RURAL - EMPAER MT","SEAF","Dependente",92544051.33,-4278318.93,"SIM","SIM","CONTROLE INTERNO",NA,"Não",625,0,144521243.85,0,146988294.22,0,-146988294.22,"PESQUISA E ASSISTÊNCIA TÉCNICA","Mato Grosso","Centro-oeste",TRUE,FALSE,-0.0462300803618816,"    92.544.051,33","EMPRESA MATOGROSSENSE DE PESQUISA, ASSISTÊNCIA E EXTENSÃO RURAL - EMPAER MT (MT)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$     92.544.051,33
+Lucros / Prejuízos no ano: R$    -4.278.318,93
+ROE: -4.6200%","neg","PESQUISA E ASSISTÊNCIA TÉCNICA","Negativo"
+"MT","EMPRESA MATO-GROSSENSE DE TECNOLOGIA DA INFORMAÇÃO - MTI","INFORMATICA","Dependente",8622483.09,14871569.91,"SIM","SIM","NÃO","53210.22","Não",297,0,69342810.06,0,74492176.37,0,-74492176.37,"INFORMÁTICA","Mato Grosso","Centro-oeste",FALSE,FALSE,1.72474329665516,"     8.622.483,09","EMPRESA MATO-GROSSENSE DE TECNOLOGIA DA INFORMAÇÃO - MTI (MT)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: INFORMÁTICA
+PL: R$      8.622.483,09
+Lucros / Prejuízos no ano: R$    14.871.569,91
+ROE: 172.4700%","bem_pos","INFORMÁTICA","Positivo"
+"MT","MT PARTICIPAÇÕES E PROJETOS S.A - MT PAR","OUTRO","Dependente",40001869.75,966771.11,"SIM","SIM","NÃO","18250.900000000001","Não",24,0,3240179.93,0,4688395.37,0,-4688395.37,"GESTÃO DE ATIVOS","Mato Grosso","Centro-oeste",FALSE,FALSE,0.02416814804013,"    40.001.869,75","MT PARTICIPAÇÕES E PROJETOS S.A - MT PAR (MT)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: GESTÃO DE ATIVOS
+PL: R$     40.001.869,75
+Lucros / Prejuízos no ano: R$       966.771,11
+ROE: 2.4200%","pos","GESTÃO DE ATIVOS","Positivo"
+"MS","COMPANHIA DE GÁS DO ESTADO DE MATO GROSSO DO SUL - MSGÁS","GÁS NATURAL","Não Dependente",46021817.36,41006103.49,"SIM","SIM","SIM","27599.75","Sim",83,14606887.79,26008866.4,6164574.19,0,0,6164574.19,"DISTRIBUIÇÃO DE GÁS","Mato Grosso do Sul","Centro-oeste",TRUE,FALSE,0.891014432768589,"    46.021.817,36","COMPANHIA DE GÁS DO ESTADO DE MATO GROSSO DO SUL - MSGÁS (MS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$     46.021.817,36
+Lucros / Prejuízos no ano: R$    41.006.103,49
+ROE: 89.1000%","bem_pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"MS","EMPRESA DE SANEAMENTO DE MATO GROSSO DO SUL S.A.- SANESUL","SANEAMENTO","Não Dependente",814537988,83445108.48,"SIM","SIM","SIM","26641.55","Sim",1510,167731620.14,166380133.23,17038.24,0,0,17038.24,"SANEAMENTO","Mato Grosso do Sul","Centro-oeste",TRUE,FALSE,0.102444710632698,"   814.537.988,00","EMPRESA DE SANEAMENTO DE MATO GROSSO DO SUL S.A.- SANESUL (MS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$    814.537.988,00
+Lucros / Prejuízos no ano: R$    83.445.108,48
+ROE: 10.2400%","pos","SANEAMENTO","Positivo"
+"MG","BDMG","FINANCEIRO","Não Dependente",1820883000,84131000,"SIM","SIM","SIM","40285","Sim",526,50756984.46,112567000,67399110.88,0,67514552.17,-115441.290000007,"FINANCEIRO","Minas gerais","Sudeste",TRUE,FALSE,0.0462034079070429," 1.820.883.000,00","BDMG (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$  1.820.883.000,00
+Lucros / Prejuízos no ano: R$    84.131.000,00
+ROE: 4.6200%","pos","FINANCEIRO","Positivo"
+"MG","CEMIG","ENERGIA","Não Dependente",15890865000,3128073000,"SIM","SIM","SIM","70000","Sim",5934,7062580000,1271518000,47855.37,0,0,47855.37,"ENERGIA","Minas gerais","Sudeste",TRUE,FALSE,0.196847245256945,"15.890.865.000,00","CEMIG (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$ 15.890.865.000,00
+Lucros / Prejuízos no ano: R$ 3.128.073.000,00
+ROE: 19.6800%","pos","ENERGIA","Positivo"
+"MG","CEMIG D","ENERGIA","Não Dependente",4708208000,1644366000,"SIM","SIM","SIM","59000","Sim",4425,5226277000,869289000,0,0,0,NA,"ENERGIA","Minas gerais","Sudeste",TRUE,TRUE,0.349255173093457," 4.708.208.000,00","CEMIG D (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$  4.708.208.000,00
+Lucros / Prejuízos no ano: R$ 1.644.366.000,00
+ROE: 34.9300%","pos","ENERGIA","Positivo"
+"MG","CEMIG GT","ENERGIA","Não Dependente",5136201000,835078000,"SIM","SIM","SIM","70000","Sim",1410,944265000,321745000,0,0,0,NA,"ENERGIA","Minas gerais","Sudeste",TRUE,TRUE,0.162586705621528," 5.136.201.000,00","CEMIG GT (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$  5.136.201.000,00
+Lucros / Prejuízos no ano: R$   835.078.000,00
+ROE: 16.2600%","pos","ENERGIA","Positivo"
+"MG","CODEMGE","DESENVOLVIMENTO","Não Dependente",2154701000,880556000,"SIM","SIM","SIM","60151.96","Sim",668,6226689.36,61085000,27236665.68,0,-124303000,151539665.68,"DESENVOLVIMENTO","Minas gerais","Sudeste",TRUE,FALSE,0.408667374266778," 2.154.701.000,00","CODEMGE (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DESENVOLVIMENTO
+PL: R$  2.154.701.000,00
+Lucros / Prejuízos no ano: R$   880.556.000,00
+ROE: 40.8700%","pos","DESENVOLVIMENTO","Positivo"
+"MG","CODEMIG","DESENVOLVIMENTO","Não Dependente",739116000,1075550000,"SIM","SIM","SIM",NA,"Sim",31,439616680.09,4233000,439618243.28,0,124303000,315315243.28,"DESENVOLVIMENTO","Minas gerais","Sudeste",TRUE,FALSE,1.45518430124635,"   739.116.000,00","CODEMIG (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DESENVOLVIMENTO
+PL: R$    739.116.000,00
+Lucros / Prejuízos no ano: R$ 1.075.550.000,00
+ROE: 145.5200%","bem_pos","DESENVOLVIMENTO","Positivo"
+"MG","CODEPAR","DESENVOLVIMENTO","Não Dependente",371758000,13871000,"SIM","SIM","SIM",NA,"Não",0,NA,NA,0,0,0,NA,"DESENVOLVIMENTO","Minas gerais","Sudeste",TRUE,TRUE,0.0373119072084528,"   371.758.000,00","CODEPAR (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DESENVOLVIMENTO
+PL: R$    371.758.000,00
+Lucros / Prejuízos no ano: R$    13.871.000,00
+ROE: 3.7300%","pos","DESENVOLVIMENTO","Positivo"
+"MG","COPANOR","SANEAMENTO","Não Dependente",128783000,-17972000,"NÃO","SIM","NÃO","7178.5","Não",465,34102878.01,19057344.95,0,0,0,NA,"SANEAMENTO","Minas gerais","Sudeste",FALSE,TRUE,-0.139552580697763,"   128.783.000,00","COPANOR (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: SANEAMENTO
+PL: R$    128.783.000,00
+Lucros / Prejuízos no ano: R$   -17.972.000,00
+ROE: -13.9600%","neg","SANEAMENTO","Negativo"
+"MG","COPASA","SANEAMENTO","Não Dependente",6743713000,754374000,"SIM","SIM","SIM","48294.59","Sim",12652,1265735110.46,1415206000,136917186.33,0,0,136917186.33,"SANEAMENTO","Minas gerais","Sudeste",TRUE,FALSE,0.11186330141867," 6.743.713.000,00","COPASA (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  6.743.713.000,00
+Lucros / Prejuízos no ano: R$   754.374.000,00
+ROE: 11.1900%","pos","SANEAMENTO","Positivo"
+"MG","EMATER","ASSIS. TÉCNICA","Dependente",56089013.75,2983840.68,"SIM","SIM","NÃO","31122.54","Não",1973,1130031.26,266218137.13,0,202319004.16,0,-202319004.16,"PESQUISA E ASSISTÊNCIA TÉCNICA","Minas gerais","Sudeste",FALSE,FALSE,0.0531983089112527,"    56.089.013,75","EMATER (MG)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$     56.089.013,75
+Lucros / Prejuízos no ano: R$     2.983.840,68
+ROE: 5.3200%","pos","PESQUISA E ASSISTÊNCIA TÉCNICA","Positivo"
+"MG","EMC","COMUNICAÇÕES","Dependente",36746012.81,699255.34,"SIM","SIM","NÃO","9191.0300000000007","Não",107,NA,8801854.17,0,10894276.37,0,-10894276.37,"COMUNICAÇÃO","Minas gerais","Sudeste",FALSE,FALSE,0.0190294207868372,"    36.746.012,81","EMC (MG)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: COMUNICAÇÃO
+PL: R$     36.746.012,81
+Lucros / Prejuízos no ano: R$       699.255,34
+ROE: 1.9000%","pos","Demais","Positivo"
+"MG","EPAMIG","PESQUISA","Dependente",3123717.3,756922.16,"SIM","SIM","NÃO","23518.86","Não",875,4203428.97,92447339.81,0,97282763.64,0,-97282763.64,"PESQUISA E ASSISTÊNCIA TÉCNICA","Minas gerais","Sudeste",FALSE,FALSE,0.242314552600519,"     3.123.717,30","EPAMIG (MG)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$      3.123.717,30
+Lucros / Prejuízos no ano: R$       756.922,16
+ROE: 24.2300%","pos","PESQUISA E ASSISTÊNCIA TÉCNICA","Positivo"
+"MG","GASMIG","DISTRIBUIÇÃO DE GÁS","Não Dependente",995408000,164558000,"SIM","SIM","SIM","58349.41","Sim",285,44969000,52125000,0,0,0,NA,"DISTRIBUIÇÃO DE GÁS","Minas gerais","Sudeste",TRUE,TRUE,0.165317136289843,"   995.408.000,00","GASMIG (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$    995.408.000,00
+Lucros / Prejuízos no ano: R$   164.558.000,00
+ROE: 16.5300%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"MG","METROMINAS","TRANSPORTES","Não Dependente",95428,-213761,"SIM","SIM","NÃO","9000","Não",1,NA,170633,0,0,0,NA,"TRANSPORTES","Minas gerais","Sudeste",FALSE,TRUE,-2.24002389235864,"        95.428,00","METROMINAS (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$         95.428,00
+Lucros / Prejuízos no ano: R$      -213.761,00
+ROE: -224.0000%","bem_neg","TRANSPORTES","Negativo"
+"MG","MGI","GESTÃO DE ATIVOS","Não Dependente",443431745.53,-8494374.33,"SIM","SIM","SIM","12373.72","Não",85,78287001.88,9259668.32,0,0,57457711.49,-57457711.49,"GESTÃO DE ATIVOS","Minas gerais","Sudeste",TRUE,FALSE,-0.0191559905568947,"   443.431.745,53","MGI (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: GESTÃO DE ATIVOS
+PL: R$    443.431.745,53
+Lucros / Prejuízos no ano: R$    -8.494.374,33
+ROE: -1.9200%","neg","GESTÃO DE ATIVOS","Negativo"
+"MG","MGS","OUTRO","Não Dependente",32365402.9,501190.44,"SIM","SIM","SIM","15881.98","Não",24545,NA,71005966.69,10763463.4,0,0,10763463.4,"GESTÃO DE ATIVOS","Minas gerais","Sudeste",TRUE,FALSE,0.0154853762070733,"    32.365.402,90","MGS (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: GESTÃO DE ATIVOS
+PL: R$     32.365.402,90
+Lucros / Prejuízos no ano: R$       501.190,44
+ROE: 1.5500%","pos","GESTÃO DE ATIVOS","Positivo"
+"MG","PRODEMGE","INFORMÁTICA","Não Dependente",77490690,7676523,"SIM","SIM","SIM","20950.900000000001","Não",1116,5459585.96,140613032.48,0,0,0,NA,"INFORMÁTICA","Minas gerais","Sudeste",TRUE,TRUE,0.0990638101170605,"    77.490.690,00","PRODEMGE (MG)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: INFORMÁTICA
+PL: R$     77.490.690,00
+Lucros / Prejuízos no ano: R$     7.676.523,00
+ROE: 9.9100%","pos","INFORMÁTICA","Positivo"
+"PA","BANCO DO ESTADO DO PARÁ","FINANCEIRO","Não Dependente",1365474472.56,324051731.33,"SIM","SIM","SIM","26113.55","Sim",2388,31398001.05,500557783.33,128769805.89,0,0,128769805.89,"FINANCEIRO","Pará","Norte",TRUE,FALSE,0.237318044271063," 1.365.474.472,56","BANCO DO ESTADO DO PARÁ (PA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$  1.365.474.472,56
+Lucros / Prejuízos no ano: R$   324.051.731,33
+ROE: 23.7300%","pos","FINANCEIRO","Positivo"
+"PA","CENTRAL DE ABASTECIMENTO DO PARÁ","ABASTECIMENTO","Dependente",4124627.42,327277.49,"SIM","SIM","SIM","17581","Não",77,246177.84,5659338.7,0,9249668.55,30073.99,-9279742.54,"ABASTECIMENTO","Pará","Norte",TRUE,FALSE,0.0793471644040033,"     4.124.627,42","CENTRAL DE ABASTECIMENTO DO PARÁ (PA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ABASTECIMENTO
+PL: R$      4.124.627,42
+Lucros / Prejuízos no ano: R$       327.277,49
+ROE: 7.9300%","pos","ABASTECIMENTO","Positivo"
+"PA","COMPANHIA ADMINISTRADORA DA ZONA DE PROCESSAMENTO DE EXPORTAÇÃO","DESENVOLVIMENTO","Não Dependente",24141052.72,-112477.55,"SIM","SIM","NÃO",NA,"Não",0,0,0,0,0,2e+05,-2e+05,"DESENVOLVIMENTO","Pará","Norte",FALSE,FALSE,-0.00465918165643275,"    24.141.052,72","COMPANHIA ADMINISTRADORA DA ZONA DE PROCESSAMENTO DE EXPORTAÇÃO (PA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$     24.141.052,72
+Lucros / Prejuízos no ano: R$      -112.477,55
+ROE: -0.4700%","neg","DESENVOLVIMENTO","Negativo"
+"PA","COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DO PARÀ","DESENVOLVIMENTO","Dependente",56909668.65,319460.06,"SIM","SIM","NÃO","17036","Não",38,1266169.72,4141832.64,0,4323168.75,0,-4323168.75,"DESENVOLVIMENTO","Pará","Norte",FALSE,FALSE,0.00561345844349772,"    56.909.668,65","COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DO PARÀ (PA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$     56.909.668,65
+Lucros / Prejuízos no ano: R$       319.460,06
+ROE: 0.5600%","pos","DESENVOLVIMENTO","Positivo"
+"PA","COMPANHIA DE GÁS DO PARÁ","DISTRIBUIÇÃO DE GÁS","Não Dependente",315,1256,"SIM","SIM","NÃO",NA,"Não",2,NA,351058,0,471750,376,-472126,"DISTRIBUIÇÃO DE GÁS","Pará","Norte",FALSE,FALSE,3.98730158730159,"           315,00","COMPANHIA DE GÁS DO PARÁ (PA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$            315,00
+Lucros / Prejuízos no ano: R$         1.256,00
+ROE: 398.7300%","bem_pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"PA","COMPANHIA DE HABITAÇÃO DO ESTADO DO PARÁ","SERVIÇOS PÚBLICOS","Dependente",115300312.78,-743828.14,"SIM","SIM","NÃO","23087.39","Não",172,10806425.05,28747495.14,0,51767489.88,0,-51767489.88,"HABITAÇÃO E URBANIZAÇÃO","Pará","Norte",FALSE,FALSE,-0.00645122395651493,"   115.300.312,78","COMPANHIA DE HABITAÇÃO DO ESTADO DO PARÁ (PA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$    115.300.312,78
+Lucros / Prejuízos no ano: R$      -743.828,14
+ROE: -0.6500%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"PA","COMPANHIA DE PORTOS E HIDROVIAS DO ESTADO DO PARÁ","TRANSPORTES","Dependente",43182470.28,32597484.47,"SIM","SIM","SIM","21523.91","Não",50,32454797.6,3760135.58,0,9275907.51,0,-9275907.51,"PORTOS E HIDROVIAS","Pará","Norte",TRUE,FALSE,0.754877714466871,"    43.182.470,28","COMPANHIA DE PORTOS E HIDROVIAS DO ESTADO DO PARÁ (PA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PORTOS E HIDROVIAS
+PL: R$     43.182.470,28
+Lucros / Prejuízos no ano: R$    32.597.484,47
+ROE: 75.4900%","bem_pos","PORTOS E HIDROVIAS","Positivo"
+"PA","COMPANHIA DE SANEAMENTO DO PARÁ","SANEAMENTO","Não Dependente",357365631.29,-248485246.21,"SIM","SIM","SIM",NA,"Não",1686,10708768.44,186181574.16,0,0,223343621,-223343621,"SANEAMENTO","Pará","Norte",TRUE,FALSE,-0.695324968193026,"   357.365.631,29","COMPANHIA DE SANEAMENTO DO PARÁ (PA)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$    357.365.631,29
+Lucros / Prejuízos no ano: R$  -248.485.246,21
+ROE: -69.5300%","bem_neg","SANEAMENTO","Negativo"
+"PA","EMPRESA DE ASSISTÊNCIA TÉCNICA E EXTENSÃO RURAL DO ESTADO DO PARÁ","ASSITÊNCIA TÉCNICA","Dependente",20476852.27,3258885.81,"SIM","NÃO","NÃO","40164.370000000003","Não",945,444447.9,103610642.29,0,108268724,0,-108268724,"PESQUISA E ASSISTÊNCIA TÉCNICA","Pará","Norte",FALSE,FALSE,0.159149744649694,"    20.476.852,27","EMPRESA DE ASSISTÊNCIA TÉCNICA E EXTENSÃO RURAL DO ESTADO DO PARÁ (PA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$     20.476.852,27
+Lucros / Prejuízos no ano: R$     3.258.885,81
+ROE: 15.9100%","pos","PESQUISA E ASSISTÊNCIA TÉCNICA","Positivo"
+"PA","EMPRESA DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO DO ESTADO DO PARÁ","INFORMÁTICA","Dependente",32669046.1,2892803.42,"SIM","SIM","NÃO","31534.74","Não",305,2892803.42,48447961.93,0,55167695.02,0,-55167695.02,"INFORMÁTICA","Pará","Norte",FALSE,FALSE,0.0885487568613153,"    32.669.046,10","EMPRESA DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO DO ESTADO DO PARÁ (PA)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: INFORMÁTICA
+PL: R$     32.669.046,10
+Lucros / Prejuízos no ano: R$     2.892.803,42
+ROE: 8.8500%","pos","INFORMÁTICA","Positivo"
+"PB","COMPANHIA DE ÁGUA E ESGOTOS DA PARAIBA","SANEAMENTO","Não Dependente",1520720791,99721000,"SIM","SIM","SIM","0","Não",2942,0,401098000,0,0,0,0,"SANEAMENTO","Paraíba","Nordeste",TRUE,FALSE,0.0655748251685473," 1.520.720.791,00","COMPANHIA DE ÁGUA E ESGOTOS DA PARAIBA (PB)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  1.520.720.791,00
+Lucros / Prejuízos no ano: R$    99.721.000,00
+ROE: 6.5600%","pos","SANEAMENTO","Positivo"
+"PB","COMPANHIA DE DESENVOLVIMENTO DA PARAÍBA - CINEP","OUTRO","Dependente",13158224.25,189546.74,"SIM","SIM","NÃO","0","Não",86,0,2645702.47,0,4760116.39,0,-4760116.39,"DESENVOLVIMENTO","Paraíba","Nordeste",FALSE,FALSE,0.0144051914907895,"    13.158.224,25","COMPANHIA DE DESENVOLVIMENTO DA PARAÍBA - CINEP (PB)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$     13.158.224,25
+Lucros / Prejuízos no ano: R$       189.546,74
+ROE: 1.4400%","pos","DESENVOLVIMENTO","Positivo"
+"PB","COMPANHIA DE PROCESSAMENTO DE DADOS DA PARAIBA - CODATA","INFORMÁTICA","Dependente",88770870.26,2278325.27,"SIM","SIM","NÃO","0","Não",213,1728304.1,0,0,0,0,0,"INFORMÁTICA","Paraíba","Nordeste",FALSE,FALSE,0.0256652352661074,"    88.770.870,26","COMPANHIA DE PROCESSAMENTO DE DADOS DA PARAIBA - CODATA (PB)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: INFORMÁTICA
+PL: R$     88.770.870,26
+Lucros / Prejuízos no ano: R$     2.278.325,27
+ROE: 2.5700%","pos","INFORMÁTICA","Positivo"
+"PB","COMPANHIA DOCAS DA PARAIBA","OUTRO","Não Dependente",77132097.35,646040.17,"SIM","SIM","NÃO","0","Não",33,0,0,0,0,0,0,"PORTOS E HIDROVIAS","Paraíba","Nordeste",FALSE,FALSE,0.00837576303764285,"    77.132.097,35","COMPANHIA DOCAS DA PARAIBA (PB)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PORTOS E HIDROVIAS
+PL: R$     77.132.097,35
+Lucros / Prejuízos no ano: R$       646.040,17
+ROE: 0.8400%","pos","PORTOS E HIDROVIAS","Positivo"
+"PB","COMPANHIA ESTADUAL DE HABITAÇÃO POPULAR ¿ CEHAP","OUTRO","Dependente",28078342,-3054633,"SIM","SIM","NÃO","0","Não",237,0,10192490,0,17187184.14,0,-17187184.14,"HABITAÇÃO E URBANIZAÇÃO","Paraíba","Nordeste",FALSE,FALSE,-0.108789650044151,"    28.078.342,00","COMPANHIA ESTADUAL DE HABITAÇÃO POPULAR ¿ CEHAP (PB)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$     28.078.342,00
+Lucros / Prejuízos no ano: R$    -3.054.633,00
+ROE: -10.8800%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"PB","COMPANHIA PARAIBANA DE GÁS","DISTRIBUIÇÃO DE GÁS","Não Dependente",65174248.92,4558628.28,"SIM","SIM","SIM","0","Não",72,0,10370000,1545722.69,0,0,1545722.69,"DISTRIBUIÇÃO DE GÁS","Paraíba","Nordeste",TRUE,FALSE,0.0699452368924975,"    65.174.248,92","COMPANHIA PARAIBANA DE GÁS (PB)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$     65.174.248,92
+Lucros / Prejuízos no ano: R$     4.558.628,28
+ROE: 6.9900%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"PB","EMPRESA PARAIBANA DE COMUNICAÇÃO - EPC","COMUNICAÇÕES","Dependente",23258411.74,4884279.7,"SIM","SIM","NÃO","0","Não",287,256533.94,909914,0,4425576.77,18374132.04,-22799708.81,"COMUNICAÇÃO","Paraíba","Nordeste",FALSE,FALSE,0.210000569024237,"    23.258.411,74","EMPRESA PARAIBANA DE COMUNICAÇÃO - EPC (PB)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: COMUNICAÇÃO
+PL: R$     23.258.411,74
+Lucros / Prejuízos no ano: R$     4.884.279,70
+ROE: 21.0000%","pos","Demais","Positivo"
+"PB","EMPRESA PARAÍBANA DE TURISMO S/A - PBTUR","OUTRO","Dependente",2397904,12987,"SIM","SIM","NÃO","0","Não",5,0,0,0,2593626,0,-2593626,"TURISMO","Paraíba","Nordeste",FALSE,FALSE,0.00541597995582809,"     2.397.904,00","EMPRESA PARAÍBANA DE TURISMO S/A - PBTUR (PB)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TURISMO
+PL: R$      2.397.904,00
+Lucros / Prejuízos no ano: R$        12.987,00
+ROE: 0.5400%","pos","Demais","Positivo"
+"PB","LABORAT.INDL.FARMAC.EST.PARAIBA S/A-LIFESA","SAÚDE","Dependente",794578.86,-208725.31,"SIM","SIM","NÃO","0","Não",14,0,0,0,905741.04,0,-905741.04,"SAÚDE","Paraíba","Nordeste",FALSE,FALSE,-0.262686714318073,"       794.578,86","LABORAT.INDL.FARMAC.EST.PARAIBA S/A-LIFESA (PB)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: SAÚDE
+PL: R$        794.578,86
+Lucros / Prejuízos no ano: R$      -208.725,31
+ROE: -26.2700%","neg","Demais","Negativo"
+"PB","PBTUR HOTEIS S/A","OUTRO","Dependente",10818584,-89760,"SIM","SIM","NÃO","0","Não",1,0,0,0,52263.2,0,-52263.2,"TURISMO","Paraíba","Nordeste",FALSE,FALSE,-0.00829683441012243,"    10.818.584,00","PBTUR HOTEIS S/A (PB)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TURISMO
+PL: R$     10.818.584,00
+Lucros / Prejuízos no ano: R$       -89.760,00
+ROE: -0.8300%","neg","Demais","Negativo"
+"PR","Administração dos Portos de Paranaguá e Antonina - APPA","Serviços Públicos","Não Dependente",498345970.27,24897095.5,"Possui","Possui","Possui","34601.550000000003","Não",520,143370858.47,76630708.67,0,0,0,0,"PORTOS E HIDROVIAS","Paraná","Sul",TRUE,FALSE,0.049959459863819,"   498.345.970,27","Administração dos Portos de Paranaguá e Antonina - APPA (PR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PORTOS E HIDROVIAS
+PL: R$    498.345.970,27
+Lucros / Prejuízos no ano: R$    24.897.095,50
+ROE: 5.0000%","pos","PORTOS E HIDROVIAS","Positivo"
+"PR","Centrais de Abastecimento do Paraná S/A - CEASA/PR","Agricultura","Não Dependente",129757157.44,4020064.54,"Possui","Possui","Não possui",NA,"Não",69,7070908.66,10674385.89,0,0,0,0,"ABASTECIMENTO","Paraná","Sul",FALSE,FALSE,0.0309814473383396,"   129.757.157,44","Centrais de Abastecimento do Paraná S/A - CEASA/PR (PR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$    129.757.157,44
+Lucros / Prejuízos no ano: R$     4.020.064,54
+ROE: 3.1000%","pos","ABASTECIMENTO","Positivo"
+"PR","Companhia de Saneamento do Paraná - SANEPAR","Saneamento","Não Dependente",6173914000,1080034000,"Possui","Possui","Possui",NA,"Sim",6985,1029604000,1094751000,79597000,0,0,79597000,"SANEAMENTO","Paraná","Sul",TRUE,FALSE,0.174935057404428," 6.173.914.000,00","Companhia de Saneamento do Paraná - SANEPAR (PR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  6.173.914.000,00
+Lucros / Prejuízos no ano: R$ 1.080.034.000,00
+ROE: 17.4900%","pos","SANEAMENTO","Positivo"
+"PR","Companhia de Tecnologia da Informação e Comunicação do Paraná(CELEPAR)","Informática","Não Dependente",130426088,2789250,"Possui","Possui","Possui","34602","Não",1095,7763830,193199986,627320,0,0,627320,"INFORMÁTICA","Paraná","Sul",TRUE,FALSE,0.0213856755406173,"   130.426.088,00","Companhia de Tecnologia da Informação e Comunicação do Paraná(CELEPAR) (PR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: INFORMÁTICA
+PL: R$    130.426.088,00
+Lucros / Prejuízos no ano: R$     2.789.250,00
+ROE: 2.1400%","pos","INFORMÁTICA","Positivo"
+"PR","Companhia Paranaense de Energia - Copel","Energia","Não Dependente",17598213,2062869,"Possui","Possui","Possui","10924.64","Sim",61,1928600,1563708,112196,0,0,112196,"ENERGIA","Paraná","Sul",TRUE,FALSE,0.117220367772569,"    17.598.213,00","Companhia Paranaense de Energia - Copel (PR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$     17.598.213,00
+Lucros / Prejuízos no ano: R$     2.062.869,00
+ROE: 11.7200%","pos","ENERGIA","Positivo"
+"PR","Estrada de Ferro Paraná Oeste S/A","Transporte Ferroviário","Não Dependente",274185635.4,-6530718.66,"Possui","Possui","Não possui",NA,"Não",137,418852.61,7353780.1,0,0,5e+06,-5e+06,"TRANSPORTES","Paraná","Sul",FALSE,FALSE,-0.0238186024970731,"   274.185.635,40","Estrada de Ferro Paraná Oeste S/A (PR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$    274.185.635,40
+Lucros / Prejuízos no ano: R$    -6.530.718,66
+ROE: -2.3800%","neg","TRANSPORTES","Negativo"
+"PR","Instituto de Tecnologia do Paraná - TECPAR","Primário","Não Dependente",69920496.12,-26149115.06,"Possui","Possui","Possui","25093.53","Não",332,2944734.21,49584401.23,0,0,52101596,-52101596,"PESQUISA E ASSISTÊNCIA TÉCNICA","Paraná","Sul",TRUE,FALSE,-0.37398354575634,"    69.920.496,12","Instituto de Tecnologia do Paraná - TECPAR (PR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$     69.920.496,12
+Lucros / Prejuízos no ano: R$   -26.149.115,06
+ROE: -37.4000%","neg","PESQUISA E ASSISTÊNCIA TÉCNICA","Negativo"
+"PE","AGENCIA DE DESENVOLVIMENTO ECONOMICO DE PERNAMBUCO S.A. - AD DIPER","DESENVOLVIMENTO","Não Dependente",179999343.43,-5882713,"SIM","SIM","NÃO","9648.35","Não",52,11137298.75,16861617.05,6400000,0,0,6400000,"DESENVOLVIMENTO","Pernambuco","Nordeste",FALSE,FALSE,-0.0326818580995976,"   179.999.343,43","AGENCIA DE DESENVOLVIMENTO ECONOMICO DE PERNAMBUCO S.A. - AD DIPER (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$    179.999.343,43
+Lucros / Prejuízos no ano: R$    -5.882.713,00
+ROE: -3.2700%","neg","DESENVOLVIMENTO","Negativo"
+"PE","AGENCIA DE FOMENTO DO ESTADO DE PERNAMBUCO S.A. - AGE","FINANCEIRO","Não Dependente",47281331.39,-907319.12,"SIM","SIM","NÃO","15200","Não",0,0,3480894.24,0,0,0,0,"FINANCEIRO","Pernambuco","Nordeste",FALSE,FALSE,-0.0191897963387701,"    47.281.331,39","AGENCIA DE FOMENTO DO ESTADO DE PERNAMBUCO S.A. - AGE (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$     47.281.331,39
+Lucros / Prejuízos no ano: R$      -907.319,12
+ROE: -1.9200%","neg","FINANCEIRO","Negativo"
+"PE","COMPANHIA EDITORA DE PERNAMBUCO - CEPE","OUTRO","Não Dependente",58845023,-7604393,"SIM","SIM","NÃO","14668.4","Não",87,74909,14167056,0,0,0,0,"COMUNICAÇÃO","Pernambuco","Nordeste",FALSE,FALSE,-0.129227462448269,"    58.845.023,00","COMPANHIA EDITORA DE PERNAMBUCO - CEPE (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: COMUNICAÇÃO
+PL: R$     58.845.023,00
+Lucros / Prejuízos no ano: R$    -7.604.393,00
+ROE: -12.9200%","neg","Demais","Negativo"
+"PE","COMPANHIA ESTADUAL DE HABITAÇÃO E OBRAS - CEHAB","OUTRO","Dependente",47448749.75,-8813975.11,"SIM","SIM","NÃO","9966.6200000000008","Não",0,85177332.45,8441239.38,0,69812588.56,0,-69812588.56,"HABITAÇÃO E URBANIZAÇÃO","Pernambuco","Nordeste",FALSE,FALSE,-0.18575779459816,"    47.448.749,75","COMPANHIA ESTADUAL DE HABITAÇÃO E OBRAS - CEHAB (PE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$     47.448.749,75
+Lucros / Prejuízos no ano: R$    -8.813.975,11
+ROE: -18.5800%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"PE","COMPANHIA PERNAMBUCANA DE GÁS - COPERGÁS","ENERGIA","Não Dependente",363020729.56,192373398.11,"SIM","SIM","SIM","21214.89","Sim",123,37131278.14,33470620.97,17335338.36,0,0,17335338.36,"DISTRIBUIÇÃO DE GÁS","Pernambuco","Nordeste",TRUE,FALSE,0.529924002806029,"   363.020.729,56","COMPANHIA PERNAMBUCANA DE GÁS - COPERGÁS (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$    363.020.729,56
+Lucros / Prejuízos no ano: R$   192.373.398,11
+ROE: 52.9900%","bem_pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"PE","COMPANHIA PERNAMBUCANA DE SANEAMENTO - COMPESA","ABASTECIMENTO","Não Dependente",6107115236.25,158620211.03,"SIM","SIM","SIM","30572.68","Sim",3242,376915083.84,275766383.66,0,0,71691803.33,-71691803.33,"SANEAMENTO","Pernambuco","Nordeste",TRUE,FALSE,0.0259730175203635," 6.107.115.236,25","COMPANHIA PERNAMBUCANA DE SANEAMENTO - COMPESA (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  6.107.115.236,25
+Lucros / Prejuízos no ano: R$   158.620.211,03
+ROE: 2.6000%","pos","SANEAMENTO","Positivo"
+"PE","EMPRESA DE TURISMO DE PERNAMBUCO GOVERNADOR EDUARDO CAMPOS - EMPETUR","OUTRO","Dependente",181562246.93,-19483259.76,"SIM","SIM","NÃO","24520.86","Não",143,0,22271836.68,0,73189284.52,0,-73189284.52,"TURISMO","Pernambuco","Nordeste",FALSE,FALSE,-0.10730898129671,"   181.562.246,93","EMPRESA DE TURISMO DE PERNAMBUCO GOVERNADOR EDUARDO CAMPOS - EMPETUR (PE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TURISMO
+PL: R$    181.562.246,93
+Lucros / Prejuízos no ano: R$   -19.483.259,76
+ROE: -10.7300%","neg","Demais","Negativo"
+"PE","EMPRESA PERNAMBUCANA DE TRANSPOSTE COLETIVO INTERMUNICIPAL - EPTI","TRANSPORTES","Dependente",2021516.33,633978,"SIM","SIM","NÃO","9966.6200000000008","Não",0,65404.49,2408852.08,0,2016457.39,0,-2016457.39,"TRANSPORTES","Pernambuco","Nordeste",FALSE,FALSE,0.313615077252431,"     2.021.516,33","EMPRESA PERNAMBUCANA DE TRANSPOSTE COLETIVO INTERMUNICIPAL - EPTI (PE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$      2.021.516,33
+Lucros / Prejuízos no ano: R$       633.978,00
+ROE: 31.3600%","pos","TRANSPORTES","Positivo"
+"PE","EMPRESA PERNAMBUCO DE COMUNICAÇÃO S.A. - EPC","COMUNICAÇÕES","Dependente",7251071,1749117,"SIM","SIM","NÃO","7973.3","Não",0,402808,2444768,0,5512155,0,-5512155,"COMUNICAÇÃO","Pernambuco","Nordeste",FALSE,FALSE,0.241221882946671,"     7.251.071,00","EMPRESA PERNAMBUCO DE COMUNICAÇÃO S.A. - EPC (PE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: COMUNICAÇÃO
+PL: R$      7.251.071,00
+Lucros / Prejuízos no ano: R$     1.749.117,00
+ROE: 24.1200%","pos","Demais","Positivo"
+"PE","INSTITUTO AGRONÔMICO DE PERNAMBUCO - IPA","SERVIÇOS PÚBLICOS","Dependente",36099451,-4235139,"SIM","SIM","NÃO","12796.77","Não",712,4324157.27,56505747.99,0,92391578.22,0,-92391578.22,"PESQUISA E ASSISTÊNCIA TÉCNICA","Pernambuco","Nordeste",FALSE,FALSE,-0.117318653959585,"    36.099.451,00","INSTITUTO AGRONÔMICO DE PERNAMBUCO - IPA (PE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$     36.099.451,00
+Lucros / Prejuízos no ano: R$    -4.235.139,00
+ROE: -11.7300%","neg","PESQUISA E ASSISTÊNCIA TÉCNICA","Negativo"
+"PE","LABORATÓRIO FARMACÊUTICO DO ESTADO DE PERNAMBUCO GOVERNADOR MIGUEL ARRAES S.A. - LAFEPE","OUTRO","Não Dependente",110186539,29300000,"SIM","SIM","NÃO","19831.09","Não",454,2653331,39529373.4,0,0,0,0,"SAÚDE","Pernambuco","Nordeste",FALSE,FALSE,0.26591269919096,"   110.186.539,00","LABORATÓRIO FARMACÊUTICO DO ESTADO DE PERNAMBUCO GOVERNADOR MIGUEL ARRAES S.A. - LAFEPE (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: SAÚDE
+PL: R$    110.186.539,00
+Lucros / Prejuízos no ano: R$    29.300.000,00
+ROE: 26.5900%","pos","Demais","Positivo"
+"PE","PORTO DO RECIFE S.A.","OUTRO","Não Dependente",4159748.87,-45472698.6,"SIM","SIM","NÃO","17550.05","Não",19,0,30766061.18,0,0,6210000,-6210000,"PORTOS E HIDROVIAS","Pernambuco","Nordeste",FALSE,FALSE,-10.9315970798016,"     4.159.748,87","PORTO DO RECIFE S.A. (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PORTOS E HIDROVIAS
+PL: R$      4.159.748,87
+Lucros / Prejuízos no ano: R$   -45.472.698,60
+ROE: -1 093.1600%","bem_neg","PORTOS E HIDROVIAS","Negativo"
+"PE","SUAPE COMPLEXO INDUSTRIAL PORTUÁRIO GOVERNADOR ERALDO GUEIROS - SUAPE","OUTRO","Não Dependente",3117191491,16171430,"SIM","SIM","SIM","37205","Não",127,27803159,58482495,0,0,721350,-721350,"PORTOS E HIDROVIAS","Pernambuco","Nordeste",TRUE,FALSE,0.00518782052584526," 3.117.191.491,00","SUAPE COMPLEXO INDUSTRIAL PORTUÁRIO GOVERNADOR ERALDO GUEIROS - SUAPE (PE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PORTOS E HIDROVIAS
+PL: R$  3.117.191.491,00
+Lucros / Prejuízos no ano: R$    16.171.430,00
+ROE: 0.5200%","pos","PORTOS E HIDROVIAS","Positivo"
+"RJ","Agência de Fomento do Estado do Rio de Janeiro S.A. - AgeRio","FINANCEIRO","Não Dependente",474796965.02,7204367.88,"SIM","SIM","SIM","27027.11","Sim",120,60936.21,29784199.47,0,0,0,NA,"FINANCEIRO","Rio de Janeiro","Sudeste",TRUE,TRUE,0.0151735760983572,"   474.796.965,02","Agência de Fomento do Estado do Rio de Janeiro S.A. - AgeRio (RJ)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$    474.796.965,02
+Lucros / Prejuízos no ano: R$     7.204.367,88
+ROE: 1.5200%","pos","FINANCEIRO","Positivo"
+"RJ","Comapnhia Estadual de Engenharia de Transportes e Logísticas - CENTRAL","TRANSPORTES","Dependente",791399588.73,-5108918.33,"SIM","SIM","NÃO",NA,"Não",420,NA,59195166.56,0,67292889.67,0,-67292889.67,"TRANSPORTES","Rio de Janeiro","Sudeste",FALSE,FALSE,-0.00645554837626154,"   791.399.588,73","Comapnhia Estadual de Engenharia de Transportes e Logísticas - CENTRAL (RJ)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$    791.399.588,73
+Lucros / Prejuízos no ano: R$    -5.108.918,33
+ROE: -0.6500%","neg","TRANSPORTES","Negativo"
+"RJ","Companhia de Desenvolvimento Rodoviário e Terminais do Estado do Rio de Janeiro - CODERTE","TRANSPORTES","Não Dependente",12649841.24,-1204790.18,"SIM","SIM","NÃO","6633.58","Não",120,30320,9402413.67,0,0,0,NA,"TRANSPORTES","Rio de Janeiro","Sudeste",FALSE,TRUE,-0.095241525734753,"    12.649.841,24","Companhia de Desenvolvimento Rodoviário e Terminais do Estado do Rio de Janeiro - CODERTE (RJ)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$     12.649.841,24
+Lucros / Prejuízos no ano: R$    -1.204.790,18
+ROE: -9.5200%","neg","TRANSPORTES","Negativo"
+"RJ","Companhia Estadual de Águas e Esgotos ¿ CEDAE","Saneamento, Serv. Água e Gás","Não Dependente",7277650000,1022934000,"SIM","SIM","SIM","68340","Sim",5125,121803000,1104258000,242947000,0,0,242947000,"SANEAMENTO","Rio de Janeiro","Sudeste",TRUE,FALSE,0.140558284611104," 7.277.650.000,00","Companhia Estadual de Águas e Esgotos ¿ CEDAE (RJ)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  7.277.650.000,00
+Lucros / Prejuízos no ano: R$ 1.022.934.000,00
+ROE: 14.0600%","pos","SANEAMENTO","Positivo"
+"RJ","Companhia Estadual de Haitação do Rio de Janeiro - CEHAB/RJ","OUTRO","Dependente",81833354.95,-16893286.6,"SIM","SIM","NÃO","18152.18","Não",335,28050548.31,53475817.07,0,87035053.97,228066288.04,-315101342.01,"HABITAÇÃO E URBANIZAÇÃO","Rio de Janeiro","Sudeste",FALSE,FALSE,-0.206435219603568,"    81.833.354,95","Companhia Estadual de Haitação do Rio de Janeiro - CEHAB/RJ (RJ)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$     81.833.354,95
+Lucros / Prejuízos no ano: R$   -16.893.286,60
+ROE: -20.6400%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"RJ","Empresa de Assistência Técnica e Extensão Rural do Estado do Rio de Janeiro - EMATER-RIO","ASSISTÊNCIA TÉCNICA","Dependente",96964.85,-510548.59,"SIM","SIM","NÃO",NA,"Não",580,NA,82604429.96,0,87094460.55,0,-87094460.55,"PESQUISA E ASSISTÊNCIA TÉCNICA","Rio de Janeiro","Sudeste",FALSE,FALSE,-5.2652955168806,"        96.964,85","Empresa de Assistência Técnica e Extensão Rural do Estado do Rio de Janeiro - EMATER-RIO (RJ)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$         96.964,85
+Lucros / Prejuízos no ano: R$      -510.548,59
+ROE: -526.5300%","bem_neg","PESQUISA E ASSISTÊNCIA TÉCNICA","Negativo"
+"RJ","Empresa de Obras Públicas do Estado Do Rio de Janeiro - EMOP","OUTRO","Dependente",301669929.82,-162997.88,"SIM","SIM","NÃO",NA,"Não",441,5885622.61,54901409.63,0,78291498.6,0,-78291498.6,"HABITAÇÃO E URBANIZAÇÃO","Rio de Janeiro","Sudeste",FALSE,FALSE,-0.000540318619417114,"   301.669.929,82","Empresa de Obras Públicas do Estado Do Rio de Janeiro - EMOP (RJ)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$    301.669.929,82
+Lucros / Prejuízos no ano: R$      -162.997,88
+ROE: -0.0500%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"RS","BADESUL Desenvolvimento S.A. - Agência de Fomento/RS","FINANCEIRO","Não Dependente",732864,28113,"SIM","SIM","SIM","29","Sim",145,NA,3552,274355.68,0,0,274355.68,"FINANCEIRO","Rio Grande do Sul","Sul",TRUE,FALSE,0.0383604597851716,"       732.864,00","BADESUL Desenvolvimento S.A. - Agência de Fomento/RS (RS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$        732.864,00
+Lucros / Prejuízos no ano: R$        28.113,00
+ROE: 3.8400%","pos","FINANCEIRO","Positivo"
+"RS","Banco do Estado do Rio Grande do Sul - BANRISUL","FINANCEIRO","Não Dependente",7794105,1344418,"SIM","SIM","SIM","51","Sim",10763,NA,1966331,0,0,0,NA,"FINANCEIRO","Rio Grande do Sul","Sul",TRUE,TRUE,0.172491645929841,"     7.794.105,00","Banco do Estado do Rio Grande do Sul - BANRISUL (RS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$      7.794.105,00
+Lucros / Prejuízos no ano: R$     1.344.418,00
+ROE: 17.2500%","pos","FINANCEIRO","Positivo"
+"RS","Caixa de Administração da Dívida Pública Estadual - CADIP","FINANCEIRO","Não Dependente",221547,-35,"SIM","SIM","NÃO","0","Não",0,NA,0,0,0,0,NA,"FINANCEIRO","Rio Grande do Sul","Sul",FALSE,TRUE,-0.000157980022297752,"       221.547,00","Caixa de Administração da Dívida Pública Estadual - CADIP (RS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$        221.547,00
+Lucros / Prejuízos no ano: R$           -35,00
+ROE: -0.0200%","neg","FINANCEIRO","Negativo"
+"RS","Companhia de Gás do Estado RGS - SULGÁS","DISTRIBUIÇÃO DE GÁS","Não Dependente",191729,82718,"SIM","SIM","SIM","10.5","Não",134,NA,39239,33665.08,0,0,33665.08,"DISTRIBUIÇÃO DE GÁS","Rio Grande do Sul","Sul",TRUE,FALSE,0.431431864767458,"       191.729,00","Companhia de Gás do Estado RGS - SULGÁS (RS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$        191.729,00
+Lucros / Prejuízos no ano: R$        82.718,00
+ROE: 43.1400%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"RS","Companhia Estadual de Geração e Transmição de Energia Eletrica - CEEE-GT","ENERGIA","Não Dependente",2432740,391230,"SIM","SIM","SIM","16","Não",1091,NA,309091,0,0,0,NA,"ENERGIA","Rio Grande do Sul","Sul",TRUE,TRUE,0.160818665373201,"     2.432.740,00","Companhia Estadual de Geração e Transmição de Energia Eletrica - CEEE-GT (RS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$      2.432.740,00
+Lucros / Prejuízos no ano: R$       391.230,00
+ROE: 16.0800%","pos","ENERGIA","Positivo"
+"RS","Companhia Riograndense de Saneamento - CORSAN","SANEAMENTO","Não Dependente",2353111,301153,"SIM","SIM","SIM","25","Não",5908,NA,1116155,50820.94,0,52458,-1637.06,"SANEAMENTO","Rio Grande do Sul","Sul",TRUE,FALSE,0.127980787986627,"     2.353.111,00","Companhia Riograndense de Saneamento - CORSAN (RS)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$      2.353.111,00
+Lucros / Prejuízos no ano: R$       301.153,00
+ROE: 12.8000%","pos","SANEAMENTO","Positivo"
+"RO","COMPANHIA DE MINERAÇÃO DE RONDÔNIA","OUTRO","Não Dependente",1844843729.98,20380739.46,"SIM","SIM","NÃO","16000","Não",35,8151.66,1500000,0,0,0,NA,"MINERAÇÃO","Rondônia","Norte",FALSE,TRUE,0.01104740695854," 1.844.843.729,98","COMPANHIA DE MINERAÇÃO DE RONDÔNIA (RO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: MINERAÇÃO
+PL: R$  1.844.843.729,98
+Lucros / Prejuízos no ano: R$    20.380.739,46
+ROE: 1.1000%","pos","Demais","Positivo"
+"RO","SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDÔNIA","OUTRO","Não Dependente",2837372.16,196886.65,"SIM","SIM","NÃO","21231.21","Não",39,317404.97,9828031.87,0,0,0,NA,"PORTOS E HIDROVIAS","Rondônia","Norte",FALSE,TRUE,0.0693904919402607,"     2.837.372,16","SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDÔNIA (RO)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PORTOS E HIDROVIAS
+PL: R$      2.837.372,16
+Lucros / Prejuízos no ano: R$       196.886,65
+ROE: 6.9400%","pos","PORTOS E HIDROVIAS","Positivo"
+"RR","COMANHIA DE ÁGUA E ESGOTO DE RORAIMA","SANEAMENTO","Não Dependente",393422254.6,-71046880.11,"SIM","SIM","SIM","23175","Não",746,1466867.12,38060760.31,0,0,0,0,"SANEAMENTO","Roraima","Norte",TRUE,FALSE,-0.180586835846983,"   393.422.254,60","COMANHIA DE ÁGUA E ESGOTO DE RORAIMA (RR)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$    393.422.254,60
+Lucros / Prejuízos no ano: R$   -71.046.880,11
+ROE: -18.0600%","neg","SANEAMENTO","Negativo"
+"RR","COMPANHIA DE DESENVOLVIMENTO DE RORAIMA - CODESAIMA","OUTROS","Dependente",165396888.03,-8516315.99,"SIM","SIM","NÃO","23335","Não",249,0,17739094.11,0,18853987.68,0,-18853987.68,"DESENVOLVIMENTO","Roraima","Norte",FALSE,FALSE,-0.0514901827442805,"   165.396.888,03","COMPANHIA DE DESENVOLVIMENTO DE RORAIMA - CODESAIMA (RR)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$    165.396.888,03
+Lucros / Prejuízos no ano: R$    -8.516.315,99
+ROE: -5.1500%","neg","DESENVOLVIMENTO","Negativo"
+"RR","AGÊNCIA DE FOMENTO DO ESTADO DE RORAIMA","DESENVOLVIMENTO","Dependente",7297377.35,-322403.24,"SIM","SIM","NÃO","23175","Não",33,31318,3631941.4,0,5144983.56,0,-5144983.56,"FINANCEIRO","Roraima","Norte",FALSE,FALSE,-0.0441807000702794,"     7.297.377,35","AGÊNCIA DE FOMENTO DO ESTADO DE RORAIMA (RR)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: FINANCEIRO
+PL: R$      7.297.377,35
+Lucros / Prejuízos no ano: R$      -322.403,24
+ROE: -4.4200%","neg","FINANCEIRO","Negativo"
+"SC","Agência de Fomento do Estado de Santa Catarina S.A.","FINANCEIRO","Não Dependente",597150251.33,44578232.34,"SIM","SIM","SIM","48199.08","Não",100,0,34666475.79,0,0,0,NA,"FINANCEIRO","Santa Catarina","Sul",TRUE,TRUE,0.0746516178142994,"   597.150.251,33","Agência de Fomento do Estado de Santa Catarina S.A. (SC)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$    597.150.251,33
+Lucros / Prejuízos no ano: R$    44.578.232,34
+ROE: 7.4700%","pos","FINANCEIRO","Positivo"
+"SC","CENTRAIS DE ABASTECIMENTO DO ESTADO DE SANTA CATARINA","ABASTECIMENTO","Não Dependente",8642564.47,1022638.48,"SIM","SIM","NÃO","8795.67","Não",43,375224.67,1277451.62,0,0,0,NA,"ABASTECIMENTO","Santa Catarina","Sul",FALSE,TRUE,0.118325814467427,"     8.642.564,47","CENTRAIS DE ABASTECIMENTO DO ESTADO DE SANTA CATARINA (SC)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: ABASTECIMENTO
+PL: R$      8.642.564,47
+Lucros / Prejuízos no ano: R$     1.022.638,48
+ROE: 11.8300%","pos","ABASTECIMENTO","Positivo"
+"SC","Centrais Elétricas de Santa Catarina S.A.","ENERGIA","Não Dependente",1407123619.82,283575141.12,"SIM","SIM","SIM","832054.27","Sim",3300,599971460.57,778918573.62,13633512.07,0,0,13633512.07,"ENERGIA","Santa Catarina","Sul",TRUE,FALSE,0.201528236130579," 1.407.123.619,82","Centrais Elétricas de Santa Catarina S.A. (SC)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$  1.407.123.619,82
+Lucros / Prejuízos no ano: R$   283.575.141,12
+ROE: 20.1500%","pos","ENERGIA","Positivo"
+"SC","CENTRO DE INFORMATICA E AUTOMAÇÃO DO ESTADO DE SC S/A","INFORMÁTICA","Não Dependente",53484475.92,8117167.59,"SIM","SIM","NÃO","0","Não",346,9354860.07,73622299.67,0,0,0,NA,"INFORMÁTICA","Santa Catarina","Sul",FALSE,TRUE,0.151766796820471,"    53.484.475,92","CENTRO DE INFORMATICA E AUTOMAÇÃO DO ESTADO DE SC S/A (SC)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: INFORMÁTICA
+PL: R$     53.484.475,92
+Lucros / Prejuízos no ano: R$     8.117.167,59
+ROE: 15.1800%","pos","INFORMÁTICA","Positivo"
+"SC","COMPANHIA CATARINENSE DE AGUAS E SANEAMENTO","SANEAMENTO","Não Dependente",12570380.98,119686013,"SIM","SIM","SIM","38170","Não",2503,245070731,3480889.91,0,0,0,NA,"SANEAMENTO","Santa Catarina","Sul",TRUE,TRUE,9.52127172521067,"    12.570.380,98","COMPANHIA CATARINENSE DE AGUAS E SANEAMENTO (SC)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$     12.570.380,98
+Lucros / Prejuízos no ano: R$   119.686.013,00
+ROE: 952.1300%","bem_pos","SANEAMENTO","Positivo"
+"SC","Companhia de Distritos Industriais de Santa Catarina. (Em Liquidação)","OUTRO","Dependente",1801574.89,-245284.29,"SIM","SIM","NÃO","0","Não",0,0,0,0,0,1653431.95,-1653431.95,"OUTROS","Santa Catarina","Sul",FALSE,FALSE,-0.136149927134031,"     1.801.574,89","Companhia de Distritos Industriais de Santa Catarina. (Em Liquidação) (SC)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: OUTROS
+PL: R$      1.801.574,89
+Lucros / Prejuízos no ano: R$      -245.284,29
+ROE: -13.6100%","neg","OUTROS","Negativo"
+"SC","Companhia Integrada de Desenvolvimento Agrícola de Santa Catarina","SERVIÇOS PÚBLICOS","Dependente",6183072.37,-9425008.77,"SIM","SIM","NÃO","48465.14","Não",1049,1397747.3,182152219.21,0,182152219.21,0,-182152219.21,"DESENVOLVIMENTO","Santa Catarina","Sul",FALSE,FALSE,-1.52432451150495,"     6.183.072,37","Companhia Integrada de Desenvolvimento Agrícola de Santa Catarina (SC)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$      6.183.072,37
+Lucros / Prejuízos no ano: R$    -9.425.008,77
+ROE: -152.4300%","bem_neg","DESENVOLVIMENTO","Negativo"
+"SC","Empresa de Pesquisa Agropecuária e Extensão Rural de Santa Catarina","PESQUISA","Dependente",3645024.43,2422444.71,"SIM","SIM","NÃO","27002.75","Não",1763,3087559.04,290027958.76,0,324896612.77,0,-324896612.77,"PESQUISA E ASSISTÊNCIA TÉCNICA","Santa Catarina","Sul",FALSE,FALSE,0.664589430474681,"     3.645.024,43","Empresa de Pesquisa Agropecuária e Extensão Rural de Santa Catarina (SC)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$      3.645.024,43
+Lucros / Prejuízos no ano: R$     2.422.444,71
+ROE: 66.4600%","bem_pos","PESQUISA E ASSISTÊNCIA TÉCNICA","Positivo"
+"SC","IAZPE IMBITUBA ADMINISTRADORA DA ZONA DE PROCESSAMENTO DE EXPORTAÇÃO SA","DESENVOLVIMENTO","Dependente",651483.52,-107300.86,"SIM","SIM","NÃO","868.52","Não",0,0,23450.04,0,0,91384.8,-91384.8,"DESENVOLVIMENTO","Santa Catarina","Sul",FALSE,FALSE,-0.164702339669313,"       651.483,52","IAZPE IMBITUBA ADMINISTRADORA DA ZONA DE PROCESSAMENTO DE EXPORTAÇÃO SA (SC)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$        651.483,52
+Lucros / Prejuízos no ano: R$      -107.300,86
+ROE: -16.4700%","neg","DESENVOLVIMENTO","Negativo"
+"SC","SC PARTICIPAÇÕES PARCERIAS S/A","DESENVOLVIMENTO","Não Dependente",422274466.04,7220571.74,"SIM","SIM","SIM","19428.14","Não",42,0,6343930.48,0,0,0,NA,"GESTÃO DE ATIVOS","Santa Catarina","Sul",TRUE,TRUE,0.0170992383406768,"   422.274.466,04","SC PARTICIPAÇÕES PARCERIAS S/A (SC)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: GESTÃO DE ATIVOS
+PL: R$    422.274.466,04
+Lucros / Prejuízos no ano: R$     7.220.571,74
+ROE: 1.7100%","pos","GESTÃO DE ATIVOS","Positivo"
+"SP","CETESB - COMPANHIA AMBIENTAL DO ESTADO DE SÃO PAULO","SERVIÇOS PÚBLICOS","Dependente",196439,-24553,"SIM","SIM","SIM","20","Sim",1896,757,412211,0,205716,0,-205716,"OUTROS","São Paulo","Sudeste",TRUE,FALSE,-0.124990455052205,"       196.439,00","CETESB - COMPANHIA AMBIENTAL DO ESTADO DE SÃO PAULO (SP)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: OUTROS
+PL: R$        196.439,00
+Lucros / Prejuízos no ano: R$       -24.553,00
+ROE: -12.5000%","neg","OUTROS","Negativo"
+"SP","COMPANHIA DE DESENVOLVIMENTO AGRICOLA DE SAO PAULO - CODASP - EM LIQUIDACAO","OUTRO","Dependente",1218,-5230,"NÃO","SIM","NÃO","22","Não",80,NA,28506,0,23873,0,-23873,"OUTROS","São Paulo","Sudeste",FALSE,FALSE,-4.29392446633826,"         1.218,00","COMPANHIA DE DESENVOLVIMENTO AGRICOLA DE SAO PAULO - CODASP - EM LIQUIDACAO (SP)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: OUTROS
+PL: R$          1.218,00
+Lucros / Prejuízos no ano: R$        -5.230,00
+ROE: -429.3900%","bem_neg","OUTROS","Negativo"
+"SP","COMPANHIA DE DESENVOLVIMENTO HABITACIONAL E URBANO DO ESTADO DE SÃO PAULO - CDHU","OUTRO","Não Dependente",10285796,283534,"SIM","SIM","SIM","21","Sim",549,1409177,112566,0,0,371152,-371152,"HABITAÇÃO E URBANIZAÇÃO","São Paulo","Sudeste",TRUE,FALSE,0.0275655865622845,"    10.285.796,00","COMPANHIA DE DESENVOLVIMENTO HABITACIONAL E URBANO DO ESTADO DE SÃO PAULO - CDHU (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$     10.285.796,00
+Lucros / Prejuízos no ano: R$       283.534,00
+ROE: 2.7600%","pos","HABITAÇÃO E URBANIZAÇÃO","Positivo"
+"SP","COMPANHIA DE PROCESSAMENTO DE DADOS DO ESTADO DE SÃO PAULO - PRODESP","INFORMÁTICA","Não Dependente",576390,69889,"SIM","SIM","SIM","45","Sim",1681,40935,376609,54837,0,0,54837,"INFORMÁTICA","São Paulo","Sudeste",TRUE,FALSE,0.12125297107861,"       576.390,00","COMPANHIA DE PROCESSAMENTO DE DADOS DO ESTADO DE SÃO PAULO - PRODESP (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: INFORMÁTICA
+PL: R$        576.390,00
+Lucros / Prejuízos no ano: R$        69.889,00
+ROE: 12.1300%","pos","INFORMÁTICA","Positivo"
+"SP","COMPANHIA DE SANEAMENTO BÁSICO DO ESTADO DE SÃO PAULO - SABESP","SANEAMENTO","Não Dependente",21635783,3367517,"SIM","SIM","SIM","33","Sim",13945,5068020,2681940,398142,0,0,398142,"SANEAMENTO","São Paulo","Sudeste",TRUE,FALSE,0.155645718946248,"    21.635.783,00","COMPANHIA DE SANEAMENTO BÁSICO DO ESTADO DE SÃO PAULO - SABESP (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$     21.635.783,00
+Lucros / Prejuízos no ano: R$     3.367.517,00
+ROE: 15.5600%","pos","SANEAMENTO","Positivo"
+"SP","COMPANHIA DO METROPOLITANO DE SÃO PAULO-METRÔ","TRANSPORTES","Não Dependente",33145278,-599416,"SIM","SIM","SIM","31","Sim",8284,1841775,1735949,0,0,1494420,-1494420,"TRANSPORTES","São Paulo","Sudeste",TRUE,FALSE,-0.0180845066377177,"    33.145.278,00","COMPANHIA DO METROPOLITANO DE SÃO PAULO-METRÔ (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: TRANSPORTES
+PL: R$     33.145.278,00
+Lucros / Prejuízos no ano: R$      -599.416,00
+ROE: -1.8100%","neg","TRANSPORTES","Negativo"
+"SP","COMPANHIA DOCAS DE SÃO SEBASTIÃO","OUTRO","Dependente",242878,8077,"SIM","SIM","NÃO","29","Não",92,NA,15742,0,10575,2020,-12595,"PORTOS E HIDROVIAS","São Paulo","Sudeste",FALSE,FALSE,0.0332553792439002,"       242.878,00","COMPANHIA DOCAS DE SÃO SEBASTIÃO (SP)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: PORTOS E HIDROVIAS
+PL: R$        242.878,00
+Lucros / Prejuízos no ano: R$         8.077,00
+ROE: 3.3300%","pos","PORTOS E HIDROVIAS","Positivo"
+"SP","COMPANHIA PAULISTA DE OBRAS E SERVIÇOS - CPOS","OUTRO","Não Dependente",67666,309,"SIM","SIM","NÃO","24","Não",187,2346,34154,0,0,0,NA,"HABITAÇÃO E URBANIZAÇÃO","São Paulo","Sudeste",FALSE,TRUE,0.00456654745366949,"        67.666,00","COMPANHIA PAULISTA DE OBRAS E SERVIÇOS - CPOS (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$         67.666,00
+Lucros / Prejuízos no ano: R$           309,00
+ROE: 0.4600%","pos","HABITAÇÃO E URBANIZAÇÃO","Positivo"
+"SP","COMPANHIA PAULISTA DE PARCERIAS - CPP","OUTRO","Não Dependente",1860725,130348,"SIM","SIM","NÃO","30","Sim",5,NA,3130,26664,0,0,26664,"GESTÃO DE ATIVOS","São Paulo","Sudeste",FALSE,FALSE,0.0700522645742923,"     1.860.725,00","COMPANHIA PAULISTA DE PARCERIAS - CPP (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: GESTÃO DE ATIVOS
+PL: R$      1.860.725,00
+Lucros / Prejuízos no ano: R$       130.348,00
+ROE: 7.0100%","pos","GESTÃO DE ATIVOS","Positivo"
+"SP","COMPANHIA PAULISTA DE SECURITIZAÇÃO","FINANCEIRO","Não Dependente",421072,49539,"SIM","SIM","SIM","22","Não",2,NA,2773,11606,0,0,11606,"GESTÃO DE ATIVOS","São Paulo","Sudeste",TRUE,FALSE,0.117649713113197,"       421.072,00","COMPANHIA PAULISTA DE SECURITIZAÇÃO (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: GESTÃO DE ATIVOS
+PL: R$        421.072,00
+Lucros / Prejuízos no ano: R$        49.539,00
+ROE: 11.7600%","pos","GESTÃO DE ATIVOS","Positivo"
+"SP","COMPANHIA PAULISTA DE TRENS METROPOLITANOS - CPTM","TRANSPORTES","Dependente",9785350,-237287,"SIM","SIM","SIM","23","Sim",7872,314133,1140496,0,929813,-1748864,819051,"TRANSPORTES","São Paulo","Sudeste",TRUE,FALSE,-0.0242492092771337,"     9.785.350,00","COMPANHIA PAULISTA DE TRENS METROPOLITANOS - CPTM (SP)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: TRANSPORTES
+PL: R$      9.785.350,00
+Lucros / Prejuízos no ano: R$      -237.287,00
+ROE: -2.4200%","neg","TRANSPORTES","Negativo"
+"SP","COSESP - COMPANHIA DE SEGUROS DO ESTADO DE SÃO PAULO","OUTRO","Não Dependente",141690,16877,"SIM","SIM","NÃO","22","Sim",38,169,9200,37109,0,0,37109,"GESTÃO DE ATIVOS","São Paulo","Sudeste",FALSE,FALSE,0.119112146234738,"       141.690,00","COSESP - COMPANHIA DE SEGUROS DO ESTADO DE SÃO PAULO (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: GESTÃO DE ATIVOS
+PL: R$        141.690,00
+Lucros / Prejuízos no ano: R$        16.877,00
+ROE: 11.9100%","pos","GESTÃO DE ATIVOS","Positivo"
+"SP","DERSA - DESENVOLVIMENTO RODOVIÁRIO S/A","TRANSPORTES","Não Dependente",1333333,-125711,"SIM","SIM","NÃO","23","Não",471,NA,86345,0,0,-72174,72174,"TRANSPORTES","São Paulo","Sudeste",FALSE,FALSE,-0.0942832735708184,"     1.333.333,00","DERSA - DESENVOLVIMENTO RODOVIÁRIO S/A (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$      1.333.333,00
+Lucros / Prejuízos no ano: R$      -125.711,00
+ROE: -9.4300%","neg","TRANSPORTES","Negativo"
+"SP","DESENVOLVE SP - AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A.","OUTRO","Não Dependente",1122419,47560,"SIM","SIM","SIM","28","Sim",147,104312,39444,11295,0,0,11295,"FINANCEIRO","São Paulo","Sudeste",TRUE,FALSE,0.0423727681017517,"     1.122.419,00","DESENVOLVE SP - AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$      1.122.419,00
+Lucros / Prejuízos no ano: R$        47.560,00
+ROE: 4.2400%","pos","FINANCEIRO","Positivo"
+"SP","EMAE - EMPRESA METROPOLITANA DE ÁGUAS E ENERGIA - AÇÕES ORDINÁRIAS","ENERGIA","Não Dependente",990225,92636,"SIM","SIM","SIM","34","Sim",457,26692,105293,12727,0,0,12727,"ENERGIA","São Paulo","Sudeste",TRUE,FALSE,0.0935504557045116,"       990.225,00","EMAE - EMPRESA METROPOLITANA DE ÁGUAS E ENERGIA - AÇÕES ORDINÁRIAS (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: ENERGIA
+PL: R$        990.225,00
+Lucros / Prejuízos no ano: R$        92.636,00
+ROE: 9.3600%","pos","ENERGIA","Positivo"
+"SP","EMPRESA METROPOLITANA DE TRANSPORTES URBANOS DE SÃO PAULO S/A - EMTU-SP","TRANSPORTES","Não Dependente",2015989,-56040,"SIM","SIM","SIM","24","Sim",501,NA,92212,0,0,99202,-99202,"TRANSPORTES","São Paulo","Sudeste",TRUE,FALSE,-0.0277977707219633,"     2.015.989,00","EMPRESA METROPOLITANA DE TRANSPORTES URBANOS DE SÃO PAULO S/A - EMTU-SP (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: TRANSPORTES
+PL: R$      2.015.989,00
+Lucros / Prejuízos no ano: R$       -56.040,00
+ROE: -2.7800%","neg","TRANSPORTES","Negativo"
+"SP","EMPRESA PAULISTA DE PLANEJAMENTO METROPOLITANO S/A- EMPLASA - EM LIQUIDAÇÃO","OUTRO","Dependente",28811,-5584,"NÃO","SIM","NÃO","21","Não",22,2234,21386,0,46088,637,-46725,"TRANSPORTES","São Paulo","Sudeste",FALSE,FALSE,-0.193814862378952,"        28.811,00","EMPRESA PAULISTA DE PLANEJAMENTO METROPOLITANO S/A- EMPLASA - EM LIQUIDAÇÃO (SP)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TRANSPORTES
+PL: R$         28.811,00
+Lucros / Prejuízos no ano: R$        -5.584,00
+ROE: -19.3800%","neg","TRANSPORTES","Negativo"
+"SP","IMPRENSA OFICIAL DO ESTADO S.A - IMESP","COMUNICAÇÕES","Não Dependente",200189,44942,"SIM","SIM","SIM","17","Sim",728,7130,136638,141202,0,0,141202,"COMUNICAÇÃO","São Paulo","Sudeste",TRUE,FALSE,0.224497849532192,"       200.189,00","IMPRENSA OFICIAL DO ESTADO S.A - IMESP (SP)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: COMUNICAÇÃO
+PL: R$        200.189,00
+Lucros / Prejuízos no ano: R$        44.942,00
+ROE: 22.4500%","pos","Demais","Positivo"
+"SP","INSTITUTO DE PESQUISAS TECNOLÓGICAS DO ESTADO DE SÃO PAULO S/A - IPT","PESQUISA","Dependente",114342,1170,"SIM","SIM","SIM","17","Não",688,1601,119925,0,84622,1601,-86223,"PESQUISA E ASSISTÊNCIA TÉCNICA","São Paulo","Sudeste",TRUE,FALSE,0.0102324605131973,"       114.342,00","INSTITUTO DE PESQUISAS TECNOLÓGICAS DO ESTADO DE SÃO PAULO S/A - IPT (SP)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: PESQUISA E ASSISTÊNCIA TÉCNICA
+PL: R$        114.342,00
+Lucros / Prejuízos no ano: R$         1.170,00
+ROE: 1.0200%","pos","PESQUISA E ASSISTÊNCIA TÉCNICA","Positivo"
+"SE","BANCO DO ESTADO DE SERGIPE","FINANCEIRO","Não Dependente",433857136,83614519,"SIM","SIM","SIM","16667","Sim",1028,15513100,174909535,10224355.57,0,0,10224355.57,"FINANCEIRO","Sergipe","Nordeste",TRUE,FALSE,0.192723622736495,"   433.857.136,00","BANCO DO ESTADO DE SERGIPE (SE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: FINANCEIRO
+PL: R$    433.857.136,00
+Lucros / Prejuízos no ano: R$    83.614.519,00
+ROE: 19.2700%","pos","FINANCEIRO","Positivo"
+"SE","CIA ESTADUAL DE HABITAÇÃO E OBRAS PÚBLICAS","OUTRO","Dependente",105486433,-2478471,"SIM","SIM","NÃO",NA,"Não",217,NA,32999,0,0,0,NA,"HABITAÇÃO E URBANIZAÇÃO","Sergipe","Nordeste",FALSE,TRUE,-0.0234956375859254,"   105.486.433,00","CIA ESTADUAL DE HABITAÇÃO E OBRAS PÚBLICAS (SE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: HABITAÇÃO E URBANIZAÇÃO
+PL: R$    105.486.433,00
+Lucros / Prejuízos no ano: R$    -2.478.471,00
+ROE: -2.3500%","neg","HABITAÇÃO E URBANIZAÇÃO","Negativo"
+"SE","COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DE SERGIPE","OUTRO","Dependente",213019890,8513258,"SIM","SIM","NÃO","8100","Não",120,9922306,14908554,0,0,0,NA,"DESENVOLVIMENTO","Sergipe","Nordeste",FALSE,TRUE,0.0399646155107863,"   213.019.890,00","COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DE SERGIPE (SE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DESENVOLVIMENTO
+PL: R$    213.019.890,00
+Lucros / Prejuízos no ano: R$     8.513.258,00
+ROE: 4.0000%","pos","DESENVOLVIMENTO","Positivo"
+"SE","COMPANHIA DE SANEAMENTO DE SERGIPE","SANEAMENTO","Não Dependente",1498077334,770409,"SIM","SIM","SIM",NA,"Não",1697,173630862,368173461,0,0,115764315,-115764315,"SANEAMENTO","Sergipe","Nordeste",TRUE,FALSE,0.000514265173442642," 1.498.077.334,00","COMPANHIA DE SANEAMENTO DE SERGIPE (SE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Sim
+Setor: SANEAMENTO
+PL: R$  1.498.077.334,00
+Lucros / Prejuízos no ano: R$       770.409,00
+ROE: 0.0500%","pos","SANEAMENTO","Positivo"
+"SE","EMPRESA SERGIPANA DE TURISMO S/A","DESENVOLVIMENTO","Dependente",12566333.31,213651.53,"SIM","SIM","NÃO",NA,"Não",41,NA,3279526.9,0,0,0,NA,"TURISMO","Sergipe","Nordeste",FALSE,TRUE,0.0170018990209325,"    12.566.333,31","EMPRESA SERGIPANA DE TURISMO S/A (SE)
+Dependência: Dependente
+Possui todas as estruturas de Governança? Não
+Setor: TURISMO
+PL: R$     12.566.333,31
+Lucros / Prejuízos no ano: R$       213.651,53
+ROE: 1.7000%","pos","Demais","Positivo"
+"SE","SERGIPE GÁS S/A - SERGAS","DISTRIBUIÇÃO DE GÁS","Não Dependente",52700591.12,1055857.59,"SIM","SIM","NÃO","39544","Sim",67,6142077.95,13303979.37,170000,0,0,170000,"DISTRIBUIÇÃO DE GÁS","Sergipe","Nordeste",FALSE,FALSE,0.0200350236602811,"    52.700.591,12","SERGIPE GÁS S/A - SERGAS (SE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: DISTRIBUIÇÃO DE GÁS
+PL: R$     52.700.591,12
+Lucros / Prejuízos no ano: R$     1.055.857,59
+ROE: 2.0000%","pos","DISTRIBUIÇÃO DE GÁS","Positivo"
+"SE","SERVIÇOS GRAFICOS DE SERGIPE","COMUNICAÇÕES","Não Dependente",4946385.46,-1131258.13,"SIM","SIM","NÃO","10924.26","Não",57,65674.3,4431490.45,0,0,0,NA,"COMUNICAÇÃO","Sergipe","Nordeste",FALSE,TRUE,-0.228703997929025,"     4.946.385,46","SERVIÇOS GRAFICOS DE SERGIPE (SE)
+Dependência: Não Dependente
+Possui todas as estruturas de Governança? Não
+Setor: COMUNICAÇÃO
+PL: R$      4.946.385,46
+Lucros / Prejuízos no ano: R$    -1.131.258,13
+ROE: -22.8700%","neg","Demais","Negativo"

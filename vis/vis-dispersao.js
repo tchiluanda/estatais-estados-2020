@@ -6,7 +6,7 @@ const vis = {
 
             svg: "svg.vis-dispersao",
             cont: "div.vis-dispersao",
-            data: "./dados/dados.csv"
+            data: "./dados/dados_roe.csv"
     
         },
     
@@ -49,11 +49,27 @@ const vis = {
 
         processed : {},
 
-        //
+        quant_variables : {
 
-        variables : [""],
+            // proprio de cada projeto
+            list : ["lucros", "PL"],
 
-        domains : {}
+            domains : {}
+        
+        },
+
+        categ_variables : {
+
+            // proprio de cada projeto
+            // para este em particular, vou usar para definir as variaveis que pretendo usar
+            // para permitir a filtragem dos dados. e também, no caso do "dep", para permitir 
+            // estilizar os pontos usando css. para isso vou usar data-attributes.
+            
+            list : ["dep", "gov", "plr_rva", "cat_ROE", "setor", "Nome_estado"],
+            
+            domains : {}
+
+        },
 
     },
 
@@ -96,6 +112,24 @@ const vis = {
 
         },
 
+        build_variables_domains : function() {
+
+            vis.data.quant_variables.list.forEach(variable => {
+                vis.data.quant_variables.domains[variable] = d3.extent(vis.data.raw, d => +d[variable]);
+            })
+
+            vis.data.categ_variables.list.forEach(variable => {
+                vis.data.categ_variables.domains[variable] = utils.unique(vis.data.raw, variable);
+            })
+
+        },
+
+        set_start_domain_zero : function(variable) {
+
+            vis.data.quant_variables.domains[variable][0] = 0;
+
+        },
+
         read_data : function(url) {
 
             d3.csv(url).then(
@@ -131,9 +165,13 @@ const vis = {
         begin : function(data) {
 
             console.log(data.columns);
+            console.table(data);
 
             // saves data as a property to make it easier to access it elsewhere
             vis.data.raw = data;
+
+            vis.utils.build_variables_domains();
+            vis.utils.set_start_domain_zero("PL");
 
         }
 
@@ -142,3 +180,5 @@ const vis = {
 }
 
 vis.control.init();
+
+console.log(vis);

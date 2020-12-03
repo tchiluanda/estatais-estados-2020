@@ -207,7 +207,7 @@ dados_selecionados_raw[linha_CMTP, "maior_rem"] <- as.character(9.4e3)
 dados_selecionados_raw[linha_CMTP, "desp_investimento"] <- as.character(1.9e6)
 dados_selecionados_raw[linha_CMTP, "desp_pessoal"] <- as.character(3.2e6)
 
-govs <- dados_selecionados %>%
+govs <- dados_selecionados_raw %>%
   select(starts_with("gov_")) %>% 
   unlist() %>%
   unique()
@@ -754,7 +754,7 @@ dados_roe %>%
 # ROE - plotly ------------------------------------------------------------
 
 
-roe_plotly <- plot_ly(dados_roe, 
+roe_plotly <- plot_ly(dados_roe %>% filter(plr_rva == "Sim"), 
                       y = ~lucros, 
                       x = ~PL, 
                       text = ~Empresa, 
@@ -1236,6 +1236,7 @@ dados_selecionados %>%
 
 write.csv2(dados_selecionados, file = "./dados/dados.csv", fileEncoding = "UTF-8")
 
+write.csv(dados_roe, file = "./dados/dados_roe.csv", fileEncoding = "UTF-8", row.names = FALSE)
 
 
 # infos do texto ----------------------------------------------------------
