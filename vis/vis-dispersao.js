@@ -335,9 +335,9 @@ const vis = {
             // saves data as a property to make it easier to access it elsewhere
             vis.data.raw = data;
 
-            vis.render.bubbles.initialize();
             vis.render.axis.initialize("x");
             vis.render.axis.initialize("y");
+            vis.render.bubbles.initialize();
 
             vis.utils.build_variables_domains();
             vis.utils.set_start_domain_zero("PL");
