@@ -24,11 +24,14 @@ const vis = {
             cont: null
     
         },
+
+        duration : 1000,
     
         dims : {
     
             h: null,
             w: null,
+            radius : 4,
             
             margins: {
     
@@ -44,6 +47,14 @@ const vis = {
                 x : null,
 
                 y : null
+
+            },
+
+            origin : {
+
+                x0 : 0,
+
+                y0 : 0
 
             }
     
@@ -154,6 +165,14 @@ const vis = {
 
         },
 
+        set_origin : function() {
+
+            vis.params.dims.origin.x0 = Math.floor(vis.render.scales.x(0));
+            vis.params.dims.origin.y0 = Math.floor(vis.render.scales.y(0));
+
+
+        },
+
         read_data : function(url) {
 
             d3.csv(url).then(
@@ -192,6 +211,80 @@ const vis = {
 
             }
 
+        },
+
+        axis : {
+
+            x : d3.axisBottom(),
+
+            y : d3.axisLeft(),
+
+            initialize : function(dim) {
+
+                vis.params.sels.axis[dim] = vis.params.sels.svg
+                  .append("g")
+                  .classed("axis", true)
+                ;
+
+            },
+
+            update_axis_scale : function(dim) {
+
+                vis.render.axis[dim].scale(
+                    vis.render.scales[dim]
+                );
+
+            },
+
+            update_axis_element : function(dim) {
+
+                vis.params.sels.axis[dim]
+                  .transition()
+                  .duration(vis.params.duration)
+                  .attr("transform", 
+                    "translate(" 
+                    + (dim == "x" ? 0 : vis.params.dims.origin.x0)
+                    + "," 
+                    + (dim == "y" ? 0 : vis.params.dims.origin.y0)
+                    + ")")
+                  .call(vis.render.axis[dim])
+                ;
+
+
+            }
+
+        },
+
+        bubbles : {
+
+            initialize : function() {
+
+                vis.params.sels.bubbles = d3.select(vis.params.refs.svg)
+                  .selectAll("circle")
+                  .data(vis.data.raw)
+                  .join("circle")
+                  .attr("data-gov", d => d.gov == "TRUE" ? "true" : "false")
+                  .attr("data-dep", d => d.dep == "Dependente" ? "true" : "false")
+                  .attr("data-plr", d => d.plr_rva == "Não" ? "false" : "true")
+                  .attr("data-setor", d => d.setor)
+                  .attr("data-estado", d => d.Nome_estado)
+                  .attr("data-catroe", d => d.cat_ROE)
+                  .attr("data-selected", "true")
+                ;
+
+            },
+
+            update_positions : function() {
+
+                vis.params.sels.bubbles
+                  .attr("cx", d => vis.render.scales.x(d.PL))
+                  .attr("cy", d => vis.render.scales.y(d.lucros))
+                  .attr("r", vis.params.dims.radius)
+                ;
+
+            }
+
+
         }
 
 
@@ -218,6 +311,20 @@ const vis = {
             vis.render.scales.update.range("x");
             vis.render.scales.update.range("y");
 
+            vis.render.axis.update_axis_scale("x");
+            vis.render.axis.update_axis_scale("y");
+
+            vis.utils.set_origin();
+
+        },
+
+        on_resize : function() {
+
+            vis.control.set_dimensions();
+            vis.render.bubbles.update_positions();
+            vis.render.axis.update_axis_element("x");
+            vis.render.axis.update_axis_element("y");
+
         },
 
 
@@ -228,13 +335,17 @@ const vis = {
             // saves data as a property to make it easier to access it elsewhere
             vis.data.raw = data;
 
+            vis.render.bubbles.initialize();
+            vis.render.axis.initialize("x");
+            vis.render.axis.initialize("y");
+
             vis.utils.build_variables_domains();
             vis.utils.set_start_domain_zero("PL");
 
             vis.render.scales.update.domain("x", "PL");
             vis.render.scales.update.domain("y", "lucros");
 
-            vis.control.set_dimensions();
+            vis.control.on_resize();
 
             console.log(vis);
 

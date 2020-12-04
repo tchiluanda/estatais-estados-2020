@@ -1,3 +1,8 @@
+:root {
+    --cor-dep:  #f2ac29;
+    --cor-ndep: #718c35;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -330,5 +335,14 @@ svg.vis-dispersao {
 div.vis-dispersao {
     position: relative;
     background-color: khaki;
+}
+
+circle {
+    fill: var(--cor-ndep);
+    opacity: .7;
+}
+
+circle[data-dep="true"] {
+    fill: var(--cor-dep);
 }
 
