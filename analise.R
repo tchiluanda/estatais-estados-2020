@@ -751,6 +751,14 @@ dados_roe %>%
 dados_roe %>%
   filter(emp == "COMPANHIA DE DESENVOLVIMENTO AGRICOLA DE SAO PAULO - CODASP - EM LIQUIDACAO")
 
+
+# ROE - dispersão ---------------------------------------------------------
+
+ggplot(dados_roe, aes( y = -lucros, x = PL, color = dep)) + 
+  geom_point() +
+  scale_x_log10() +
+  scale_y_log10()
+
 # ROE - plotly ------------------------------------------------------------
 
 
